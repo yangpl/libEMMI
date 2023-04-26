@@ -5,9 +5,9 @@ Author: Pengliang Yang, Harbin Institute of Technology, China
 
 Email: ypl.2100@gmail.com
 
-Programming language: C
+Programming language: C, Fortran
 
-Result visualization: python3, Madagascar (Scons)
+Result visualization: python3, Madagascar (Scons) and gnuplot
 
 System requirements: Linux OS
 
@@ -75,6 +75,9 @@ You would first need to create input file. There is a Fortran routine create_acq
 
 * src_rec_table.txt, gives the connection table showing which source uses which receivers to record EM data.
 
+You can visualize the survey configuration by running gnuplot script:
+
+* gnuplot plot_survey_layout.gnu
 
 ------------------------------
 The output after inversion:
