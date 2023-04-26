@@ -124,8 +124,13 @@ The output after inversion:
   4   8.24e+01  4.99e-01   1.88e+00  1.00e+00    0     4
 
   ...
-  
-In addition to these files, I created 3 python scripts to visualize the result. These are:
+
+
+
+-------------------------------------
+Visualization of the numerical result
+
+I created 3 python scripts to visualize the result. These are:
 
 * plot_histogram.py: it will plot the histogram of data misfit.
 
