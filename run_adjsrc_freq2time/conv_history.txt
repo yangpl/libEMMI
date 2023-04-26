@@ -1,0 +1,14 @@
+iteration 0 res dat 1.000000e+00 res mod 0.000000e+00 grad 1.000000e+00
+iteration 1 res dat 7.576733e-01 res mod 2.575995e-12 grad 1.455151e-01
+iteration 2 res dat 6.050245e-01 res mod 1.386817e-11 grad 2.247622e-02
+iteration 3 res dat 4.228963e-01 res mod 1.131368e-10 grad 3.119987e-03
+iteration 4 res dat 3.147553e-01 res mod 4.085974e-10 grad 2.196187e-04
+iteration 5 res dat 3.144376e-01 res mod 4.101256e-10 grad 1.328196e-03
+iteration 6 res dat 1.118564e-01 res mod 1.157477e-08 grad 4.604409e-03
+iteration 7 res dat 1.069737e-01 res mod 1.209563e-08 grad 2.154842e-05
+iteration 8 res dat 9.636302e-02 res mod 1.350565e-08 grad 4.579015e-02
+iteration 9 res dat 1.448851e-02 res mod 4.176761e-08 grad 1.556063e-03
+iteration 10 res dat 3.442198e-05 res mod 4.993397e-08 grad 5.699661e-06
+iteration 11 res dat 2.769455e-05 res mod 4.993783e-08 grad 8.462382e-07
+iteration 12 res dat 2.427051e-05 res mod 4.993899e-08 grad 1.396145e-05
+iteration 13 res dat 4.755193e-08 res mod 4.994686e-08 grad 4.531087e-11
