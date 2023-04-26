@@ -1,0 +1,2 @@
+2023/04/25 03:51:41 [1;33m[W] [service.go:128] login to server failed: dial tcp 101.42.168.35:5000: i/o timeout[0m
+dial tcp 101.42.168.35:5000: i/o timeout

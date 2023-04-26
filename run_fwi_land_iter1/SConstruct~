@@ -1,0 +1,98 @@
+from rsf.proj import *
+
+####################################################################
+n1=101
+n2=101
+n3=61
+h1=0.06 #km
+h2=0.06
+h3=0.025
+Flow('rhotrue',None,
+	'''
+	echo in=rho11 n1=%d n2=%d n3=%d data_format=binary_float |
+	sfdd form=native | 
+	sfput d1=%g d2=%g d3=%g o1=-3 o2=-3 o3=0
+	label1=X label2=Y label3=Z unit1=km unit2=km unit3=km
+	'''%(n1,n2,n3,h1,h2,h3))
+Flow('rhoinit',None,
+	'''
+	echo in=rho11_init n1=%d n2=%d n3=%d data_format=binary_float |
+	sfdd form=native | 
+	sfput d1=%g d2=%g d3=%g o1=-3 o2=-3 o3=0
+	label1=X label2=Y label3=Z unit1=km unit2=km unit3=km
+	'''%(n1,n2,n3,h1,h2,h3))
+Flow('rhoinv',None,
+	'''
+	echo in=param_final n1=%d n2=%d n3=%d data_format=binary_float |
+	sfdd form=native | 
+	sfput d1=%g d2=%g d3=%g o1=-3 o2=-3 o3=0
+	label1=X label2=Y label3=Z unit1=km unit2=km unit3=km
+	'''%(n1,n2,n3,h1,h2,h3))
+	
+Flow('grad',None,
+	'''
+	echo in=gradient_fwi n1=%d n2=%d n3=%d data_format=binary_float |
+	sfdd form=native | 
+	sfput d1=%g d2=%g d3=%g o1=-3 o2=-3 o3=0
+	label1=X label2=Y label3=Z unit1=km unit2=km unit3=km
+	'''%(n1,n2,n3,h1,h2,h3))
+Flow('phess',None,
+	'''
+	echo in=pseudo_hessian n1=%d n2=%d n3=%d data_format=binary_float |
+	sfdd form=native | 
+	sfput d1=%g d2=%g d3=%g o1=-3 o2=-3 o3=0
+	label1=X label2=Y label3=Z unit1=km unit2=km unit3=km
+	'''%(n1,n2,n3,h1,h2,h3))
+Flow('grad_preco',None,
+	'''
+	echo in=gradient_preco n1=%d n2=%d n3=%d data_format=binary_float |
+	sfdd form=native | 
+	sfput d1=%g d2=%g d3=%g o1=-3 o2=-3 o3=0
+	label1=X label2=Y label3=Z unit1=km unit2=km unit3=km
+	'''%(n1,n2,n3,h1,h2,h3))
+
+iz=25
+ix=62
+iy=56
+Plot('rhotrue',
+       '''
+       byte allpos=y gainpanel=all clip=40 |
+       sftransp plane=13 | sftransp plane=23 |
+       grey3 flat=y frame1=%d frame2=%d frame3=%d color=j mean=y title="Rtrue" 
+       '''%(iz,ix,iy))
+Plot('rhoinit',
+       '''
+       byte allpos=y gainpanel=all clip=40 |
+       sftransp plane=13 | sftransp plane=23 |
+       grey3 flat=y frame1=%d frame2=%d frame3=%d color=j mean=y title="Rinit" 
+       '''%(iz,ix,iy))
+Plot('rhoinv',
+       '''
+       byte allpos=y gainpanel=all  clip=40|
+       sftransp plane=13 | sftransp plane=23 |
+       grey3 flat=y frame1=%d frame2=%d frame3=%d color=j mean=y title="Rinv" 
+       '''%(iz,ix,iy))
+Result('inv', 'rhotrue rhoinit rhoinv', 'SideBySideAniso')
+
+Result('grad',
+       '''
+       byte allpos=n gainpanel=all clip=50 |
+       sftransp plane=13 | sftransp plane=23 |
+       grey3 flat=n frame1=%d frame2=%d frame3=%d color=j mean=y title="Grad" 
+       '''%(iz,ix,iy))
+Plot('phess',
+       '''
+       byte allpos=y gainpanel=all |
+       sftransp plane=13 | sftransp plane=23 |
+       grey3 flat=n frame1=%d frame2=%d frame3=%d color=j mean=y title="Grad" 
+       '''%(iz,ix,iy))
+Plot('grad_preco',
+       '''
+       byte allpos=y gainpanel=all |
+       sftransp plane=13 | sftransp plane=23 |
+       grey3 flat=n frame1=%d frame2=%d frame3=%d color=j mean=y title="Grad_preco" 
+       '''%(iz,ix,iy))
+
+Result('final', 'grad phess grad_preco', 'SideBySideAniso')
+
+End()
