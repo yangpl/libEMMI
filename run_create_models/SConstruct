@@ -1,0 +1,46 @@
+from rsf.proj import *
+
+####################################################################
+n1=91
+n2=91
+n3=71
+h1=0.2 #km
+h2=0.2
+h3=0.05
+Flow('rho11',None,
+	'''
+	echo in=rho11 n1=%d n2=%d n3=%d data_format=binary_float |
+	sfdd form=native | 
+	sfput d1=%g d2=%g d3=%g o1=-9 o2=-9 o3=0
+	label1=X label2=Y label3=Z unit1=km unit2=km unit3=km
+	'''%(n1,n2,n3,h1,h2,h3))
+
+Flow('rho33',None,
+	'''
+	echo in=rho33 n1=%d n2=%d n3=%d data_format=binary_float |
+	sfdd form=native |
+	sfput d1=%g d2=%g d3=%g o1=-9 o2=-9 o3=0
+	label1=X label2=Y label3=Z unit1=km unit2=km unit3=km
+	'''%(n1,n2,n3,h1,h2,h3))
+
+iz1=61
+ix1=45
+iz2=61
+ix2=45
+iy=45
+Plot('rho11',
+       '''
+       byte allpos=y gainpanel=all |
+       sftransp plane=13 | sftransp plane=23 |
+       grey3 flat=y frame1=%d frame2=%d frame3=%d color=j mean=n title="Rh" 
+       '''%(iz1,ix1,iy))
+Plot('rho33',
+       '''
+       byte allpos=y gainpanel=all |
+       sftransp plane=13 | sftransp plane=23 |
+       grey3 flat=y frame1=%d frame2=%d frame3=%d color=j mean=n title="Rv" 
+       '''%(iz2,ix2,iy))
+Result('rho', 'rho11 rho33', 'SideBySideAniso')
+
+End()
+
