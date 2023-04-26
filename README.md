@@ -13,7 +13,7 @@ System requirements: Linux OS
 
 Compilation requirement: gcc compiler, mpicc compiler and make
 
-Software required: fftw3
+Software required: fftw3 (https://fftw.org/)
 
 --------------------------------------------
 Structure of the software:
