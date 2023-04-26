@@ -15,6 +15,17 @@ Compilation requirement: gcc compiler, mpicc compiler and make
 
 Software required: fftw3
 
+--------------------------------------------
+Structure of the software:
+
+* src: source code 
+* include: header files
+* bin: the directory where executable will be stored
+* run_adjsrc_freq2tiime: adjoint source estimation example
+* run_create_model: template to create resistivity model
+* run_fwi_land_iter30: template for 3D CSEM inversion
+* run_fwi_land_iter1: template to run only 1st iteration
+
 
 --------------------------------------------
 1) run_adjsrc_freq2time:
