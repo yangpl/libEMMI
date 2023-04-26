@@ -1,0 +1,24 @@
+in=gradient_fwi n1=101 n2=101 n3=61 data_format=binary_float
+3.2-git	sfdd	Documents/libEMMI/run_fwi_land:	pyang@pyang-ThinkBook-14-G4-IAP	Wed Apr 26 04:21:11 2023
+
+	data_format="native_float"
+	esize=4
+	in="stdout"
+	in="stdin"
+
+3.2-git	sfput	Documents/libEMMI/run_fwi_land:	pyang@pyang-ThinkBook-14-G4-IAP	Wed Apr 26 04:21:11 2023
+
+	unit1=m
+	label3=Z
+	unit2=m
+	unit3=m
+	d1=60
+	d2=60
+	d3=25
+	o1=-3000
+	data_format="native_float"
+	o2=-3000
+	o3=0
+	in="/home/pyang/Install/RSFROOT/datapath/Documents/libEMMI/run_fwi_land/grad.rsf@"
+	label1=X
+	label2=Y

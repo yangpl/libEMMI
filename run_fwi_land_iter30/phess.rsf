@@ -1,0 +1,24 @@
+in=pseudo_hessian n1=101 n2=101 n3=61 data_format=binary_float
+3.2-git	sfdd	CSEM_inversion_GN/run_fwi_land_template/run_fwi_land:	pyang@pyang-Lenovo-Y50-70	Mon Mar 14 09:19:01 2022
+
+	data_format="native_float"
+	esize=4
+	in="stdout"
+	in="stdin"
+
+3.2-git	sfput	CSEM_inversion_GN/run_fwi_land_template/run_fwi_land:	pyang@pyang-Lenovo-Y50-70	Mon Mar 14 09:19:01 2022
+
+	unit1=km
+	label3=Z
+	unit2=km
+	unit3=km
+	d1=0.06
+	d2=0.06
+	d3=0.025
+	o1=-3
+	data_format="native_float"
+	o2=-3
+	o3=0
+	in="/home/pyang/Install/RSFROOT/datapath/CSEM_inversion_GN/run_fwi_land_template/run_fwi_land/phess.rsf@"
+	label1=X
+	label2=Y

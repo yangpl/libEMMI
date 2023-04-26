@@ -1,0 +1,2 @@
+cp rhoinit vel_init2
+printf "\x2500" | dd of=vel_init2 bs=1 seek=0 count=1 conv=notrunc
