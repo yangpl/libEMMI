@@ -50,5 +50,5 @@ offset_start=600
 ">inputpar.txt
 
 export OMP_NUM_THREADS=4
-mpirun -n 16 ../bin/fdtd $(cat inputpar.txt) #>&out
+mpirun -n 16 ../bin/fdtd $(cat inputpar.txt) #>&out.txt
 

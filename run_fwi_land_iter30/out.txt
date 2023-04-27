@@ -1,0 +1,6453 @@
+  Current date and time: 25-Apr-2023 22:57:17
+=====================================================
+    Welcome to EM modeling and inversion code        
+            Author: Pengliang Yang                   
+            E-mail: ypl.2100@gmail.com               
+  Copyright (c) 2020. All rights reserved. 
+=====================================================
+
+Task: Inversion for medium parameters 
+
+=====================================================
+reciprocity=0
+PML layers on each side: nb=12
+Buffer layers on each side: ne=7
+Number of layers extended outside model: nbe=19
+[d1, d2, d3]=[60, 60, 25]
+[n1, n2, n3]=[101, 101, 61]
+[n1pad, n2pad, n3pad]=[139, 139, 99]
+[rd1, rd2, rd3]=[2, 2, 1]
+freq[1]=0.25 freq[2]=1 
+Active source channels: Ex
+Active recever channels: Ex Ey
+isrc=9 nrec=256
+isrc=12 nrec=256
+isrc=14 nrec=256
+isrc=16 nrec=256
+isrc=2 nrec=256
+isrc=3 nrec=256
+isrc=5 nrec=256
+isrc=6 nrec=256
+isrc=7 nrec=256
+isrc=8 nrec=256
+isrc=10 nrec=256
+isrc=11 nrec=256
+isrc=4 nrec=256
+isrc=13 nrec=256
+isrc=15 nrec=256
+nugrid=0
+isrc=1 nrec=256
+[x1min,x1max]=[-3000, 3000]
+[x2min,x2max]=[-3000, 3000]
+[x3min,x3max]=[0, 1500]
+nsrc_total=16
+nrec_total=256
+isrc=1 (x,y,z)=(-1600.00, -1600.00, 1.00)
+isrc=2 (x,y,z)=(-533.33, -1600.00, 1.00)
+isrc=3 (x,y,z)=(533.33, -1600.00, 1.00)
+isrc=4 (x,y,z)=(1600.00, -1600.00, 1.00)
+isrc=5 (x,y,z)=(-1600.00, -533.33, 1.00)
+isrc=6 (x,y,z)=(-533.33, -533.33, 1.00)
+isrc=7 (x,y,z)=(533.33, -533.33, 1.00)
+isrc=8 (x,y,z)=(1600.00, -533.33, 1.00)
+isrc=9 (x,y,z)=(-1600.00, 533.33, 1.00)
+isrc=10 (x,y,z)=(-533.33, 533.33, 1.00)
+isrc=11 (x,y,z)=(533.33, 533.33, 1.00)
+isrc=12 (x,y,z)=(1600.00, 533.33, 1.00)
+isrc=13 (x,y,z)=(-1600.00, 1600.00, 1.00)
+isrc=14 (x,y,z)=(-533.33, 1600.00, 1.00)
+isrc=15 (x,y,z)=(533.33, 1600.00, 1.00)
+isrc=16 (x,y,z)=(1600.00, 1600.00, 1.00)
+---------------------------------------
+**** method=0 (0=l-BFGS; 1=Gauss-Newton)
+**** niter=30
+**** preco=1
+**** nls=10
+**** bound=1
+**** ncg=5
+**** [lb,ub]=[1, 50]
+offset >=600 
+Amplitude uncertainty: 3%
+noisefloorE=1e-16 noisefloorH=1e-14
+Tikhonov regularization: gamma1=0.001
+TV regularization:       gamma2=0
+bathymetry specified!
+241 of 256 receivers in offset of interest
+total number of data points: ndp=15312
+isrc=1 ndp=964
+isrc=2 ndp=960
+isrc=3 ndp=960
+isrc=4 ndp=964
+isrc=5 ndp=960
+isrc=6 ndp=944
+isrc=7 ndp=944
+isrc=8 ndp=960
+isrc=9 ndp=960
+isrc=10 ndp=944
+isrc=11 ndp=944
+isrc=12 ndp=960
+isrc=13 ndp=964
+isrc=14 ndp=960
+isrc=15 ndp=960
+isrc=16 ndp=964
+read observed data completed!
+addnoise=1, target rmse=1.041371e+00
+data uncertainty computed!
+----------- fwi init completed ------------
+cfl=0.98
+[vmin, vmax]=[7071.07, 10000] m/s
+[rhomin, rhomax]=[5, 10] Ohm-m
+freqmax=56.5685 Hz
+dt=0.00201893 s
+nt=840
+------stage 1: forward modelling ---------
+it-----0
+0 corners of the cube converged!
+it-----50
+it-----100
+0 corners of the cube converged!
+it-----150
+it-----200
+0 corners of the cube converged!
+it-----250
+it-----300
+0 corners of the cube converged!
+it-----350
+it-----400
+0 corners of the cube converged!
+it-----450
+it-----500
+0 corners of the cube converged!
+it-----550
+it-----600
+0 corners of the cube converged!
+it-----650
+it-----700
+0 corners of the cube converged!
+it-----750
+it-----800
+2 corners of the cube converged!
+modelling for syn_0015.txt completed!
+modelling for syn_0016.txt completed!
+modelling for syn_0014.txt completed!
+modelling for syn_0013.txt completed!
+modelling for syn_0011.txt completed!
+modelling for syn_0012.txt completed!
+modelling for syn_0008.txt completed!
+modelling for syn_0010.txt completed!
+modelling for syn_0003.txt completed!
+modelling for syn_0009.txt completed!
+modelling for syn_0006.txt completed!
+modelling for syn_0004.txt completed!
+modelling for syn_0007.txt completed!
+modelling for syn_0005.txt completed!
+modelling for syn_0002.txt completed!
+modelling for syn_0001.txt completed!
+------stage 2: adjoint source estimation ---------
+iteration 0 res dat 1.000000e+00 res mod 0.000000e+00 grad 1.000000e+00
+iteration 1 res dat 6.393075e-01 res mod 1.745593e-10 grad 1.426692e-01
+iteration 2 res dat 4.146457e-01 res mod 9.344107e-10 grad 2.071519e-02
+iteration 3 res dat 1.454965e-01 res mod 7.965095e-09 grad 2.626028e-03
+iteration 4 res dat 1.954853e-05 res mod 2.713391e-08 grad 6.384055e-05
+iteration 5 res dat 3.809642e-09 res mod 2.713796e-08 grad 2.439208e-09
+convergence in 6 iterations
+fcost_dat=151443, rmse=4.44758
+isrc=1 rmse=4.60489
+isrc=2 rmse=4.05617
+isrc=3 rmse=4.82896
+isrc=4 rmse=3.38964
+isrc=5 rmse=4.48433
+isrc=6 rmse=5.53551
+isrc=7 rmse=4.42623
+isrc=8 rmse=3.89734
+isrc=9 rmse=4.48313
+isrc=10 rmse=5.54173
+isrc=11 rmse=4.40383
+isrc=12 rmse=3.94439
+isrc=13 rmse=4.6297
+isrc=14 rmse=4.08184
+isrc=15 rmse=4.85466
+isrc=16 rmse=3.38858
+-----------stage 3: adjoint modelling ----------
+it-----0
+0 corners of the cube converged!
+it-----50
+it-----100
+0 corners of the cube converged!
+it-----150
+it-----200
+0 corners of the cube converged!
+it-----250
+it-----300
+0 corners of the cube converged!
+it-----350
+it-----400
+0 corners of the cube converged!
+it-----450
+it-----500
+0 corners of the cube converged!
+it-----550
+it-----600
+0 corners of the cube converged!
+it-----650
+it-----700
+0 corners of the cube converged!
+it-----750
+it-----800
+0 corners of the cube converged!
+-------- stage 4: build the gradient ----------
+-------- stage 5: model regularization ----------
+fcost_Tikhonov=0
+fcost_dat=151443
+fcost_mod=0
+fcost=151443
+|x|_1 = 1.00863e+06, |g|_1 = 1.38676e+06 scaling = 0.00109099
+==========================================================
+# iter=0  fk/f0=1
+cfl=0.98
+[vmin, vmax]=[3328.16, 10000] m/s
+[rhomin, rhomax]=[1.10766, 10] Ohm-m
+freqmax=26.6252 Hz
+dt=0.00201893 s
+nt=1785
+------stage 1: forward modelling ---------
+it-----0
+0 corners of the cube converged!
+it-----50
+it-----100
+0 corners of the cube converged!
+it-----150
+it-----200
+0 corners of the cube converged!
+it-----250
+it-----300
+0 corners of the cube converged!
+it-----350
+it-----400
+0 corners of the cube converged!
+it-----450
+it-----500
+0 corners of the cube converged!
+it-----550
+it-----600
+0 corners of the cube converged!
+it-----650
+it-----700
+0 corners of the cube converged!
+it-----750
+it-----800
+0 corners of the cube converged!
+it-----850
+it-----900
+0 corners of the cube converged!
+it-----950
+it-----1000
+0 corners of the cube converged!
+it-----1050
+it-----1100
+1 corners of the cube converged!
+it-----1150
+it-----1200
+3 corners of the cube converged!
+it-----1250
+it-----1300
+4 corners of the cube converged!
+it-----1350
+modelling for syn_0011.txt completed!
+modelling for syn_0007.txt completed!
+modelling for syn_0003.txt completed!
+it-----1400
+5 corners of the cube converged!
+it-----1450
+modelling for syn_0014.txt completed!
+modelling for syn_0015.txt completed!
+modelling for syn_0006.txt completed!
+modelling for syn_0004.txt completed!
+modelling for syn_0016.txt completed!
+modelling for syn_0010.txt completed!
+modelling for syn_0002.txt completed!
+it-----1500
+7 corners of the cube converged!
+it-----1550
+modelling for syn_0013.txt completed!
+modelling for syn_0009.txt completed!
+modelling for syn_0008.txt completed!
+modelling for syn_0012.txt completed!
+modelling for syn_0005.txt completed!
+it-----1600
+8 corners of the cube converged!
+modelling for syn_0001.txt completed!
+------stage 2: adjoint source estimation ---------
+iteration 0 res dat 1.000000e+00 res mod 0.000000e+00 grad 1.000000e+00
+iteration 1 res dat 6.393011e-01 res mod 1.745631e-10 grad 1.426772e-01
+iteration 2 res dat 4.146188e-01 res mod 9.344943e-10 grad 2.072175e-02
+iteration 3 res dat 1.454239e-01 res mod 7.965716e-09 grad 2.627433e-03
+iteration 4 res dat 6.123803e-05 res mod 2.710224e-08 grad 1.999252e-04
+iteration 5 res dat 1.249437e-08 res mod 2.711564e-08 grad 8.001036e-09
+convergence in 6 iterations
+fcost_dat=116358, rmse=3.89849
+isrc=1 rmse=3.95403
+isrc=2 rmse=3.44571
+isrc=3 rmse=4.57262
+isrc=4 rmse=3.12521
+isrc=5 rmse=3.75129
+isrc=6 rmse=4.54428
+isrc=7 rmse=4.09327
+isrc=8 rmse=3.44826
+isrc=9 rmse=3.72768
+isrc=10 rmse=4.53815
+isrc=11 rmse=4.07729
+isrc=12 rmse=3.49712
+isrc=13 rmse=3.9743
+isrc=14 rmse=3.45426
+isrc=15 rmse=4.5889
+isrc=16 rmse=3.12457
+-----------stage 3: adjoint modelling ----------
+it-----0
+0 corners of the cube converged!
+it-----50
+it-----100
+0 corners of the cube converged!
+it-----150
+it-----200
+0 corners of the cube converged!
+it-----250
+it-----300
+0 corners of the cube converged!
+it-----350
+it-----400
+0 corners of the cube converged!
+it-----450
+it-----500
+0 corners of the cube converged!
+it-----550
+it-----600
+0 corners of the cube converged!
+it-----650
+it-----700
+0 corners of the cube converged!
+it-----750
+it-----800
+0 corners of the cube converged!
+it-----850
+it-----900
+0 corners of the cube converged!
+it-----950
+it-----1000
+0 corners of the cube converged!
+it-----1050
+it-----1100
+1 corners of the cube converged!
+it-----1150
+it-----1200
+3 corners of the cube converged!
+it-----1250
+it-----1300
+7 corners of the cube converged!
+it-----1350
+it-----1400
+8 corners of the cube converged!
+-------- stage 4: build the gradient ----------
+-------- stage 5: model regularization ----------
+fcost_Tikhonov=2541.43
+fcost_dat=116358
+fcost_mod=2541.43
+fcost=118899
+==========================================================
+# iter=1  fk/f0=0.78511
+cfl=0.98
+[vmin, vmax]=[4887.46, 10000] m/s
+[rhomin, rhomax]=[2.38873, 10] Ohm-m
+freqmax=39.0997 Hz
+dt=0.00201893 s
+nt=1216
+------stage 1: forward modelling ---------
+it-----0
+0 corners of the cube converged!
+it-----50
+it-----100
+0 corners of the cube converged!
+it-----150
+it-----200
+0 corners of the cube converged!
+it-----250
+it-----300
+0 corners of the cube converged!
+it-----350
+it-----400
+0 corners of the cube converged!
+it-----450
+it-----500
+0 corners of the cube converged!
+it-----550
+it-----600
+0 corners of the cube converged!
+it-----650
+it-----700
+0 corners of the cube converged!
+it-----750
+it-----800
+0 corners of the cube converged!
+it-----850
+it-----900
+0 corners of the cube converged!
+it-----950
+it-----1000
+0 corners of the cube converged!
+it-----1050
+it-----1100
+1 corners of the cube converged!
+it-----1150
+modelling for syn_0013.txt completed!
+modelling for syn_0011.txt completed!
+modelling for syn_0010.txt completed!
+modelling for syn_0012.txt completed!
+modelling for syn_0014.txt completed!
+modelling for syn_0003.txt completed!
+modelling for syn_0004.txt completed!
+modelling for syn_0009.txt completed!
+modelling for syn_0007.txt completed!
+it-----1200
+modelling for syn_0008.txt completed!
+3 corners of the cube converged!
+modelling for syn_0015.txt completed!
+modelling for syn_0005.txt completed!
+modelling for syn_0016.txt completed!
+modelling for syn_0006.txt completed!
+modelling for syn_0002.txt completed!
+modelling for syn_0001.txt completed!
+------stage 2: adjoint source estimation ---------
+iteration 0 res dat 1.000000e+00 res mod 0.000000e+00 grad 1.000000e+00
+iteration 1 res dat 6.393011e-01 res mod 1.745631e-10 grad 1.426772e-01
+iteration 2 res dat 4.146188e-01 res mod 9.344943e-10 grad 2.072175e-02
+iteration 3 res dat 1.454240e-01 res mod 7.965722e-09 grad 2.627434e-03
+iteration 4 res dat 6.123647e-05 res mod 2.710225e-08 grad 1.999082e-04
+iteration 5 res dat 1.539689e-08 res mod 2.711565e-08 grad 9.861311e-09
+convergence in 6 iterations
+fcost_dat=103518, rmse=3.67712
+isrc=1 rmse=3.50764
+isrc=2 rmse=3.27868
+isrc=3 rmse=4.51436
+isrc=4 rmse=3.07064
+isrc=5 rmse=3.47895
+isrc=6 rmse=3.92067
+isrc=7 rmse=4.02656
+isrc=8 rmse=3.407
+isrc=9 rmse=3.44972
+isrc=10 rmse=3.90523
+isrc=11 rmse=4.00926
+isrc=12 rmse=3.45678
+isrc=13 rmse=3.52931
+isrc=14 rmse=3.2826
+isrc=15 rmse=4.532
+isrc=16 rmse=3.07044
+-----------stage 3: adjoint modelling ----------
+it-----0
+0 corners of the cube converged!
+it-----50
+it-----100
+0 corners of the cube converged!
+it-----150
+it-----200
+0 corners of the cube converged!
+it-----250
+it-----300
+0 corners of the cube converged!
+it-----350
+it-----400
+0 corners of the cube converged!
+it-----450
+it-----500
+0 corners of the cube converged!
+it-----550
+it-----600
+0 corners of the cube converged!
+it-----650
+it-----700
+0 corners of the cube converged!
+it-----750
+it-----800
+0 corners of the cube converged!
+it-----850
+it-----900
+0 corners of the cube converged!
+it-----950
+it-----1000
+0 corners of the cube converged!
+it-----1050
+it-----1100
+1 corners of the cube converged!
+it-----1150
+it-----1200
+2 corners of the cube converged!
+-------- stage 4: build the gradient ----------
+-------- stage 5: model regularization ----------
+fcost_Tikhonov=1251.51
+fcost_dat=103518
+fcost_mod=1251.51
+fcost=104770
+==========================================================
+# iter=2  fk/f0=0.691812
+cfl=0.98
+[vmin, vmax]=[5062.41, 10000] m/s
+[rhomin, rhomax]=[2.5628, 10] Ohm-m
+freqmax=40.4993 Hz
+dt=0.00201893 s
+nt=1174
+------stage 1: forward modelling ---------
+it-----0
+0 corners of the cube converged!
+it-----50
+it-----100
+0 corners of the cube converged!
+it-----150
+it-----200
+0 corners of the cube converged!
+it-----250
+it-----300
+0 corners of the cube converged!
+it-----350
+it-----400
+0 corners of the cube converged!
+it-----450
+it-----500
+0 corners of the cube converged!
+it-----550
+it-----600
+0 corners of the cube converged!
+it-----650
+it-----700
+0 corners of the cube converged!
+it-----750
+it-----800
+0 corners of the cube converged!
+it-----850
+it-----900
+0 corners of the cube converged!
+it-----950
+it-----1000
+0 corners of the cube converged!
+it-----1050
+it-----1100
+2 corners of the cube converged!
+modelling for syn_0014.txt completed!
+modelling for syn_0010.txt completed!
+it-----1150
+modelling for syn_0013.txt completed!
+modelling for syn_0009.txt completed!
+modelling for syn_0015.txt completed!
+modelling for syn_0016.txt completed!
+modelling for syn_0012.txt completed!
+modelling for syn_0011.txt completed!
+modelling for syn_0006.txt completed!
+modelling for syn_0003.txt completed!
+modelling for syn_0008.txt completed!
+modelling for syn_0007.txt completed!
+modelling for syn_0004.txt completed!
+modelling for syn_0002.txt completed!
+modelling for syn_0005.txt completed!
+modelling for syn_0001.txt completed!
+------stage 2: adjoint source estimation ---------
+iteration 0 res dat 1.000000e+00 res mod 0.000000e+00 grad 1.000000e+00
+iteration 1 res dat 6.393011e-01 res mod 1.745631e-10 grad 1.426772e-01
+iteration 2 res dat 4.146188e-01 res mod 9.344943e-10 grad 2.072175e-02
+iteration 3 res dat 1.454239e-01 res mod 7.965737e-09 grad 2.627434e-03
+iteration 4 res dat 6.150470e-05 res mod 2.710220e-08 grad 2.007857e-04
+iteration 5 res dat 1.489116e-08 res mod 2.711568e-08 grad 9.537977e-09
+convergence in 6 iterations
+fcost_dat=99149.4, rmse=3.59869
+isrc=1 rmse=3.46487
+isrc=2 rmse=3.18359
+isrc=3 rmse=4.41114
+isrc=4 rmse=2.99574
+isrc=5 rmse=3.42484
+isrc=6 rmse=3.84185
+isrc=7 rmse=3.89793
+isrc=8 rmse=3.36389
+isrc=9 rmse=3.39588
+isrc=10 rmse=3.82751
+isrc=11 rmse=3.88172
+isrc=12 rmse=3.41394
+isrc=13 rmse=3.48465
+isrc=14 rmse=3.18793
+isrc=15 rmse=4.42883
+isrc=16 rmse=2.99723
+-----------stage 3: adjoint modelling ----------
+it-----0
+0 corners of the cube converged!
+it-----50
+it-----100
+0 corners of the cube converged!
+it-----150
+it-----200
+0 corners of the cube converged!
+it-----250
+it-----300
+0 corners of the cube converged!
+it-----350
+it-----400
+0 corners of the cube converged!
+it-----450
+it-----500
+0 corners of the cube converged!
+it-----550
+it-----600
+0 corners of the cube converged!
+it-----650
+it-----700
+0 corners of the cube converged!
+it-----750
+it-----800
+0 corners of the cube converged!
+it-----850
+it-----900
+0 corners of the cube converged!
+it-----950
+it-----1000
+0 corners of the cube converged!
+it-----1050
+it-----1100
+1 corners of the cube converged!
+it-----1150
+-------- stage 4: build the gradient ----------
+-------- stage 5: model regularization ----------
+fcost_Tikhonov=1251.13
+fcost_dat=99149.4
+fcost_mod=1251.13
+fcost=100401
+==========================================================
+# iter=3  fk/f0=0.66296
+cfl=0.98
+[vmin, vmax]=[3829.74, 15953.5] m/s
+[rhomin, rhomax]=[1.46669, 25.4513] Ohm-m
+freqmax=30.6379 Hz
+dt=0.00126551 s
+nt=2475
+------stage 1: forward modelling ---------
+it-----0
+0 corners of the cube converged!
+it-----50
+it-----100
+0 corners of the cube converged!
+it-----150
+it-----200
+0 corners of the cube converged!
+it-----250
+it-----300
+0 corners of the cube converged!
+it-----350
+it-----400
+0 corners of the cube converged!
+it-----450
+it-----500
+1 corners of the cube converged!
+it-----550
+it-----600
+0 corners of the cube converged!
+it-----650
+it-----700
+1 corners of the cube converged!
+it-----750
+it-----800
+0 corners of the cube converged!
+it-----850
+it-----900
+0 corners of the cube converged!
+it-----950
+it-----1000
+0 corners of the cube converged!
+it-----1050
+it-----1100
+0 corners of the cube converged!
+it-----1150
+it-----1200
+0 corners of the cube converged!
+it-----1250
+it-----1300
+0 corners of the cube converged!
+it-----1350
+it-----1400
+1 corners of the cube converged!
+it-----1450
+it-----1500
+3 corners of the cube converged!
+it-----1550
+it-----1600
+4 corners of the cube converged!
+it-----1650
+it-----1700
+2 corners of the cube converged!
+it-----1750
+it-----1800
+3 corners of the cube converged!
+it-----1850
+it-----1900
+4 corners of the cube converged!
+modelling for syn_0014.txt completed!
+it-----1950
+it-----2000
+6 corners of the cube converged!
+it-----2050
+modelling for syn_0002.txt completed!
+it-----2100
+6 corners of the cube converged!
+modelling for syn_0015.txt completed!
+modelling for syn_0003.txt completed!
+it-----2150
+it-----2200
+6 corners of the cube converged!
+modelling for syn_0011.txt completed!
+modelling for syn_0007.txt completed!
+modelling for syn_0004.txt completed!
+modelling for syn_0006.txt completed!
+it-----2250
+it-----2300
+8 corners of the cube converged!
+modelling for syn_0001.txt completed!
+------stage 2: adjoint source estimation ---------
+iteration 0 res dat 1.000000e+00 res mod 0.000000e+00 grad 1.000000e+00
+iteration 1 res dat 6.393220e-01 res mod 1.097525e-10 grad 1.426557e-01
+iteration 2 res dat 4.146708e-01 res mod 5.875225e-10 grad 2.070986e-02
+iteration 3 res dat 1.454380e-01 res mod 5.011545e-09 grad 2.625614e-03
+iteration 4 res dat 1.840141e-05 res mod 1.705975e-08 grad 6.000159e-05
+iteration 5 res dat 2.676638e-08 res mod 1.706255e-08 grad 1.715035e-08
+convergence in 6 iterations
+modelling for syn_0013.txt completed!
+modelling for syn_0016.txt completed!
+modelling for syn_0009.txt completed!
+modelling for syn_0010.txt completed!
+modelling for syn_0012.txt completed!
+modelling for syn_0005.txt completed!
+modelling for syn_0008.txt completed!
+fcost_dat=69078.3, rmse=3.00379
+isrc=1 rmse=3.05429
+isrc=2 rmse=2.4299
+isrc=3 rmse=3.53545
+isrc=4 rmse=2.4648
+isrc=5 rmse=3.04571
+isrc=6 rmse=3.29167
+isrc=7 rmse=2.86779
+isrc=8 rmse=3.12591
+isrc=9 rmse=3.02691
+isrc=10 rmse=3.3015
+isrc=11 rmse=2.86731
+isrc=12 rmse=3.16618
+isrc=13 rmse=3.06271
+isrc=14 rmse=2.44533
+isrc=15 rmse=3.55811
+isrc=16 rmse=2.48546
+-----------stage 3: adjoint modelling ----------
+it-----0
+0 corners of the cube converged!
+it-----50
+it-----100
+0 corners of the cube converged!
+it-----150
+it-----200
+0 corners of the cube converged!
+it-----250
+it-----300
+0 corners of the cube converged!
+it-----350
+it-----400
+0 corners of the cube converged!
+it-----450
+it-----500
+0 corners of the cube converged!
+it-----550
+it-----600
+0 corners of the cube converged!
+it-----650
+it-----700
+0 corners of the cube converged!
+it-----750
+it-----800
+0 corners of the cube converged!
+it-----850
+it-----900
+0 corners of the cube converged!
+it-----950
+it-----1000
+0 corners of the cube converged!
+it-----1050
+it-----1100
+0 corners of the cube converged!
+it-----1150
+it-----1200
+0 corners of the cube converged!
+it-----1250
+it-----1300
+0 corners of the cube converged!
+it-----1350
+it-----1400
+0 corners of the cube converged!
+it-----1450
+it-----1500
+0 corners of the cube converged!
+it-----1550
+it-----1600
+0 corners of the cube converged!
+it-----1650
+it-----1700
+1 corners of the cube converged!
+it-----1750
+it-----1800
+4 corners of the cube converged!
+it-----1850
+it-----1900
+6 corners of the cube converged!
+it-----1950
+it-----2000
+7 corners of the cube converged!
+it-----2050
+it-----2100
+8 corners of the cube converged!
+-------- stage 4: build the gradient ----------
+-------- stage 5: model regularization ----------
+fcost_Tikhonov=6477.61
+fcost_dat=69078.3
+fcost_mod=6477.61
+fcost=75555.9
+==========================================================
+# iter=4  fk/f0=0.498907
+cfl=0.98
+[vmin, vmax]=[3581.23, 22360.7] m/s
+[rhomin, rhomax]=[1.28252, 50] Ohm-m
+freqmax=28.6499 Hz
+dt=0.000902895 s
+nt=3711
+------stage 1: forward modelling ---------
+it-----0
+0 corners of the cube converged!
+it-----50
+it-----100
+0 corners of the cube converged!
+it-----150
+it-----200
+0 corners of the cube converged!
+it-----250
+it-----300
+0 corners of the cube converged!
+it-----350
+it-----400
+0 corners of the cube converged!
+it-----450
+it-----500
+0 corners of the cube converged!
+it-----550
+it-----600
+0 corners of the cube converged!
+it-----650
+it-----700
+0 corners of the cube converged!
+it-----750
+it-----800
+0 corners of the cube converged!
+it-----850
+it-----900
+1 corners of the cube converged!
+it-----950
+it-----1000
+0 corners of the cube converged!
+it-----1050
+it-----1100
+0 corners of the cube converged!
+it-----1150
+it-----1200
+0 corners of the cube converged!
+it-----1250
+it-----1300
+0 corners of the cube converged!
+it-----1350
+it-----1400
+0 corners of the cube converged!
+it-----1450
+it-----1500
+0 corners of the cube converged!
+it-----1550
+it-----1600
+0 corners of the cube converged!
+it-----1650
+it-----1700
+1 corners of the cube converged!
+it-----1750
+it-----1800
+1 corners of the cube converged!
+it-----1850
+it-----1900
+3 corners of the cube converged!
+it-----1950
+it-----2000
+3 corners of the cube converged!
+it-----2050
+it-----2100
+3 corners of the cube converged!
+it-----2150
+it-----2200
+2 corners of the cube converged!
+it-----2250
+it-----2300
+4 corners of the cube converged!
+it-----2350
+it-----2400
+5 corners of the cube converged!
+it-----2450
+it-----2500
+4 corners of the cube converged!
+it-----2550
+it-----2600
+4 corners of the cube converged!
+it-----2650
+it-----2700
+5 corners of the cube converged!
+it-----2750
+modelling for syn_0003.txt completed!
+it-----2800
+5 corners of the cube converged!
+it-----2850
+modelling for syn_0014.txt completed!
+modelling for syn_0015.txt completed!
+modelling for syn_0007.txt completed!
+it-----2900
+4 corners of the cube converged!
+it-----2950
+modelling for syn_0011.txt completed!
+modelling for syn_0002.txt completed!
+modelling for syn_0016.txt completed!
+it-----3000
+7 corners of the cube converged!
+it-----3050
+it-----3100
+6 corners of the cube converged!
+modelling for syn_0013.txt completed!
+modelling for syn_0004.txt completed!
+it-----3150
+modelling for syn_0010.txt completed!
+it-----3200
+8 corners of the cube converged!
+modelling for syn_0001.txt completed!
+------stage 2: adjoint source estimation ---------
+iteration 0 res dat 1.000000e+00 res mod 0.000000e+00 grad 1.000000e+00
+iteration 1 res dat 6.393334e-01 res mod 7.841799e-11 grad 1.426455e-01
+iteration 2 res dat 4.146993e-01 res mod 4.197752e-10 grad 2.070382e-02
+iteration 3 res dat 1.454484e-01 res mod 3.581975e-09 grad 2.624918e-03
+iteration 4 res dat 1.347838e-03 res mod 1.206390e-08 grad 4.362303e-03
+iteration 5 res dat 3.659943e-08 res mod 1.219648e-08 grad 2.337257e-08
+convergence in 6 iterations
+modelling for syn_0009.txt completed!
+modelling for syn_0006.txt completed!
+modelling for syn_0005.txt completed!
+modelling for syn_0012.txt completed!
+modelling for syn_0008.txt completed!
+fcost_dat=59930.3, rmse=2.79784
+isrc=1 rmse=2.74967
+isrc=2 rmse=2.04962
+isrc=3 rmse=2.97293
+isrc=4 rmse=2.71361
+isrc=5 rmse=2.91274
+isrc=6 rmse=3.20112
+isrc=7 rmse=2.43183
+isrc=8 rmse=3.1136
+isrc=9 rmse=2.91158
+isrc=10 rmse=3.21457
+isrc=11 rmse=2.46633
+isrc=12 rmse=3.14287
+isrc=13 rmse=2.69994
+isrc=14 rmse=2.09887
+isrc=15 rmse=3.03594
+isrc=16 rmse=2.69977
+-----------stage 3: adjoint modelling ----------
+it-----0
+0 corners of the cube converged!
+it-----50
+it-----100
+0 corners of the cube converged!
+it-----150
+it-----200
+0 corners of the cube converged!
+it-----250
+it-----300
+0 corners of the cube converged!
+it-----350
+it-----400
+0 corners of the cube converged!
+it-----450
+it-----500
+0 corners of the cube converged!
+it-----550
+it-----600
+0 corners of the cube converged!
+it-----650
+it-----700
+0 corners of the cube converged!
+it-----750
+it-----800
+0 corners of the cube converged!
+it-----850
+it-----900
+0 corners of the cube converged!
+it-----950
+it-----1000
+0 corners of the cube converged!
+it-----1050
+it-----1100
+0 corners of the cube converged!
+it-----1150
+it-----1200
+0 corners of the cube converged!
+it-----1250
+it-----1300
+0 corners of the cube converged!
+it-----1350
+it-----1400
+0 corners of the cube converged!
+it-----1450
+it-----1500
+0 corners of the cube converged!
+it-----1550
+it-----1600
+0 corners of the cube converged!
+it-----1650
+it-----1700
+0 corners of the cube converged!
+it-----1750
+it-----1800
+0 corners of the cube converged!
+it-----1850
+it-----1900
+0 corners of the cube converged!
+it-----1950
+it-----2000
+0 corners of the cube converged!
+it-----2050
+it-----2100
+0 corners of the cube converged!
+it-----2150
+it-----2200
+1 corners of the cube converged!
+it-----2250
+it-----2300
+2 corners of the cube converged!
+it-----2350
+it-----2400
+5 corners of the cube converged!
+it-----2450
+it-----2500
+7 corners of the cube converged!
+it-----2550
+it-----2600
+7 corners of the cube converged!
+it-----2650
+it-----2700
+7 corners of the cube converged!
+it-----2750
+it-----2800
+7 corners of the cube converged!
+it-----2850
+it-----2900
+7 corners of the cube converged!
+it-----2950
+it-----3000
+7 corners of the cube converged!
+it-----3050
+it-----3100
+7 corners of the cube converged!
+it-----3150
+it-----3200
+8 corners of the cube converged!
+-------- stage 4: build the gradient ----------
+-------- stage 5: model regularization ----------
+fcost_Tikhonov=11266.1
+fcost_dat=59930.3
+fcost_mod=11266.1
+fcost=71196.5
+==========================================================
+# iter=5  fk/f0=0.470121
+cfl=0.98
+[vmin, vmax]=[3651.55, 22360.7] m/s
+[rhomin, rhomax]=[1.33338, 50] Ohm-m
+freqmax=29.2124 Hz
+dt=0.000902895 s
+nt=3639
+------stage 1: forward modelling ---------
+it-----0
+0 corners of the cube converged!
+it-----50
+it-----100
+0 corners of the cube converged!
+it-----150
+it-----200
+0 corners of the cube converged!
+it-----250
+it-----300
+0 corners of the cube converged!
+it-----350
+it-----400
+0 corners of the cube converged!
+it-----450
+it-----500
+0 corners of the cube converged!
+it-----550
+it-----600
+0 corners of the cube converged!
+it-----650
+it-----700
+0 corners of the cube converged!
+it-----750
+it-----800
+0 corners of the cube converged!
+it-----850
+it-----900
+1 corners of the cube converged!
+it-----950
+it-----1000
+0 corners of the cube converged!
+it-----1050
+it-----1100
+0 corners of the cube converged!
+it-----1150
+it-----1200
+0 corners of the cube converged!
+it-----1250
+it-----1300
+0 corners of the cube converged!
+it-----1350
+it-----1400
+0 corners of the cube converged!
+it-----1450
+it-----1500
+1 corners of the cube converged!
+it-----1550
+it-----1600
+0 corners of the cube converged!
+it-----1650
+it-----1700
+2 corners of the cube converged!
+it-----1750
+it-----1800
+3 corners of the cube converged!
+it-----1850
+it-----1900
+1 corners of the cube converged!
+it-----1950
+it-----2000
+2 corners of the cube converged!
+it-----2050
+it-----2100
+1 corners of the cube converged!
+it-----2150
+it-----2200
+3 corners of the cube converged!
+it-----2250
+it-----2300
+4 corners of the cube converged!
+it-----2350
+it-----2400
+3 corners of the cube converged!
+it-----2450
+it-----2500
+5 corners of the cube converged!
+it-----2550
+it-----2600
+3 corners of the cube converged!
+it-----2650
+it-----2700
+4 corners of the cube converged!
+it-----2750
+modelling for syn_0002.txt completed!
+it-----2800
+5 corners of the cube converged!
+modelling for syn_0014.txt completed!
+modelling for syn_0016.txt completed!
+modelling for syn_0015.txt completed!
+modelling for syn_0003.txt completed!
+it-----2850
+it-----2900
+6 corners of the cube converged!
+modelling for syn_0013.txt completed!
+modelling for syn_0004.txt completed!
+it-----2950
+it-----3000
+6 corners of the cube converged!
+it-----3050
+modelling for syn_0006.txt completed!
+it-----3100
+7 corners of the cube converged!
+modelling for syn_0011.txt completed!
+it-----3150
+modelling for syn_0007.txt completed!
+it-----3200
+8 corners of the cube converged!
+modelling for syn_0001.txt completed!
+------stage 2: adjoint source estimation ---------
+iteration 0 res dat 1.000000e+00 res mod 0.000000e+00 grad 1.000000e+00
+iteration 1 res dat 6.393334e-01 res mod 7.841799e-11 grad 1.426455e-01
+iteration 2 res dat 4.146993e-01 res mod 4.197752e-10 grad 2.070382e-02
+iteration 3 res dat 1.454484e-01 res mod 3.581975e-09 grad 2.624918e-03
+modelling for syn_0010.txt completed!
+iteration 4 res dat 1.347838e-03 res mod 1.206390e-08 grad 4.362303e-03
+iteration 5 res dat 3.659943e-08 res mod 1.219648e-08 grad 2.337257e-08
+convergence in 6 iterations
+modelling for syn_0009.txt completed!
+modelling for syn_0008.txt completed!
+modelling for syn_0005.txt completed!
+modelling for syn_0012.txt completed!
+fcost_dat=51240.5, rmse=2.58705
+isrc=1 rmse=2.63089
+isrc=2 rmse=1.97456
+isrc=3 rmse=2.84982
+isrc=4 rmse=2.11622
+isrc=5 rmse=2.70989
+isrc=6 rmse=2.90187
+isrc=7 rmse=2.29249
+isrc=8 rmse=2.94207
+isrc=9 rmse=2.71821
+isrc=10 rmse=2.93367
+isrc=11 rmse=2.32536
+isrc=12 rmse=2.97573
+isrc=13 rmse=2.62197
+isrc=14 rmse=1.99399
+isrc=15 rmse=2.87841
+isrc=16 rmse=2.15122
+-----------stage 3: adjoint modelling ----------
+it-----0
+0 corners of the cube converged!
+it-----50
+it-----100
+0 corners of the cube converged!
+it-----150
+it-----200
+0 corners of the cube converged!
+it-----250
+it-----300
+0 corners of the cube converged!
+it-----350
+it-----400
+0 corners of the cube converged!
+it-----450
+it-----500
+0 corners of the cube converged!
+it-----550
+it-----600
+0 corners of the cube converged!
+it-----650
+it-----700
+0 corners of the cube converged!
+it-----750
+it-----800
+0 corners of the cube converged!
+it-----850
+it-----900
+0 corners of the cube converged!
+it-----950
+it-----1000
+0 corners of the cube converged!
+it-----1050
+it-----1100
+0 corners of the cube converged!
+it-----1150
+it-----1200
+0 corners of the cube converged!
+it-----1250
+it-----1300
+0 corners of the cube converged!
+it-----1350
+it-----1400
+0 corners of the cube converged!
+it-----1450
+it-----1500
+0 corners of the cube converged!
+it-----1550
+it-----1600
+0 corners of the cube converged!
+it-----1650
+it-----1700
+0 corners of the cube converged!
+it-----1750
+it-----1800
+0 corners of the cube converged!
+it-----1850
+it-----1900
+0 corners of the cube converged!
+it-----1950
+it-----2000
+0 corners of the cube converged!
+it-----2050
+it-----2100
+0 corners of the cube converged!
+it-----2150
+it-----2200
+1 corners of the cube converged!
+it-----2250
+it-----2300
+1 corners of the cube converged!
+it-----2350
+it-----2400
+4 corners of the cube converged!
+it-----2450
+it-----2500
+6 corners of the cube converged!
+it-----2550
+it-----2600
+7 corners of the cube converged!
+it-----2650
+it-----2700
+7 corners of the cube converged!
+it-----2750
+it-----2800
+8 corners of the cube converged!
+-------- stage 4: build the gradient ----------
+-------- stage 5: model regularization ----------
+fcost_Tikhonov=8529.57
+fcost_dat=51240.5
+fcost_mod=8529.57
+fcost=59770.1
+==========================================================
+# iter=6  fk/f0=0.394671
+cfl=0.98
+[vmin, vmax]=[3973.99, 19668.9] m/s
+[rhomin, rhomax]=[1.57926, 38.6866] Ohm-m
+freqmax=31.7919 Hz
+dt=0.00102646 s
+nt=2941
+------stage 1: forward modelling ---------
+it-----0
+0 corners of the cube converged!
+it-----50
+it-----100
+0 corners of the cube converged!
+it-----150
+it-----200
+0 corners of the cube converged!
+it-----250
+it-----300
+0 corners of the cube converged!
+it-----350
+it-----400
+0 corners of the cube converged!
+it-----450
+it-----500
+0 corners of the cube converged!
+it-----550
+it-----600
+1 corners of the cube converged!
+it-----650
+it-----700
+0 corners of the cube converged!
+it-----750
+it-----800
+1 corners of the cube converged!
+it-----850
+it-----900
+0 corners of the cube converged!
+it-----950
+it-----1000
+0 corners of the cube converged!
+it-----1050
+it-----1100
+0 corners of the cube converged!
+it-----1150
+it-----1200
+0 corners of the cube converged!
+it-----1250
+it-----1300
+0 corners of the cube converged!
+it-----1350
+it-----1400
+0 corners of the cube converged!
+it-----1450
+it-----1500
+0 corners of the cube converged!
+it-----1550
+it-----1600
+1 corners of the cube converged!
+it-----1650
+it-----1700
+1 corners of the cube converged!
+it-----1750
+it-----1800
+3 corners of the cube converged!
+it-----1850
+it-----1900
+1 corners of the cube converged!
+it-----1950
+it-----2000
+3 corners of the cube converged!
+it-----2050
+it-----2100
+4 corners of the cube converged!
+it-----2150
+it-----2200
+4 corners of the cube converged!
+it-----2250
+it-----2300
+5 corners of the cube converged!
+it-----2350
+it-----2400
+4 corners of the cube converged!
+it-----2450
+modelling for syn_0014.txt completed!
+it-----2500
+modelling for syn_0015.txt completed!
+6 corners of the cube converged!
+it-----2550
+it-----2600
+6 corners of the cube converged!
+it-----2650
+modelling for syn_0004.txt completed!
+modelling for syn_0003.txt completed!
+modelling for syn_0002.txt completed!
+it-----2700
+7 corners of the cube converged!
+modelling for syn_0013.txt completed!
+it-----2750
+modelling for syn_0007.txt completed!
+it-----2800
+7 corners of the cube converged!
+modelling for syn_0011.txt completed!
+it-----2850
+modelling for syn_0010.txt completed!
+modelling for syn_0016.txt completed!
+modelling for syn_0012.txt completed!
+modelling for syn_0009.txt completed!
+it-----2900
+8 corners of the cube converged!
+modelling for syn_0001.txt completed!
+------stage 2: adjoint source estimation ---------
+iteration 0 res dat 1.000000e+00 res mod 0.000000e+00 grad 1.000000e+00
+iteration 1 res dat 6.393289e-01 res mod 8.910551e-11 grad 1.426491e-01
+iteration 2 res dat 4.146877e-01 res mod 4.769923e-10 grad 2.070567e-02
+iteration 3 res dat 1.454432e-01 res mod 4.069638e-09 grad 2.625039e-03
+iteration 4 res dat 1.222292e-04 res mod 1.384310e-08 grad 3.989801e-04
+iteration 5 res dat 3.616256e-09 res mod 1.385665e-08 grad 2.312611e-09
+convergence in 6 iterations
+modelling for syn_0008.txt completed!
+modelling for syn_0006.txt completed!
+modelling for syn_0005.txt completed!
+fcost_dat=47375.7, rmse=2.48758
+isrc=1 rmse=2.54699
+isrc=2 rmse=1.90256
+isrc=3 rmse=2.76719
+isrc=4 rmse=2.03005
+isrc=5 rmse=2.5997
+isrc=6 rmse=2.761
+isrc=7 rmse=2.19683
+isrc=8 rmse=2.83437
+isrc=9 rmse=2.60551
+isrc=10 rmse=2.78987
+isrc=11 rmse=2.22107
+isrc=12 rmse=2.87106
+isrc=13 rmse=2.54117
+isrc=14 rmse=1.91894
+isrc=15 rmse=2.79072
+isrc=16 rmse=2.05602
+-----------stage 3: adjoint modelling ----------
+it-----0
+0 corners of the cube converged!
+it-----50
+it-----100
+0 corners of the cube converged!
+it-----150
+it-----200
+0 corners of the cube converged!
+it-----250
+it-----300
+0 corners of the cube converged!
+it-----350
+it-----400
+0 corners of the cube converged!
+it-----450
+it-----500
+0 corners of the cube converged!
+it-----550
+it-----600
+0 corners of the cube converged!
+it-----650
+it-----700
+0 corners of the cube converged!
+it-----750
+it-----800
+0 corners of the cube converged!
+it-----850
+it-----900
+0 corners of the cube converged!
+it-----950
+it-----1000
+0 corners of the cube converged!
+it-----1050
+it-----1100
+0 corners of the cube converged!
+it-----1150
+it-----1200
+0 corners of the cube converged!
+it-----1250
+it-----1300
+0 corners of the cube converged!
+it-----1350
+it-----1400
+0 corners of the cube converged!
+it-----1450
+it-----1500
+0 corners of the cube converged!
+it-----1550
+it-----1600
+0 corners of the cube converged!
+it-----1650
+it-----1700
+0 corners of the cube converged!
+it-----1750
+it-----1800
+0 corners of the cube converged!
+it-----1850
+it-----1900
+0 corners of the cube converged!
+it-----1950
+it-----2000
+1 corners of the cube converged!
+it-----2050
+it-----2100
+1 corners of the cube converged!
+it-----2150
+it-----2200
+4 corners of the cube converged!
+it-----2250
+it-----2300
+6 corners of the cube converged!
+it-----2350
+it-----2400
+6 corners of the cube converged!
+it-----2450
+it-----2500
+8 corners of the cube converged!
+-------- stage 4: build the gradient ----------
+-------- stage 5: model regularization ----------
+fcost_Tikhonov=6324.98
+fcost_dat=47375.7
+fcost_mod=6324.98
+fcost=53700.7
+==========================================================
+# iter=7  fk/f0=0.354594
+cfl=0.98
+[vmin, vmax]=[4286.98, 21712.3] m/s
+[rhomin, rhomax]=[1.83782, 47.1423] Ohm-m
+freqmax=34.2958 Hz
+dt=0.000929858 s
+nt=3010
+------stage 1: forward modelling ---------
+it-----0
+0 corners of the cube converged!
+it-----50
+it-----100
+0 corners of the cube converged!
+it-----150
+it-----200
+0 corners of the cube converged!
+it-----250
+it-----300
+0 corners of the cube converged!
+it-----350
+it-----400
+0 corners of the cube converged!
+it-----450
+it-----500
+0 corners of the cube converged!
+it-----550
+it-----600
+0 corners of the cube converged!
+it-----650
+it-----700
+0 corners of the cube converged!
+it-----750
+it-----800
+0 corners of the cube converged!
+it-----850
+it-----900
+1 corners of the cube converged!
+it-----950
+it-----1000
+0 corners of the cube converged!
+it-----1050
+it-----1100
+0 corners of the cube converged!
+it-----1150
+it-----1200
+0 corners of the cube converged!
+it-----1250
+it-----1300
+0 corners of the cube converged!
+it-----1350
+it-----1400
+0 corners of the cube converged!
+it-----1450
+it-----1500
+1 corners of the cube converged!
+it-----1550
+it-----1600
+0 corners of the cube converged!
+it-----1650
+it-----1700
+0 corners of the cube converged!
+it-----1750
+it-----1800
+2 corners of the cube converged!
+it-----1850
+it-----1900
+2 corners of the cube converged!
+it-----1950
+it-----2000
+1 corners of the cube converged!
+it-----2050
+it-----2100
+2 corners of the cube converged!
+it-----2150
+it-----2200
+3 corners of the cube converged!
+it-----2250
+it-----2300
+3 corners of the cube converged!
+it-----2350
+it-----2400
+4 corners of the cube converged!
+it-----2450
+it-----2500
+6 corners of the cube converged!
+it-----2550
+it-----2600
+5 corners of the cube converged!
+it-----2650
+it-----2700
+5 corners of the cube converged!
+it-----2750
+modelling for syn_0015.txt completed!
+it-----2800
+6 corners of the cube converged!
+it-----2850
+modelling for syn_0002.txt completed!
+it-----2900
+5 corners of the cube converged!
+it-----2950
+modelling for syn_0011.txt completed!
+modelling for syn_0014.txt completed!
+modelling for syn_0016.txt completed!
+modelling for syn_0013.txt completed!
+modelling for syn_0012.txt completed!
+modelling for syn_0010.txt completed!
+modelling for syn_0009.txt completed!
+modelling for syn_0003.txt completed!
+modelling for syn_0004.txt completed!
+modelling for syn_0008.txt completed!
+modelling for syn_0007.txt completed!
+modelling for syn_0006.txt completed!
+modelling for syn_0005.txt completed!
+it-----3000
+6 corners of the cube converged!
+modelling for syn_0001.txt completed!
+------stage 2: adjoint source estimation ---------
+iteration 0 res dat 1.000000e+00 res mod 0.000000e+00 grad 1.000000e+00
+iteration 1 res dat 6.393325e-01 res mod 8.075144e-11 grad 1.426467e-01
+iteration 2 res dat 4.146967e-01 res mod 4.322666e-10 grad 2.070427e-02
+iteration 3 res dat 1.454470e-01 res mod 3.688462e-09 grad 2.624980e-03
+iteration 4 res dat 1.402888e-03 res mod 1.241673e-08 grad 4.538765e-03
+iteration 5 res dat 4.555006e-08 res mod 1.255878e-08 grad 2.916612e-08
+convergence in 6 iterations
+fcost_dat=38100.6, rmse=2.23082
+isrc=1 rmse=2.26966
+isrc=2 rmse=1.7381
+isrc=3 rmse=2.42541
+isrc=4 rmse=1.9448
+isrc=5 rmse=2.29398
+isrc=6 rmse=2.36694
+isrc=7 rmse=1.98069
+isrc=8 rmse=2.59634
+isrc=9 rmse=2.38806
+isrc=10 rmse=2.38374
+isrc=11 rmse=1.9963
+isrc=12 rmse=2.62138
+isrc=13 rmse=2.24994
+isrc=14 rmse=1.74804
+isrc=15 rmse=2.45605
+isrc=16 rmse=1.96564
+-----------stage 3: adjoint modelling ----------
+it-----0
+0 corners of the cube converged!
+it-----50
+it-----100
+0 corners of the cube converged!
+it-----150
+it-----200
+0 corners of the cube converged!
+it-----250
+it-----300
+0 corners of the cube converged!
+it-----350
+it-----400
+0 corners of the cube converged!
+it-----450
+it-----500
+0 corners of the cube converged!
+it-----550
+it-----600
+0 corners of the cube converged!
+it-----650
+it-----700
+0 corners of the cube converged!
+it-----750
+it-----800
+0 corners of the cube converged!
+it-----850
+it-----900
+0 corners of the cube converged!
+it-----950
+it-----1000
+0 corners of the cube converged!
+it-----1050
+it-----1100
+0 corners of the cube converged!
+it-----1150
+it-----1200
+0 corners of the cube converged!
+it-----1250
+it-----1300
+0 corners of the cube converged!
+it-----1350
+it-----1400
+0 corners of the cube converged!
+it-----1450
+it-----1500
+0 corners of the cube converged!
+it-----1550
+it-----1600
+0 corners of the cube converged!
+it-----1650
+it-----1700
+0 corners of the cube converged!
+it-----1750
+it-----1800
+0 corners of the cube converged!
+it-----1850
+it-----1900
+0 corners of the cube converged!
+it-----1950
+it-----2000
+0 corners of the cube converged!
+it-----2050
+it-----2100
+0 corners of the cube converged!
+it-----2150
+it-----2200
+1 corners of the cube converged!
+it-----2250
+it-----2300
+1 corners of the cube converged!
+it-----2350
+it-----2400
+4 corners of the cube converged!
+it-----2450
+it-----2500
+6 corners of the cube converged!
+it-----2550
+it-----2600
+7 corners of the cube converged!
+it-----2650
+it-----2700
+7 corners of the cube converged!
+it-----2750
+it-----2800
+8 corners of the cube converged!
+-------- stage 4: build the gradient ----------
+-------- stage 5: model regularization ----------
+fcost_Tikhonov=5926
+fcost_dat=38100.6
+fcost_mod=5926
+fcost=44026.6
+==========================================================
+# iter=8  fk/f0=0.290714
+cfl=0.98
+[vmin, vmax]=[3771.58, 22360.7] m/s
+[rhomin, rhomax]=[1.42248, 50] Ohm-m
+freqmax=30.1726 Hz
+dt=0.000902895 s
+nt=3523
+------stage 1: forward modelling ---------
+it-----0
+0 corners of the cube converged!
+it-----50
+it-----100
+0 corners of the cube converged!
+it-----150
+it-----200
+0 corners of the cube converged!
+it-----250
+it-----300
+0 corners of the cube converged!
+it-----350
+it-----400
+0 corners of the cube converged!
+it-----450
+it-----500
+0 corners of the cube converged!
+it-----550
+it-----600
+0 corners of the cube converged!
+it-----650
+it-----700
+0 corners of the cube converged!
+it-----750
+it-----800
+0 corners of the cube converged!
+it-----850
+it-----900
+1 corners of the cube converged!
+it-----950
+it-----1000
+0 corners of the cube converged!
+it-----1050
+it-----1100
+0 corners of the cube converged!
+it-----1150
+it-----1200
+0 corners of the cube converged!
+it-----1250
+it-----1300
+0 corners of the cube converged!
+it-----1350
+it-----1400
+0 corners of the cube converged!
+it-----1450
+it-----1500
+0 corners of the cube converged!
+it-----1550
+it-----1600
+0 corners of the cube converged!
+it-----1650
+it-----1700
+0 corners of the cube converged!
+it-----1750
+it-----1800
+1 corners of the cube converged!
+it-----1850
+it-----1900
+1 corners of the cube converged!
+it-----1950
+it-----2000
+0 corners of the cube converged!
+it-----2050
+it-----2100
+3 corners of the cube converged!
+it-----2150
+it-----2200
+1 corners of the cube converged!
+it-----2250
+it-----2300
+3 corners of the cube converged!
+it-----2350
+it-----2400
+2 corners of the cube converged!
+it-----2450
+it-----2500
+5 corners of the cube converged!
+it-----2550
+it-----2600
+4 corners of the cube converged!
+it-----2650
+it-----2700
+4 corners of the cube converged!
+it-----2750
+modelling for syn_0003.txt completed!
+modelling for syn_0015.txt completed!
+it-----2800
+6 corners of the cube converged!
+it-----2850
+modelling for syn_0014.txt completed!
+modelling for syn_0007.txt completed!
+modelling for syn_0002.txt completed!
+it-----2900
+5 corners of the cube converged!
+it-----2950
+modelling for syn_0016.txt completed!
+modelling for syn_0011.txt completed!
+modelling for syn_0012.txt completed!
+it-----3000
+6 corners of the cube converged!
+it-----3050
+modelling for syn_0004.txt completed!
+modelling for syn_0006.txt completed!
+it-----3100
+6 corners of the cube converged!
+modelling for syn_0013.txt completed!
+modelling for syn_0010.txt completed!
+it-----3150
+modelling for syn_0008.txt completed!
+modelling for syn_0005.txt completed!
+it-----3200
+8 corners of the cube converged!
+modelling for syn_0001.txt completed!
+------stage 2: adjoint source estimation ---------
+iteration 0 res dat 1.000000e+00 res mod 0.000000e+00 grad 1.000000e+00
+iteration 1 res dat 6.393334e-01 res mod 7.841799e-11 grad 1.426455e-01
+iteration 2 res dat 4.146993e-01 res mod 4.197752e-10 grad 2.070382e-02
+iteration 3 res dat 1.454484e-01 res mod 3.581975e-09 grad 2.624918e-03
+iteration 4 res dat 1.347838e-03 res mod 1.206390e-08 grad 4.362303e-03
+iteration 5 res dat 3.659943e-08 res mod 1.219648e-08 grad 2.337257e-08
+convergence in 6 iterations
+modelling for syn_0009.txt completed!
+fcost_dat=34269.7, rmse=2.1157
+isrc=1 rmse=2.10043
+isrc=2 rmse=1.74721
+isrc=3 rmse=2.05718
+isrc=4 rmse=1.79306
+isrc=5 rmse=2.15764
+isrc=6 rmse=1.99856
+isrc=7 rmse=2.84046
+isrc=8 rmse=2.36827
+isrc=9 rmse=2.31807
+isrc=10 rmse=2.00274
+isrc=11 rmse=2.14762
+isrc=12 rmse=2.36255
+isrc=13 rmse=2.04175
+isrc=14 rmse=1.76715
+isrc=15 rmse=2.07196
+isrc=16 rmse=1.80999
+-----------stage 3: adjoint modelling ----------
+it-----0
+0 corners of the cube converged!
+it-----50
+it-----100
+0 corners of the cube converged!
+it-----150
+it-----200
+0 corners of the cube converged!
+it-----250
+it-----300
+0 corners of the cube converged!
+it-----350
+it-----400
+0 corners of the cube converged!
+it-----450
+it-----500
+0 corners of the cube converged!
+it-----550
+it-----600
+0 corners of the cube converged!
+it-----650
+it-----700
+0 corners of the cube converged!
+it-----750
+it-----800
+0 corners of the cube converged!
+it-----850
+it-----900
+0 corners of the cube converged!
+it-----950
+it-----1000
+0 corners of the cube converged!
+it-----1050
+it-----1100
+0 corners of the cube converged!
+it-----1150
+it-----1200
+0 corners of the cube converged!
+it-----1250
+it-----1300
+0 corners of the cube converged!
+it-----1350
+it-----1400
+0 corners of the cube converged!
+it-----1450
+it-----1500
+0 corners of the cube converged!
+it-----1550
+it-----1600
+0 corners of the cube converged!
+it-----1650
+it-----1700
+0 corners of the cube converged!
+it-----1750
+it-----1800
+0 corners of the cube converged!
+it-----1850
+it-----1900
+0 corners of the cube converged!
+it-----1950
+it-----2000
+0 corners of the cube converged!
+it-----2050
+it-----2100
+0 corners of the cube converged!
+it-----2150
+it-----2200
+1 corners of the cube converged!
+it-----2250
+it-----2300
+1 corners of the cube converged!
+it-----2350
+it-----2400
+3 corners of the cube converged!
+it-----2450
+it-----2500
+6 corners of the cube converged!
+it-----2550
+it-----2600
+7 corners of the cube converged!
+it-----2650
+it-----2700
+7 corners of the cube converged!
+it-----2750
+it-----2800
+8 corners of the cube converged!
+-------- stage 4: build the gradient ----------
+-------- stage 5: model regularization ----------
+fcost_Tikhonov=8663.98
+fcost_dat=34269.7
+fcost_mod=8663.98
+fcost=42933.7
+==========================================================
+# iter=9  fk/f0=0.283498
+cfl=0.98
+[vmin, vmax]=[3886.49, 22360.7] m/s
+[rhomin, rhomax]=[1.51048, 50] Ohm-m
+freqmax=31.0919 Hz
+dt=0.000902895 s
+nt=3419
+------stage 1: forward modelling ---------
+it-----0
+0 corners of the cube converged!
+it-----50
+it-----100
+0 corners of the cube converged!
+it-----150
+it-----200
+0 corners of the cube converged!
+it-----250
+it-----300
+0 corners of the cube converged!
+it-----350
+it-----400
+0 corners of the cube converged!
+it-----450
+it-----500
+0 corners of the cube converged!
+it-----550
+it-----600
+0 corners of the cube converged!
+it-----650
+it-----700
+0 corners of the cube converged!
+it-----750
+it-----800
+0 corners of the cube converged!
+it-----850
+it-----900
+1 corners of the cube converged!
+it-----950
+it-----1000
+0 corners of the cube converged!
+it-----1050
+it-----1100
+0 corners of the cube converged!
+it-----1150
+it-----1200
+0 corners of the cube converged!
+it-----1250
+it-----1300
+0 corners of the cube converged!
+it-----1350
+it-----1400
+1 corners of the cube converged!
+it-----1450
+it-----1500
+0 corners of the cube converged!
+it-----1550
+it-----1600
+0 corners of the cube converged!
+it-----1650
+it-----1700
+0 corners of the cube converged!
+it-----1750
+it-----1800
+0 corners of the cube converged!
+it-----1850
+it-----1900
+1 corners of the cube converged!
+it-----1950
+it-----2000
+1 corners of the cube converged!
+it-----2050
+it-----2100
+3 corners of the cube converged!
+it-----2150
+it-----2200
+2 corners of the cube converged!
+it-----2250
+it-----2300
+4 corners of the cube converged!
+it-----2350
+it-----2400
+4 corners of the cube converged!
+it-----2450
+it-----2500
+5 corners of the cube converged!
+it-----2550
+it-----2600
+4 corners of the cube converged!
+it-----2650
+modelling for syn_0003.txt completed!
+it-----2700
+4 corners of the cube converged!
+modelling for syn_0002.txt completed!
+it-----2750
+modelling for syn_0015.txt completed!
+it-----2800
+6 corners of the cube converged!
+it-----2850
+modelling for syn_0014.txt completed!
+it-----2900
+5 corners of the cube converged!
+modelling for syn_0016.txt completed!
+it-----2950
+modelling for syn_0004.txt completed!
+modelling for syn_0007.txt completed!
+modelling for syn_0011.txt completed!
+it-----3000
+6 corners of the cube converged!
+it-----3050
+modelling for syn_0012.txt completed!
+modelling for syn_0008.txt completed!
+modelling for syn_0006.txt completed!
+modelling for syn_0013.txt completed!
+modelling for syn_0010.txt completed!
+modelling for syn_0009.txt completed!
+it-----3100
+7 corners of the cube converged!
+it-----3150
+it-----3200
+8 corners of the cube converged!
+modelling for syn_0001.txt completed!
+------stage 2: adjoint source estimation ---------
+iteration 0 res dat 1.000000e+00 res mod 0.000000e+00 grad 1.000000e+00
+iteration 1 res dat 6.393334e-01 res mod 7.841799e-11 grad 1.426455e-01
+iteration 2 res dat 4.146993e-01 res mod 4.197752e-10 grad 2.070382e-02
+iteration 3 res dat 1.454484e-01 res mod 3.581975e-09 grad 2.624918e-03
+iteration 4 res dat 1.347838e-03 res mod 1.206390e-08 grad 4.362303e-03
+iteration 5 res dat 3.659943e-08 res mod 1.219648e-08 grad 2.337257e-08
+convergence in 6 iterations
+modelling for syn_0005.txt completed!
+fcost_dat=29548.4, rmse=1.96456
+isrc=1 rmse=1.99711
+isrc=2 rmse=1.69958
+isrc=3 rmse=2.05609
+isrc=4 rmse=1.75594
+isrc=5 rmse=2.06604
+isrc=6 rmse=1.98001
+isrc=7 rmse=1.74878
+isrc=8 rmse=2.28706
+isrc=9 rmse=2.10585
+isrc=10 rmse=1.98662
+isrc=11 rmse=1.76744
+isrc=12 rmse=2.31052
+isrc=13 rmse=1.96302
+isrc=14 rmse=1.69911
+isrc=15 rmse=2.08311
+isrc=16 rmse=1.7736
+-----------stage 3: adjoint modelling ----------
+it-----0
+0 corners of the cube converged!
+it-----50
+it-----100
+0 corners of the cube converged!
+it-----150
+it-----200
+0 corners of the cube converged!
+it-----250
+it-----300
+0 corners of the cube converged!
+it-----350
+it-----400
+0 corners of the cube converged!
+it-----450
+it-----500
+0 corners of the cube converged!
+it-----550
+it-----600
+0 corners of the cube converged!
+it-----650
+it-----700
+0 corners of the cube converged!
+it-----750
+it-----800
+0 corners of the cube converged!
+it-----850
+it-----900
+0 corners of the cube converged!
+it-----950
+it-----1000
+0 corners of the cube converged!
+it-----1050
+it-----1100
+0 corners of the cube converged!
+it-----1150
+it-----1200
+0 corners of the cube converged!
+it-----1250
+it-----1300
+0 corners of the cube converged!
+it-----1350
+it-----1400
+0 corners of the cube converged!
+it-----1450
+it-----1500
+0 corners of the cube converged!
+it-----1550
+it-----1600
+0 corners of the cube converged!
+it-----1650
+it-----1700
+0 corners of the cube converged!
+it-----1750
+it-----1800
+0 corners of the cube converged!
+it-----1850
+it-----1900
+0 corners of the cube converged!
+it-----1950
+it-----2000
+0 corners of the cube converged!
+it-----2050
+it-----2100
+0 corners of the cube converged!
+it-----2150
+it-----2200
+1 corners of the cube converged!
+it-----2250
+it-----2300
+1 corners of the cube converged!
+it-----2350
+it-----2400
+3 corners of the cube converged!
+it-----2450
+it-----2500
+4 corners of the cube converged!
+it-----2550
+it-----2600
+6 corners of the cube converged!
+it-----2650
+it-----2700
+7 corners of the cube converged!
+it-----2750
+it-----2800
+7 corners of the cube converged!
+it-----2850
+it-----2900
+8 corners of the cube converged!
+-------- stage 4: build the gradient ----------
+-------- stage 5: model regularization ----------
+fcost_Tikhonov=7405.95
+fcost_dat=29548.4
+fcost_mod=7405.95
+fcost=36954.4
+==========================================================
+# iter=10  fk/f0=0.244015
+cfl=0.98
+[vmin, vmax]=[3924.35, 21398.9] m/s
+[rhomin, rhomax]=[1.54005, 45.7914] Ohm-m
+freqmax=31.3948 Hz
+dt=0.000943474 s
+nt=3241
+------stage 1: forward modelling ---------
+it-----0
+0 corners of the cube converged!
+it-----50
+it-----100
+0 corners of the cube converged!
+it-----150
+it-----200
+0 corners of the cube converged!
+it-----250
+it-----300
+0 corners of the cube converged!
+it-----350
+it-----400
+0 corners of the cube converged!
+it-----450
+it-----500
+0 corners of the cube converged!
+it-----550
+it-----600
+0 corners of the cube converged!
+it-----650
+it-----700
+0 corners of the cube converged!
+it-----750
+it-----800
+0 corners of the cube converged!
+it-----850
+it-----900
+1 corners of the cube converged!
+it-----950
+it-----1000
+0 corners of the cube converged!
+it-----1050
+it-----1100
+0 corners of the cube converged!
+it-----1150
+it-----1200
+0 corners of the cube converged!
+it-----1250
+it-----1300
+0 corners of the cube converged!
+it-----1350
+it-----1400
+0 corners of the cube converged!
+it-----1450
+it-----1500
+0 corners of the cube converged!
+it-----1550
+it-----1600
+0 corners of the cube converged!
+it-----1650
+it-----1700
+0 corners of the cube converged!
+it-----1750
+it-----1800
+0 corners of the cube converged!
+it-----1850
+it-----1900
+1 corners of the cube converged!
+it-----1950
+it-----2000
+2 corners of the cube converged!
+it-----2050
+it-----2100
+4 corners of the cube converged!
+it-----2150
+it-----2200
+4 corners of the cube converged!
+it-----2250
+it-----2300
+5 corners of the cube converged!
+it-----2350
+it-----2400
+4 corners of the cube converged!
+it-----2450
+modelling for syn_0015.txt completed!
+it-----2500
+5 corners of the cube converged!
+it-----2550
+it-----2600
+6 corners of the cube converged!
+modelling for syn_0003.txt completed!
+it-----2650
+modelling for syn_0002.txt completed!
+it-----2700
+6 corners of the cube converged!
+it-----2750
+it-----2800
+6 corners of the cube converged!
+modelling for syn_0007.txt completed!
+modelling for syn_0011.txt completed!
+modelling for syn_0014.txt completed!
+it-----2850
+it-----2900
+6 corners of the cube converged!
+modelling for syn_0004.txt completed!
+modelling for syn_0006.txt completed!
+it-----2950
+modelling for syn_0013.txt completed!
+it-----3000
+6 corners of the cube converged!
+modelling for syn_0005.txt completed!
+it-----3050
+modelling for syn_0010.txt completed!
+modelling for syn_0016.txt completed!
+modelling for syn_0008.txt completed!
+it-----3100
+7 corners of the cube converged!
+modelling for syn_0009.txt completed!
+modelling for syn_0012.txt completed!
+it-----3150
+it-----3200
+7 corners of the cube converged!
+modelling for syn_0001.txt completed!
+------stage 2: adjoint source estimation ---------
+iteration 0 res dat 1.000000e+00 res mod 0.000000e+00 grad 1.000000e+00
+iteration 1 res dat 6.393310e-01 res mod 8.192906e-11 grad 1.426465e-01
+iteration 2 res dat 4.146936e-01 res mod 4.385734e-10 grad 2.070435e-02
+iteration 3 res dat 1.454450e-01 res mod 3.742155e-09 grad 2.624854e-03
+iteration 4 res dat 2.759316e-04 res mod 1.271362e-08 grad 8.997538e-04
+iteration 5 res dat 4.449952e-09 res mod 1.274183e-08 grad 2.845144e-09
+convergence in 6 iterations
+fcost_dat=28685.7, rmse=1.93567
+isrc=1 rmse=1.97968
+isrc=2 rmse=1.67485
+isrc=3 rmse=2.03639
+isrc=4 rmse=1.73311
+isrc=5 rmse=2.03447
+isrc=6 rmse=1.95493
+isrc=7 rmse=1.72103
+isrc=8 rmse=2.24993
+isrc=9 rmse=2.02328
+isrc=10 rmse=1.96201
+isrc=11 rmse=1.73543
+isrc=12 rmse=2.27944
+isrc=13 rmse=1.95208
+isrc=14 rmse=1.67164
+isrc=15 rmse=2.06219
+isrc=16 rmse=1.75037
+-----------stage 3: adjoint modelling ----------
+it-----0
+0 corners of the cube converged!
+it-----50
+it-----100
+0 corners of the cube converged!
+it-----150
+it-----200
+0 corners of the cube converged!
+it-----250
+it-----300
+0 corners of the cube converged!
+it-----350
+it-----400
+0 corners of the cube converged!
+it-----450
+it-----500
+0 corners of the cube converged!
+it-----550
+it-----600
+0 corners of the cube converged!
+it-----650
+it-----700
+0 corners of the cube converged!
+it-----750
+it-----800
+0 corners of the cube converged!
+it-----850
+it-----900
+0 corners of the cube converged!
+it-----950
+it-----1000
+0 corners of the cube converged!
+it-----1050
+it-----1100
+0 corners of the cube converged!
+it-----1150
+it-----1200
+0 corners of the cube converged!
+it-----1250
+it-----1300
+0 corners of the cube converged!
+it-----1350
+it-----1400
+0 corners of the cube converged!
+it-----1450
+it-----1500
+0 corners of the cube converged!
+it-----1550
+it-----1600
+0 corners of the cube converged!
+it-----1650
+it-----1700
+0 corners of the cube converged!
+it-----1750
+it-----1800
+0 corners of the cube converged!
+it-----1850
+it-----1900
+1 corners of the cube converged!
+it-----1950
+it-----2000
+1 corners of the cube converged!
+it-----2050
+it-----2100
+1 corners of the cube converged!
+it-----2150
+it-----2200
+1 corners of the cube converged!
+it-----2250
+it-----2300
+3 corners of the cube converged!
+it-----2350
+it-----2400
+4 corners of the cube converged!
+it-----2450
+it-----2500
+5 corners of the cube converged!
+it-----2550
+it-----2600
+6 corners of the cube converged!
+it-----2650
+it-----2700
+8 corners of the cube converged!
+-------- stage 4: build the gradient ----------
+-------- stage 5: model regularization ----------
+fcost_Tikhonov=6354.42
+fcost_dat=28685.7
+fcost_mod=6354.42
+fcost=35040.1
+==========================================================
+# iter=11  fk/f0=0.231375
+cfl=0.98
+[vmin, vmax]=[3717.98, 21361.3] m/s
+[rhomin, rhomax]=[1.38234, 45.6305] Ohm-m
+freqmax=29.7439 Hz
+dt=0.000945137 s
+nt=3414
+------stage 1: forward modelling ---------
+it-----0
+0 corners of the cube converged!
+it-----50
+it-----100
+0 corners of the cube converged!
+it-----150
+it-----200
+0 corners of the cube converged!
+it-----250
+it-----300
+0 corners of the cube converged!
+it-----350
+it-----400
+0 corners of the cube converged!
+it-----450
+it-----500
+0 corners of the cube converged!
+it-----550
+it-----600
+0 corners of the cube converged!
+it-----650
+it-----700
+0 corners of the cube converged!
+it-----750
+it-----800
+0 corners of the cube converged!
+it-----850
+it-----900
+1 corners of the cube converged!
+it-----950
+it-----1000
+0 corners of the cube converged!
+it-----1050
+it-----1100
+0 corners of the cube converged!
+it-----1150
+it-----1200
+0 corners of the cube converged!
+it-----1250
+it-----1300
+0 corners of the cube converged!
+it-----1350
+it-----1400
+1 corners of the cube converged!
+it-----1450
+it-----1500
+1 corners of the cube converged!
+it-----1550
+it-----1600
+0 corners of the cube converged!
+it-----1650
+it-----1700
+1 corners of the cube converged!
+it-----1750
+it-----1800
+1 corners of the cube converged!
+it-----1850
+it-----1900
+1 corners of the cube converged!
+it-----1950
+it-----2000
+3 corners of the cube converged!
+it-----2050
+it-----2100
+3 corners of the cube converged!
+it-----2150
+it-----2200
+1 corners of the cube converged!
+it-----2250
+it-----2300
+2 corners of the cube converged!
+it-----2350
+it-----2400
+5 corners of the cube converged!
+it-----2450
+it-----2500
+4 corners of the cube converged!
+it-----2550
+it-----2600
+6 corners of the cube converged!
+it-----2650
+it-----2700
+6 corners of the cube converged!
+it-----2750
+modelling for syn_0014.txt completed!
+modelling for syn_0003.txt completed!
+modelling for syn_0002.txt completed!
+it-----2800
+7 corners of the cube converged!
+it-----2850
+modelling for syn_0015.txt completed!
+it-----2900
+5 corners of the cube converged!
+it-----2950
+modelling for syn_0004.txt completed!
+modelling for syn_0012.txt completed!
+it-----3000
+7 corners of the cube converged!
+it-----3050
+modelling for syn_0007.txt completed!
+modelling for syn_0011.txt completed!
+modelling for syn_0016.txt completed!
+it-----3100
+8 corners of the cube converged!
+modelling for syn_0001.txt completed!
+------stage 2: adjoint source estimation ---------
+iteration 0 res dat 1.000000e+00 res mod 0.000000e+00 grad 1.000000e+00
+iteration 1 res dat 6.393313e-01 res mod 8.207278e-11 grad 1.426465e-01
+iteration 2 res dat 4.146943e-01 res mod 4.393434e-10 grad 2.070436e-02
+iteration 3 res dat 1.454453e-01 res mod 3.748741e-09 grad 2.624845e-03
+iteration 4 res dat 1.102872e-04 res mod 1.275264e-08 grad 3.600109e-04
+iteration 5 res dat 7.695563e-09 res mod 1.276420e-08 grad 4.921600e-09
+convergence in 6 iterations
+modelling for syn_0006.txt completed!
+modelling for syn_0008.txt completed!
+modelling for syn_0010.txt completed!
+modelling for syn_0009.txt completed!
+modelling for syn_0013.txt completed!
+modelling for syn_0005.txt completed!
+fcost_dat=25861.1, rmse=1.8379
+isrc=1 rmse=1.89757
+isrc=2 rmse=1.64244
+isrc=3 rmse=1.89134
+isrc=4 rmse=1.68263
+isrc=5 rmse=1.94315
+isrc=6 rmse=1.81289
+isrc=7 rmse=1.67873
+isrc=8 rmse=2.08645
+isrc=9 rmse=1.95789
+isrc=10 rmse=1.82173
+isrc=11 rmse=1.66525
+isrc=12 rmse=2.11129
+isrc=13 rmse=1.86089
+isrc=14 rmse=1.63963
+isrc=15 rmse=1.91351
+isrc=16 rmse=1.70033
+-----------stage 3: adjoint modelling ----------
+it-----0
+0 corners of the cube converged!
+it-----50
+it-----100
+0 corners of the cube converged!
+it-----150
+it-----200
+0 corners of the cube converged!
+it-----250
+it-----300
+0 corners of the cube converged!
+it-----350
+it-----400
+0 corners of the cube converged!
+it-----450
+it-----500
+0 corners of the cube converged!
+it-----550
+it-----600
+0 corners of the cube converged!
+it-----650
+it-----700
+0 corners of the cube converged!
+it-----750
+it-----800
+0 corners of the cube converged!
+it-----850
+it-----900
+0 corners of the cube converged!
+it-----950
+it-----1000
+0 corners of the cube converged!
+it-----1050
+it-----1100
+0 corners of the cube converged!
+it-----1150
+it-----1200
+0 corners of the cube converged!
+it-----1250
+it-----1300
+0 corners of the cube converged!
+it-----1350
+it-----1400
+0 corners of the cube converged!
+it-----1450
+it-----1500
+0 corners of the cube converged!
+it-----1550
+it-----1600
+0 corners of the cube converged!
+it-----1650
+it-----1700
+0 corners of the cube converged!
+it-----1750
+it-----1800
+0 corners of the cube converged!
+it-----1850
+it-----1900
+1 corners of the cube converged!
+it-----1950
+it-----2000
+1 corners of the cube converged!
+it-----2050
+it-----2100
+1 corners of the cube converged!
+it-----2150
+it-----2200
+1 corners of the cube converged!
+it-----2250
+it-----2300
+3 corners of the cube converged!
+it-----2350
+it-----2400
+4 corners of the cube converged!
+it-----2450
+it-----2500
+6 corners of the cube converged!
+it-----2550
+it-----2600
+6 corners of the cube converged!
+it-----2650
+it-----2700
+8 corners of the cube converged!
+-------- stage 4: build the gradient ----------
+-------- stage 5: model regularization ----------
+fcost_Tikhonov=6135.69
+fcost_dat=25861.1
+fcost_mod=6135.69
+fcost=31996.8
+==========================================================
+# iter=12  fk/f0=0.211279
+cfl=0.98
+[vmin, vmax]=[3529.31, 21531.5] m/s
+[rhomin, rhomax]=[1.24561, 46.3607] Ohm-m
+freqmax=28.2345 Hz
+dt=0.000937664 s
+nt=3626
+------stage 1: forward modelling ---------
+it-----0
+0 corners of the cube converged!
+it-----50
+it-----100
+0 corners of the cube converged!
+it-----150
+it-----200
+0 corners of the cube converged!
+it-----250
+it-----300
+0 corners of the cube converged!
+it-----350
+it-----400
+0 corners of the cube converged!
+it-----450
+it-----500
+0 corners of the cube converged!
+it-----550
+it-----600
+0 corners of the cube converged!
+it-----650
+it-----700
+0 corners of the cube converged!
+it-----750
+it-----800
+0 corners of the cube converged!
+it-----850
+it-----900
+1 corners of the cube converged!
+it-----950
+it-----1000
+0 corners of the cube converged!
+it-----1050
+it-----1100
+0 corners of the cube converged!
+it-----1150
+it-----1200
+0 corners of the cube converged!
+it-----1250
+it-----1300
+0 corners of the cube converged!
+it-----1350
+it-----1400
+0 corners of the cube converged!
+it-----1450
+it-----1500
+0 corners of the cube converged!
+it-----1550
+it-----1600
+0 corners of the cube converged!
+it-----1650
+it-----1700
+0 corners of the cube converged!
+it-----1750
+it-----1800
+0 corners of the cube converged!
+it-----1850
+it-----1900
+0 corners of the cube converged!
+it-----1950
+it-----2000
+1 corners of the cube converged!
+it-----2050
+it-----2100
+3 corners of the cube converged!
+it-----2150
+it-----2200
+2 corners of the cube converged!
+it-----2250
+it-----2300
+3 corners of the cube converged!
+it-----2350
+it-----2400
+4 corners of the cube converged!
+it-----2450
+it-----2500
+5 corners of the cube converged!
+it-----2550
+it-----2600
+5 corners of the cube converged!
+it-----2650
+it-----2700
+5 corners of the cube converged!
+it-----2750
+it-----2800
+5 corners of the cube converged!
+it-----2850
+modelling for syn_0003.txt completed!
+modelling for syn_0014.txt completed!
+it-----2900
+6 corners of the cube converged!
+modelling for syn_0011.txt completed!
+modelling for syn_0015.txt completed!
+it-----2950
+modelling for syn_0007.txt completed!
+modelling for syn_0002.txt completed!
+it-----3000
+7 corners of the cube converged!
+it-----3050
+modelling for syn_0009.txt completed!
+it-----3100
+8 corners of the cube converged!
+modelling for syn_0001.txt completed!
+------stage 2: adjoint source estimation ---------
+iteration 0 res dat 1.000000e+00 res mod 0.000000e+00 grad 1.000000e+00
+iteration 1 res dat 6.393319e-01 res mod 8.142646e-11 grad 1.426461e-01
+iteration 2 res dat 4.146953e-01 res mod 4.358819e-10 grad 2.070425e-02
+iteration 3 res dat 1.454460e-01 res mod 3.719262e-09 grad 2.624854e-03
+iteration 4 res dat 3.211976e-04 res mod 1.263070e-08 grad 1.047008e-03
+iteration 5 res dat 9.299423e-09 res mod 1.266381e-08 grad 5.947122e-09
+convergence in 6 iterations
+modelling for syn_0012.txt completed!
+modelling for syn_0016.txt completed!
+modelling for syn_0004.txt completed!
+modelling for syn_0006.txt completed!
+modelling for syn_0013.txt completed!
+modelling for syn_0010.txt completed!
+modelling for syn_0008.txt completed!
+modelling for syn_0005.txt completed!
+fcost_dat=23181, rmse=1.74006
+isrc=1 rmse=1.79179
+isrc=2 rmse=1.57246
+isrc=3 rmse=1.76385
+isrc=4 rmse=1.63149
+isrc=5 rmse=1.85801
+isrc=6 rmse=1.66014
+isrc=7 rmse=1.58055
+isrc=8 rmse=1.97189
+isrc=9 rmse=1.878
+isrc=10 rmse=1.6842
+isrc=11 rmse=1.62883
+isrc=12 rmse=1.96812
+isrc=13 rmse=1.76547
+isrc=14 rmse=1.55892
+isrc=15 rmse=1.78184
+isrc=16 rmse=1.66162
+-----------stage 3: adjoint modelling ----------
+it-----0
+0 corners of the cube converged!
+it-----50
+it-----100
+0 corners of the cube converged!
+it-----150
+it-----200
+0 corners of the cube converged!
+it-----250
+it-----300
+0 corners of the cube converged!
+it-----350
+it-----400
+0 corners of the cube converged!
+it-----450
+it-----500
+0 corners of the cube converged!
+it-----550
+it-----600
+0 corners of the cube converged!
+it-----650
+it-----700
+0 corners of the cube converged!
+it-----750
+it-----800
+0 corners of the cube converged!
+it-----850
+it-----900
+0 corners of the cube converged!
+it-----950
+it-----1000
+0 corners of the cube converged!
+it-----1050
+it-----1100
+0 corners of the cube converged!
+it-----1150
+it-----1200
+0 corners of the cube converged!
+it-----1250
+it-----1300
+0 corners of the cube converged!
+it-----1350
+it-----1400
+0 corners of the cube converged!
+it-----1450
+it-----1500
+0 corners of the cube converged!
+it-----1550
+it-----1600
+0 corners of the cube converged!
+it-----1650
+it-----1700
+0 corners of the cube converged!
+it-----1750
+it-----1800
+0 corners of the cube converged!
+it-----1850
+it-----1900
+1 corners of the cube converged!
+it-----1950
+it-----2000
+1 corners of the cube converged!
+it-----2050
+it-----2100
+1 corners of the cube converged!
+it-----2150
+it-----2200
+1 corners of the cube converged!
+it-----2250
+it-----2300
+3 corners of the cube converged!
+it-----2350
+it-----2400
+4 corners of the cube converged!
+it-----2450
+it-----2500
+5 corners of the cube converged!
+it-----2550
+it-----2600
+6 corners of the cube converged!
+it-----2650
+it-----2700
+8 corners of the cube converged!
+-------- stage 4: build the gradient ----------
+-------- stage 5: model regularization ----------
+fcost_Tikhonov=5509.17
+fcost_dat=23181
+fcost_mod=5509.17
+fcost=28690.2
+==========================================================
+# iter=13  fk/f0=0.189446
+cfl=0.98
+[vmin, vmax]=[3369.1, 22360.7] m/s
+[rhomin, rhomax]=[1.13508, 50] Ohm-m
+freqmax=26.9528 Hz
+dt=0.000902895 s
+nt=3944
+------stage 1: forward modelling ---------
+it-----0
+0 corners of the cube converged!
+it-----50
+it-----100
+0 corners of the cube converged!
+it-----150
+it-----200
+0 corners of the cube converged!
+it-----250
+it-----300
+0 corners of the cube converged!
+it-----350
+it-----400
+0 corners of the cube converged!
+it-----450
+it-----500
+0 corners of the cube converged!
+it-----550
+it-----600
+0 corners of the cube converged!
+it-----650
+it-----700
+0 corners of the cube converged!
+it-----750
+it-----800
+0 corners of the cube converged!
+it-----850
+it-----900
+1 corners of the cube converged!
+it-----950
+it-----1000
+0 corners of the cube converged!
+it-----1050
+it-----1100
+0 corners of the cube converged!
+it-----1150
+it-----1200
+0 corners of the cube converged!
+it-----1250
+it-----1300
+0 corners of the cube converged!
+it-----1350
+it-----1400
+0 corners of the cube converged!
+it-----1450
+it-----1500
+0 corners of the cube converged!
+it-----1550
+it-----1600
+0 corners of the cube converged!
+it-----1650
+it-----1700
+0 corners of the cube converged!
+it-----1750
+it-----1800
+1 corners of the cube converged!
+it-----1850
+it-----1900
+1 corners of the cube converged!
+it-----1950
+it-----2000
+3 corners of the cube converged!
+it-----2050
+it-----2100
+3 corners of the cube converged!
+it-----2150
+it-----2200
+2 corners of the cube converged!
+it-----2250
+it-----2300
+4 corners of the cube converged!
+it-----2350
+it-----2400
+5 corners of the cube converged!
+it-----2450
+it-----2500
+3 corners of the cube converged!
+it-----2550
+it-----2600
+6 corners of the cube converged!
+it-----2650
+it-----2700
+5 corners of the cube converged!
+it-----2750
+it-----2800
+5 corners of the cube converged!
+modelling for syn_0011.txt completed!
+it-----2850
+modelling for syn_0007.txt completed!
+modelling for syn_0002.txt completed!
+it-----2900
+6 corners of the cube converged!
+modelling for syn_0015.txt completed!
+modelling for syn_0014.txt completed!
+it-----2950
+modelling for syn_0006.txt completed!
+it-----3000
+7 corners of the cube converged!
+modelling for syn_0013.txt completed!
+it-----3050
+modelling for syn_0010.txt completed!
+modelling for syn_0003.txt completed!
+it-----3100
+7 corners of the cube converged!
+modelling for syn_0004.txt completed!
+it-----3150
+modelling for syn_0008.txt completed!
+it-----3200
+8 corners of the cube converged!
+modelling for syn_0001.txt completed!
+------stage 2: adjoint source estimation ---------
+iteration 0 res dat 1.000000e+00 res mod 0.000000e+00 grad 1.000000e+00
+iteration 1 res dat 6.393334e-01 res mod 7.841799e-11 grad 1.426455e-01
+iteration 2 res dat 4.146993e-01 res mod 4.197752e-10 grad 2.070382e-02
+iteration 3 res dat 1.454484e-01 res mod 3.581975e-09 grad 2.624918e-03
+iteration 4 res dat 1.347838e-03 res mod 1.206390e-08 grad 4.362303e-03
+iteration 5 res dat 3.659943e-08 res mod 1.219648e-08 grad 2.337257e-08
+convergence in 6 iterations
+modelling for syn_0016.txt completed!
+modelling for syn_0005.txt completed!
+modelling for syn_0009.txt completed!
+modelling for syn_0012.txt completed!
+fcost_dat=20771.1, rmse=1.64713
+isrc=1 rmse=1.70155
+isrc=2 rmse=1.53842
+isrc=3 rmse=1.65827
+isrc=4 rmse=1.53071
+isrc=5 rmse=1.77283
+isrc=6 rmse=1.58521
+isrc=7 rmse=1.62069
+isrc=8 rmse=1.71528
+isrc=9 rmse=1.8032
+isrc=10 rmse=1.61953
+isrc=11 rmse=1.62345
+isrc=12 rmse=1.74281
+isrc=13 rmse=1.67744
+isrc=14 rmse=1.51055
+isrc=15 rmse=1.6661
+isrc=16 rmse=1.55059
+-----------stage 3: adjoint modelling ----------
+it-----0
+0 corners of the cube converged!
+it-----50
+it-----100
+0 corners of the cube converged!
+it-----150
+it-----200
+0 corners of the cube converged!
+it-----250
+it-----300
+0 corners of the cube converged!
+it-----350
+it-----400
+0 corners of the cube converged!
+it-----450
+it-----500
+0 corners of the cube converged!
+it-----550
+it-----600
+0 corners of the cube converged!
+it-----650
+it-----700
+0 corners of the cube converged!
+it-----750
+it-----800
+0 corners of the cube converged!
+it-----850
+it-----900
+0 corners of the cube converged!
+it-----950
+it-----1000
+0 corners of the cube converged!
+it-----1050
+it-----1100
+0 corners of the cube converged!
+it-----1150
+it-----1200
+0 corners of the cube converged!
+it-----1250
+it-----1300
+0 corners of the cube converged!
+it-----1350
+it-----1400
+0 corners of the cube converged!
+it-----1450
+it-----1500
+0 corners of the cube converged!
+it-----1550
+it-----1600
+0 corners of the cube converged!
+it-----1650
+it-----1700
+0 corners of the cube converged!
+it-----1750
+it-----1800
+0 corners of the cube converged!
+it-----1850
+it-----1900
+0 corners of the cube converged!
+it-----1950
+it-----2000
+1 corners of the cube converged!
+it-----2050
+it-----2100
+1 corners of the cube converged!
+it-----2150
+it-----2200
+1 corners of the cube converged!
+it-----2250
+it-----2300
+1 corners of the cube converged!
+it-----2350
+it-----2400
+3 corners of the cube converged!
+it-----2450
+it-----2500
+4 corners of the cube converged!
+it-----2550
+it-----2600
+5 corners of the cube converged!
+it-----2650
+it-----2700
+7 corners of the cube converged!
+it-----2750
+it-----2800
+8 corners of the cube converged!
+-------- stage 4: build the gradient ----------
+-------- stage 5: model regularization ----------
+fcost_Tikhonov=5408.1
+fcost_dat=20771.1
+fcost_mod=5408.1
+fcost=26179.1
+==========================================================
+# iter=14  fk/f0=0.172865
+cfl=0.98
+[vmin, vmax]=[3334.88, 21775.2] m/s
+[rhomin, rhomax]=[1.11215, 47.4161] Ohm-m
+freqmax=26.6791 Hz
+dt=0.000927169 s
+nt=3880
+------stage 1: forward modelling ---------
+it-----0
+0 corners of the cube converged!
+it-----50
+it-----100
+0 corners of the cube converged!
+it-----150
+it-----200
+0 corners of the cube converged!
+it-----250
+it-----300
+0 corners of the cube converged!
+it-----350
+it-----400
+0 corners of the cube converged!
+it-----450
+it-----500
+0 corners of the cube converged!
+it-----550
+it-----600
+0 corners of the cube converged!
+it-----650
+it-----700
+0 corners of the cube converged!
+it-----750
+it-----800
+0 corners of the cube converged!
+it-----850
+it-----900
+1 corners of the cube converged!
+it-----950
+it-----1000
+0 corners of the cube converged!
+it-----1050
+it-----1100
+0 corners of the cube converged!
+it-----1150
+it-----1200
+0 corners of the cube converged!
+it-----1250
+it-----1300
+1 corners of the cube converged!
+it-----1350
+it-----1400
+0 corners of the cube converged!
+it-----1450
+it-----1500
+0 corners of the cube converged!
+it-----1550
+it-----1600
+1 corners of the cube converged!
+it-----1650
+it-----1700
+0 corners of the cube converged!
+it-----1750
+it-----1800
+1 corners of the cube converged!
+it-----1850
+it-----1900
+2 corners of the cube converged!
+it-----1950
+it-----2000
+2 corners of the cube converged!
+it-----2050
+it-----2100
+1 corners of the cube converged!
+it-----2150
+it-----2200
+2 corners of the cube converged!
+it-----2250
+it-----2300
+3 corners of the cube converged!
+it-----2350
+it-----2400
+5 corners of the cube converged!
+it-----2450
+it-----2500
+4 corners of the cube converged!
+it-----2550
+it-----2600
+5 corners of the cube converged!
+it-----2650
+modelling for syn_0015.txt completed!
+it-----2700
+6 corners of the cube converged!
+it-----2750
+modelling for syn_0002.txt completed!
+it-----2800
+6 corners of the cube converged!
+it-----2850
+modelling for syn_0003.txt completed!
+modelling for syn_0016.txt completed!
+it-----2900
+7 corners of the cube converged!
+it-----2950
+modelling for syn_0014.txt completed!
+modelling for syn_0004.txt completed!
+modelling for syn_0007.txt completed!
+it-----3000
+7 corners of the cube converged!
+it-----3050
+modelling for syn_0011.txt completed!
+it-----3100
+7 corners of the cube converged!
+it-----3150
+modelling for syn_0006.txt completed!
+it-----3200
+7 corners of the cube converged!
+modelling for syn_0009.txt completed!
+it-----3250
+modelling for syn_0005.txt completed!
+it-----3300
+8 corners of the cube converged!
+modelling for syn_0001.txt completed!
+------stage 2: adjoint source estimation ---------
+iteration 0 res dat 1.000000e+00 res mod 0.000000e+00 grad 1.000000e+00
+iteration 1 res dat 6.393325e-01 res mod 8.051884e-11 grad 1.426465e-01
+iteration 2 res dat 4.146967e-01 res mod 4.310226e-10 grad 2.070421e-02
+iteration 3 res dat 1.454470e-01 res mod 3.677848e-09 grad 2.624968e-03
+iteration 4 res dat 1.406764e-03 res mod 1.238070e-08 grad 4.551176e-03
+iteration 5 res dat 3.967932e-08 res mod 1.252264e-08 grad 2.537477e-08
+convergence in 6 iterations
+modelling for syn_0013.txt completed!
+modelling for syn_0010.txt completed!
+modelling for syn_0012.txt completed!
+modelling for syn_0008.txt completed!
+fcost_dat=19850.2, rmse=1.61021
+isrc=1 rmse=1.67347
+isrc=2 rmse=1.50824
+isrc=3 rmse=1.63306
+isrc=4 rmse=1.48229
+isrc=5 rmse=1.74421
+isrc=6 rmse=1.55311
+isrc=7 rmse=1.60289
+isrc=8 rmse=1.66222
+isrc=9 rmse=1.73579
+isrc=10 rmse=1.58647
+isrc=11 rmse=1.60163
+isrc=12 rmse=1.67453
+isrc=13 rmse=1.65193
+isrc=14 rmse=1.481
+isrc=15 rmse=1.63274
+isrc=16 rmse=1.50585
+-----------stage 3: adjoint modelling ----------
+it-----0
+0 corners of the cube converged!
+it-----50
+it-----100
+0 corners of the cube converged!
+it-----150
+it-----200
+0 corners of the cube converged!
+it-----250
+it-----300
+0 corners of the cube converged!
+it-----350
+it-----400
+0 corners of the cube converged!
+it-----450
+it-----500
+0 corners of the cube converged!
+it-----550
+it-----600
+0 corners of the cube converged!
+it-----650
+it-----700
+0 corners of the cube converged!
+it-----750
+it-----800
+0 corners of the cube converged!
+it-----850
+it-----900
+0 corners of the cube converged!
+it-----950
+it-----1000
+0 corners of the cube converged!
+it-----1050
+it-----1100
+0 corners of the cube converged!
+it-----1150
+it-----1200
+0 corners of the cube converged!
+it-----1250
+it-----1300
+0 corners of the cube converged!
+it-----1350
+it-----1400
+0 corners of the cube converged!
+it-----1450
+it-----1500
+0 corners of the cube converged!
+it-----1550
+it-----1600
+0 corners of the cube converged!
+it-----1650
+it-----1700
+0 corners of the cube converged!
+it-----1750
+it-----1800
+0 corners of the cube converged!
+it-----1850
+it-----1900
+1 corners of the cube converged!
+it-----1950
+it-----2000
+1 corners of the cube converged!
+it-----2050
+it-----2100
+1 corners of the cube converged!
+it-----2150
+it-----2200
+1 corners of the cube converged!
+it-----2250
+it-----2300
+1 corners of the cube converged!
+it-----2350
+it-----2400
+4 corners of the cube converged!
+it-----2450
+it-----2500
+4 corners of the cube converged!
+it-----2550
+it-----2600
+6 corners of the cube converged!
+it-----2650
+it-----2700
+8 corners of the cube converged!
+-------- stage 4: build the gradient ----------
+-------- stage 5: model regularization ----------
+fcost_Tikhonov=4817.04
+fcost_dat=19850.2
+fcost_mod=4817.04
+fcost=24667.3
+==========================================================
+# iter=15  fk/f0=0.162882
+cfl=0.98
+[vmin, vmax]=[3319.28, 20638.1] m/s
+[rhomin, rhomax]=[1.10176, 42.5931] Ohm-m
+freqmax=26.5543 Hz
+dt=0.000978256 s
+nt=3695
+------stage 1: forward modelling ---------
+it-----0
+0 corners of the cube converged!
+it-----50
+it-----100
+0 corners of the cube converged!
+it-----150
+it-----200
+0 corners of the cube converged!
+it-----250
+it-----300
+0 corners of the cube converged!
+it-----350
+it-----400
+0 corners of the cube converged!
+it-----450
+it-----500
+0 corners of the cube converged!
+it-----550
+it-----600
+1 corners of the cube converged!
+it-----650
+it-----700
+0 corners of the cube converged!
+it-----750
+it-----800
+0 corners of the cube converged!
+it-----850
+it-----900
+0 corners of the cube converged!
+it-----950
+it-----1000
+0 corners of the cube converged!
+it-----1050
+it-----1100
+0 corners of the cube converged!
+it-----1150
+it-----1200
+0 corners of the cube converged!
+it-----1250
+it-----1300
+0 corners of the cube converged!
+it-----1350
+it-----1400
+0 corners of the cube converged!
+it-----1450
+it-----1500
+0 corners of the cube converged!
+it-----1550
+it-----1600
+0 corners of the cube converged!
+it-----1650
+it-----1700
+0 corners of the cube converged!
+it-----1750
+it-----1800
+2 corners of the cube converged!
+it-----1850
+it-----1900
+0 corners of the cube converged!
+it-----1950
+it-----2000
+3 corners of the cube converged!
+it-----2050
+it-----2100
+3 corners of the cube converged!
+it-----2150
+it-----2200
+4 corners of the cube converged!
+it-----2250
+it-----2300
+4 corners of the cube converged!
+it-----2350
+it-----2400
+4 corners of the cube converged!
+it-----2450
+modelling for syn_0002.txt completed!
+it-----2500
+5 corners of the cube converged!
+it-----2550
+modelling for syn_0007.txt completed!
+it-----2600
+7 corners of the cube converged!
+it-----2650
+it-----2700
+7 corners of the cube converged!
+it-----2750
+modelling for syn_0003.txt completed!
+it-----2800
+7 corners of the cube converged!
+modelling for syn_0015.txt completed!
+it-----2850
+modelling for syn_0004.txt completed!
+it-----2900
+7 corners of the cube converged!
+it-----2950
+modelling for syn_0006.txt completed!
+it-----3000
+8 corners of the cube converged!
+modelling for syn_0001.txt completed!
+------stage 2: adjoint source estimation ---------
+iteration 0 res dat 1.000000e+00 res mod 0.000000e+00 grad 1.000000e+00
+iteration 1 res dat 6.393303e-01 res mod 8.493733e-11 grad 1.426475e-01
+iteration 2 res dat 4.146912e-01 res mod 4.546801e-10 grad 2.070490e-02
+iteration 3 res dat 1.454438e-01 res mod 3.879463e-09 grad 2.624919e-03
+iteration 4 res dat 1.539373e-04 res mod 1.319274e-08 grad 5.023433e-04
+iteration 5 res dat 1.039446e-08 res mod 1.320917e-08 grad 6.651923e-09
+convergence in 6 iterations
+modelling for syn_0013.txt completed!
+modelling for syn_0014.txt completed!
+modelling for syn_0016.txt completed!
+modelling for syn_0011.txt completed!
+modelling for syn_0010.txt completed!
+modelling for syn_0009.txt completed!
+modelling for syn_0008.txt completed!
+modelling for syn_0005.txt completed!
+modelling for syn_0012.txt completed!
+fcost_dat=19169.7, rmse=1.58236
+isrc=1 rmse=1.66295
+isrc=2 rmse=1.4725
+isrc=3 rmse=1.6172
+isrc=4 rmse=1.46671
+isrc=5 rmse=1.71744
+isrc=6 rmse=1.53164
+isrc=7 rmse=1.53975
+isrc=8 rmse=1.61905
+isrc=9 rmse=1.7245
+isrc=10 rmse=1.56191
+isrc=11 rmse=1.54323
+isrc=12 rmse=1.62511
+isrc=13 rmse=1.64088
+isrc=14 rmse=1.44795
+isrc=15 rmse=1.62069
+isrc=16 rmse=1.48836
+-----------stage 3: adjoint modelling ----------
+it-----0
+0 corners of the cube converged!
+it-----50
+it-----100
+0 corners of the cube converged!
+it-----150
+it-----200
+0 corners of the cube converged!
+it-----250
+it-----300
+0 corners of the cube converged!
+it-----350
+it-----400
+0 corners of the cube converged!
+it-----450
+it-----500
+0 corners of the cube converged!
+it-----550
+it-----600
+0 corners of the cube converged!
+it-----650
+it-----700
+0 corners of the cube converged!
+it-----750
+it-----800
+0 corners of the cube converged!
+it-----850
+it-----900
+0 corners of the cube converged!
+it-----950
+it-----1000
+0 corners of the cube converged!
+it-----1050
+it-----1100
+0 corners of the cube converged!
+it-----1150
+it-----1200
+0 corners of the cube converged!
+it-----1250
+it-----1300
+0 corners of the cube converged!
+it-----1350
+it-----1400
+0 corners of the cube converged!
+it-----1450
+it-----1500
+0 corners of the cube converged!
+it-----1550
+it-----1600
+0 corners of the cube converged!
+it-----1650
+it-----1700
+0 corners of the cube converged!
+it-----1750
+it-----1800
+0 corners of the cube converged!
+it-----1850
+it-----1900
+1 corners of the cube converged!
+it-----1950
+it-----2000
+1 corners of the cube converged!
+it-----2050
+it-----2100
+1 corners of the cube converged!
+it-----2150
+it-----2200
+1 corners of the cube converged!
+it-----2250
+it-----2300
+4 corners of the cube converged!
+it-----2350
+it-----2400
+6 corners of the cube converged!
+it-----2450
+it-----2500
+6 corners of the cube converged!
+it-----2550
+it-----2600
+8 corners of the cube converged!
+-------- stage 4: build the gradient ----------
+-------- stage 5: model regularization ----------
+fcost_Tikhonov=4107.71
+fcost_dat=19169.7
+fcost_mod=4107.71
+fcost=23277.4
+==========================================================
+# iter=16  fk/f0=0.153704
+cfl=0.98
+[vmin, vmax]=[3236.74, 19222.8] m/s
+[rhomin, rhomax]=[1.04765, 36.9514] Ohm-m
+freqmax=25.894 Hz
+dt=0.00105028 s
+nt=3529
+------stage 1: forward modelling ---------
+it-----0
+0 corners of the cube converged!
+it-----50
+it-----100
+0 corners of the cube converged!
+it-----150
+it-----200
+0 corners of the cube converged!
+it-----250
+it-----300
+0 corners of the cube converged!
+it-----350
+it-----400
+0 corners of the cube converged!
+it-----450
+it-----500
+0 corners of the cube converged!
+it-----550
+it-----600
+0 corners of the cube converged!
+it-----650
+it-----700
+0 corners of the cube converged!
+it-----750
+it-----800
+1 corners of the cube converged!
+it-----850
+it-----900
+0 corners of the cube converged!
+it-----950
+it-----1000
+0 corners of the cube converged!
+it-----1050
+it-----1100
+0 corners of the cube converged!
+it-----1150
+it-----1200
+0 corners of the cube converged!
+it-----1250
+it-----1300
+0 corners of the cube converged!
+it-----1350
+it-----1400
+0 corners of the cube converged!
+it-----1450
+it-----1500
+0 corners of the cube converged!
+it-----1550
+it-----1600
+1 corners of the cube converged!
+it-----1650
+it-----1700
+2 corners of the cube converged!
+it-----1750
+it-----1800
+1 corners of the cube converged!
+it-----1850
+it-----1900
+3 corners of the cube converged!
+it-----1950
+it-----2000
+4 corners of the cube converged!
+it-----2050
+it-----2100
+4 corners of the cube converged!
+it-----2150
+it-----2200
+4 corners of the cube converged!
+it-----2250
+it-----2300
+6 corners of the cube converged!
+it-----2350
+it-----2400
+5 corners of the cube converged!
+it-----2450
+modelling for syn_0015.txt completed!
+modelling for syn_0002.txt completed!
+it-----2500
+5 corners of the cube converged!
+it-----2550
+it-----2600
+8 corners of the cube converged!
+modelling for syn_0001.txt completed!
+------stage 2: adjoint source estimation ---------
+iteration 0 res dat 1.000000e+00 res mod 0.000000e+00 grad 1.000000e+00
+iteration 1 res dat 6.393287e-01 res mod 9.116437e-11 grad 1.426494e-01
+iteration 2 res dat 4.146872e-01 res mod 4.880165e-10 grad 2.070613e-02
+iteration 3 res dat 1.454434e-01 res mod 4.163635e-09 grad 2.625117e-03
+iteration 4 res dat 1.787981e-04 res mod 1.415553e-08 grad 5.833699e-04
+iteration 5 res dat 1.056249e-08 res mod 1.417648e-08 grad 6.754784e-09
+convergence in 6 iterations
+modelling for syn_0007.txt completed!
+modelling for syn_0003.txt completed!
+modelling for syn_0014.txt completed!
+modelling for syn_0004.txt completed!
+modelling for syn_0013.txt completed!
+modelling for syn_0016.txt completed!
+modelling for syn_0010.txt completed!
+modelling for syn_0008.txt completed!
+modelling for syn_0006.txt completed!
+modelling for syn_0005.txt completed!
+modelling for syn_0011.txt completed!
+modelling for syn_0009.txt completed!
+modelling for syn_0012.txt completed!
+fcost_dat=18137.3, rmse=1.53917
+isrc=1 rmse=1.62599
+isrc=2 rmse=1.41942
+isrc=3 rmse=1.58265
+isrc=4 rmse=1.46766
+isrc=5 rmse=1.66152
+isrc=6 rmse=1.48199
+isrc=7 rmse=1.46128
+isrc=8 rmse=1.58705
+isrc=9 rmse=1.66435
+isrc=10 rmse=1.51297
+isrc=11 rmse=1.4739
+isrc=12 rmse=1.56242
+isrc=13 rmse=1.60312
+isrc=14 rmse=1.3978
+isrc=15 rmse=1.59713
+isrc=16 rmse=1.48894
+-----------stage 3: adjoint modelling ----------
+it-----0
+0 corners of the cube converged!
+it-----50
+it-----100
+0 corners of the cube converged!
+it-----150
+it-----200
+0 corners of the cube converged!
+it-----250
+it-----300
+0 corners of the cube converged!
+it-----350
+it-----400
+0 corners of the cube converged!
+it-----450
+it-----500
+0 corners of the cube converged!
+it-----550
+it-----600
+0 corners of the cube converged!
+it-----650
+it-----700
+0 corners of the cube converged!
+it-----750
+it-----800
+0 corners of the cube converged!
+it-----850
+it-----900
+0 corners of the cube converged!
+it-----950
+it-----1000
+0 corners of the cube converged!
+it-----1050
+it-----1100
+0 corners of the cube converged!
+it-----1150
+it-----1200
+0 corners of the cube converged!
+it-----1250
+it-----1300
+0 corners of the cube converged!
+it-----1350
+it-----1400
+0 corners of the cube converged!
+it-----1450
+it-----1500
+0 corners of the cube converged!
+it-----1550
+it-----1600
+0 corners of the cube converged!
+it-----1650
+it-----1700
+0 corners of the cube converged!
+it-----1750
+it-----1800
+1 corners of the cube converged!
+it-----1850
+it-----1900
+1 corners of the cube converged!
+it-----1950
+it-----2000
+1 corners of the cube converged!
+it-----2050
+it-----2100
+3 corners of the cube converged!
+it-----2150
+it-----2200
+4 corners of the cube converged!
+it-----2250
+it-----2300
+6 corners of the cube converged!
+it-----2350
+it-----2400
+7 corners of the cube converged!
+it-----2450
+it-----2500
+8 corners of the cube converged!
+-------- stage 4: build the gradient ----------
+-------- stage 5: model regularization ----------
+fcost_Tikhonov=3638.7
+fcost_dat=18137.3
+fcost_mod=3638.7
+fcost=21776.1
+==========================================================
+# iter=17  fk/f0=0.143791
+cfl=0.98
+[vmin, vmax]=[3162.28, 17940.7] m/s
+[rhomin, rhomax]=[1, 32.1867] Ohm-m
+freqmax=25.2982 Hz
+dt=0.00112534 s
+nt=3372
+------stage 1: forward modelling ---------
+it-----0
+0 corners of the cube converged!
+it-----50
+it-----100
+0 corners of the cube converged!
+it-----150
+it-----200
+0 corners of the cube converged!
+it-----250
+it-----300
+0 corners of the cube converged!
+it-----350
+it-----400
+0 corners of the cube converged!
+it-----450
+it-----500
+0 corners of the cube converged!
+it-----550
+it-----600
+0 corners of the cube converged!
+it-----650
+it-----700
+0 corners of the cube converged!
+it-----750
+it-----800
+0 corners of the cube converged!
+it-----850
+it-----900
+0 corners of the cube converged!
+it-----950
+it-----1000
+0 corners of the cube converged!
+it-----1050
+it-----1100
+0 corners of the cube converged!
+it-----1150
+it-----1200
+0 corners of the cube converged!
+it-----1250
+it-----1300
+0 corners of the cube converged!
+it-----1350
+it-----1400
+0 corners of the cube converged!
+it-----1450
+it-----1500
+0 corners of the cube converged!
+it-----1550
+it-----1600
+1 corners of the cube converged!
+it-----1650
+it-----1700
+2 corners of the cube converged!
+it-----1750
+it-----1800
+3 corners of the cube converged!
+it-----1850
+it-----1900
+5 corners of the cube converged!
+it-----1950
+it-----2000
+5 corners of the cube converged!
+it-----2050
+it-----2100
+5 corners of the cube converged!
+it-----2150
+it-----2200
+6 corners of the cube converged!
+it-----2250
+it-----2300
+5 corners of the cube converged!
+it-----2350
+it-----2400
+6 corners of the cube converged!
+modelling for syn_0014.txt completed!
+it-----2450
+modelling for syn_0003.txt completed!
+modelling for syn_0002.txt completed!
+modelling for syn_0015.txt completed!
+modelling for syn_0016.txt completed!
+it-----2500
+8 corners of the cube converged!
+modelling for syn_0001.txt completed!
+------stage 2: adjoint source estimation ---------
+iteration 0 res dat 1.000000e+00 res mod 0.000000e+00 grad 1.000000e+00
+iteration 1 res dat 6.393262e-01 res mod 9.765072e-11 grad 1.426519e-01
+iteration 2 res dat 4.146811e-01 res mod 5.227365e-10 grad 2.070734e-02
+iteration 3 res dat 1.454414e-01 res mod 4.459508e-09 grad 2.625288e-03
+iteration 4 res dat 1.088311e-04 res mod 1.516990e-08 grad 3.552398e-04
+iteration 5 res dat 1.177978e-08 res mod 1.518356e-08 grad 7.540047e-09
+convergence in 6 iterations
+modelling for syn_0011.txt completed!
+modelling for syn_0007.txt completed!
+modelling for syn_0008.txt completed!
+modelling for syn_0013.txt completed!
+modelling for syn_0010.txt completed!
+modelling for syn_0009.txt completed!
+modelling for syn_0006.txt completed!
+modelling for syn_0012.txt completed!
+modelling for syn_0004.txt completed!
+modelling for syn_0005.txt completed!
+fcost_dat=17285.3, rmse=1.50258
+isrc=1 rmse=1.57576
+isrc=2 rmse=1.36861
+isrc=3 rmse=1.52782
+isrc=4 rmse=1.42634
+isrc=5 rmse=1.62036
+isrc=6 rmse=1.45016
+isrc=7 rmse=1.50874
+isrc=8 rmse=1.56284
+isrc=9 rmse=1.62019
+isrc=10 rmse=1.47169
+isrc=11 rmse=1.46415
+isrc=12 rmse=1.50471
+isrc=13 rmse=1.55315
+isrc=14 rmse=1.36198
+isrc=15 rmse=1.54256
+isrc=16 rmse=1.44935
+-----------stage 3: adjoint modelling ----------
+it-----0
+0 corners of the cube converged!
+it-----50
+it-----100
+0 corners of the cube converged!
+it-----150
+it-----200
+0 corners of the cube converged!
+it-----250
+it-----300
+0 corners of the cube converged!
+it-----350
+it-----400
+0 corners of the cube converged!
+it-----450
+it-----500
+0 corners of the cube converged!
+it-----550
+it-----600
+0 corners of the cube converged!
+it-----650
+it-----700
+0 corners of the cube converged!
+it-----750
+it-----800
+0 corners of the cube converged!
+it-----850
+it-----900
+0 corners of the cube converged!
+it-----950
+it-----1000
+0 corners of the cube converged!
+it-----1050
+it-----1100
+0 corners of the cube converged!
+it-----1150
+it-----1200
+0 corners of the cube converged!
+it-----1250
+it-----1300
+0 corners of the cube converged!
+it-----1350
+it-----1400
+0 corners of the cube converged!
+it-----1450
+it-----1500
+0 corners of the cube converged!
+it-----1550
+it-----1600
+0 corners of the cube converged!
+it-----1650
+it-----1700
+1 corners of the cube converged!
+it-----1750
+it-----1800
+1 corners of the cube converged!
+it-----1850
+it-----1900
+1 corners of the cube converged!
+it-----1950
+it-----2000
+3 corners of the cube converged!
+it-----2050
+it-----2100
+4 corners of the cube converged!
+it-----2150
+it-----2200
+8 corners of the cube converged!
+-------- stage 4: build the gradient ----------
+-------- stage 5: model regularization ----------
+fcost_Tikhonov=3513.05
+fcost_dat=17285.3
+fcost_mod=3513.05
+fcost=20798.3
+==========================================================
+# iter=18  fk/f0=0.137335
+cfl=0.98
+[vmin, vmax]=[3162.28, 17777.1] m/s
+[rhomin, rhomax]=[1, 31.6026] Ohm-m
+freqmax=25.2982 Hz
+dt=0.00113569 s
+nt=3341
+------stage 1: forward modelling ---------
+it-----0
+0 corners of the cube converged!
+it-----50
+it-----100
+0 corners of the cube converged!
+it-----150
+it-----200
+0 corners of the cube converged!
+it-----250
+it-----300
+0 corners of the cube converged!
+it-----350
+it-----400
+0 corners of the cube converged!
+it-----450
+it-----500
+0 corners of the cube converged!
+it-----550
+it-----600
+0 corners of the cube converged!
+it-----650
+it-----700
+0 corners of the cube converged!
+it-----750
+it-----800
+0 corners of the cube converged!
+it-----850
+it-----900
+0 corners of the cube converged!
+it-----950
+it-----1000
+0 corners of the cube converged!
+it-----1050
+it-----1100
+0 corners of the cube converged!
+it-----1150
+it-----1200
+0 corners of the cube converged!
+it-----1250
+it-----1300
+0 corners of the cube converged!
+it-----1350
+it-----1400
+0 corners of the cube converged!
+it-----1450
+it-----1500
+0 corners of the cube converged!
+it-----1550
+it-----1600
+1 corners of the cube converged!
+it-----1650
+it-----1700
+3 corners of the cube converged!
+it-----1750
+it-----1800
+3 corners of the cube converged!
+it-----1850
+it-----1900
+4 corners of the cube converged!
+it-----1950
+it-----2000
+5 corners of the cube converged!
+it-----2050
+it-----2100
+5 corners of the cube converged!
+it-----2150
+it-----2200
+4 corners of the cube converged!
+it-----2250
+it-----2300
+5 corners of the cube converged!
+it-----2350
+modelling for syn_0015.txt completed!
+modelling for syn_0003.txt completed!
+modelling for syn_0014.txt completed!
+modelling for syn_0002.txt completed!
+it-----2400
+6 corners of the cube converged!
+modelling for syn_0011.txt completed!
+modelling for syn_0007.txt completed!
+modelling for syn_0008.txt completed!
+it-----2450
+it-----2500
+6 corners of the cube converged!
+modelling for syn_0013.txt completed!
+modelling for syn_0016.txt completed!
+it-----2550
+modelling for syn_0004.txt completed!
+it-----2600
+6 corners of the cube converged!
+it-----2650
+modelling for syn_0012.txt completed!
+modelling for syn_0006.txt completed!
+modelling for syn_0010.txt completed!
+it-----2700
+7 corners of the cube converged!
+it-----2750
+it-----2800
+8 corners of the cube converged!
+modelling for syn_0001.txt completed!
+------stage 2: adjoint source estimation ---------
+iteration 0 res dat 1.000000e+00 res mod 0.000000e+00 grad 1.000000e+00
+iteration 1 res dat 6.393258e-01 res mod 9.854476e-11 grad 1.426520e-01
+iteration 2 res dat 4.146803e-01 res mod 5.275236e-10 grad 2.070745e-02
+iteration 3 res dat 1.454410e-01 res mod 4.500306e-09 grad 2.625321e-03
+iteration 4 res dat 2.030791e-04 res mod 1.529720e-08 grad 6.625134e-04
+iteration 5 res dat 6.153736e-09 res mod 1.532250e-08 grad 3.936132e-09
+convergence in 6 iterations
+modelling for syn_0005.txt completed!
+modelling for syn_0009.txt completed!
+fcost_dat=16761.8, rmse=1.47965
+isrc=1 rmse=1.56828
+isrc=2 rmse=1.36021
+isrc=3 rmse=1.50192
+isrc=4 rmse=1.40943
+isrc=5 rmse=1.6056
+isrc=6 rmse=1.43698
+isrc=7 rmse=1.45042
+isrc=8 rmse=1.48718
+isrc=9 rmse=1.60732
+isrc=10 rmse=1.45457
+isrc=11 rmse=1.44546
+isrc=12 rmse=1.48272
+isrc=13 rmse=1.54477
+isrc=14 rmse=1.35022
+isrc=15 rmse=1.51537
+isrc=16 rmse=1.42128
+-----------stage 3: adjoint modelling ----------
+it-----0
+0 corners of the cube converged!
+it-----50
+it-----100
+0 corners of the cube converged!
+it-----150
+it-----200
+0 corners of the cube converged!
+it-----250
+it-----300
+0 corners of the cube converged!
+it-----350
+it-----400
+0 corners of the cube converged!
+it-----450
+it-----500
+0 corners of the cube converged!
+it-----550
+it-----600
+0 corners of the cube converged!
+it-----650
+it-----700
+0 corners of the cube converged!
+it-----750
+it-----800
+0 corners of the cube converged!
+it-----850
+it-----900
+0 corners of the cube converged!
+it-----950
+it-----1000
+0 corners of the cube converged!
+it-----1050
+it-----1100
+0 corners of the cube converged!
+it-----1150
+it-----1200
+0 corners of the cube converged!
+it-----1250
+it-----1300
+0 corners of the cube converged!
+it-----1350
+it-----1400
+0 corners of the cube converged!
+it-----1450
+it-----1500
+0 corners of the cube converged!
+it-----1550
+it-----1600
+0 corners of the cube converged!
+it-----1650
+it-----1700
+1 corners of the cube converged!
+it-----1750
+it-----1800
+1 corners of the cube converged!
+it-----1850
+it-----1900
+1 corners of the cube converged!
+it-----1950
+it-----2000
+4 corners of the cube converged!
+it-----2050
+it-----2100
+6 corners of the cube converged!
+it-----2150
+it-----2200
+7 corners of the cube converged!
+it-----2250
+it-----2300
+8 corners of the cube converged!
+-------- stage 4: build the gradient ----------
+-------- stage 5: model regularization ----------
+fcost_Tikhonov=3007.53
+fcost_dat=16761.8
+fcost_mod=3007.53
+fcost=19769.3
+==========================================================
+# iter=19  fk/f0=0.13054
+cfl=0.98
+[vmin, vmax]=[3162.28, 17813.1] m/s
+[rhomin, rhomax]=[1, 31.7308] Ohm-m
+freqmax=25.2982 Hz
+dt=0.0011334 s
+nt=3348
+------stage 1: forward modelling ---------
+it-----0
+0 corners of the cube converged!
+it-----50
+it-----100
+0 corners of the cube converged!
+it-----150
+it-----200
+0 corners of the cube converged!
+it-----250
+it-----300
+0 corners of the cube converged!
+it-----350
+it-----400
+0 corners of the cube converged!
+it-----450
+it-----500
+0 corners of the cube converged!
+it-----550
+it-----600
+0 corners of the cube converged!
+it-----650
+it-----700
+0 corners of the cube converged!
+it-----750
+it-----800
+0 corners of the cube converged!
+it-----850
+it-----900
+0 corners of the cube converged!
+it-----950
+it-----1000
+0 corners of the cube converged!
+it-----1050
+it-----1100
+0 corners of the cube converged!
+it-----1150
+it-----1200
+0 corners of the cube converged!
+it-----1250
+it-----1300
+0 corners of the cube converged!
+it-----1350
+it-----1400
+0 corners of the cube converged!
+it-----1450
+it-----1500
+1 corners of the cube converged!
+it-----1550
+it-----1600
+0 corners of the cube converged!
+it-----1650
+it-----1700
+2 corners of the cube converged!
+it-----1750
+it-----1800
+4 corners of the cube converged!
+it-----1850
+it-----1900
+4 corners of the cube converged!
+it-----1950
+it-----2000
+5 corners of the cube converged!
+it-----2050
+it-----2100
+6 corners of the cube converged!
+it-----2150
+it-----2200
+5 corners of the cube converged!
+it-----2250
+it-----2300
+5 corners of the cube converged!
+it-----2350
+it-----2400
+6 corners of the cube converged!
+it-----2450
+modelling for syn_0014.txt completed!
+modelling for syn_0003.txt completed!
+it-----2500
+6 corners of the cube converged!
+modelling for syn_0016.txt completed!
+modelling for syn_0015.txt completed!
+modelling for syn_0011.txt completed!
+it-----2550
+modelling for syn_0004.txt completed!
+modelling for syn_0002.txt completed!
+it-----2600
+8 corners of the cube converged!
+modelling for syn_0001.txt completed!
+------stage 2: adjoint source estimation ---------
+iteration 0 res dat 1.000000e+00 res mod 0.000000e+00 grad 1.000000e+00
+iteration 1 res dat 6.393260e-01 res mod 9.834658e-11 grad 1.426520e-01
+iteration 2 res dat 4.146804e-01 res mod 5.264619e-10 grad 2.070750e-02
+iteration 3 res dat 1.454410e-01 res mod 4.491266e-09 grad 2.625313e-03
+iteration 4 res dat 1.717401e-04 res mod 1.527002e-08 grad 5.603918e-04
+iteration 5 res dat 6.905163e-09 res mod 1.529162e-08 grad 4.419241e-09
+convergence in 6 iterations
+modelling for syn_0010.txt completed!
+modelling for syn_0007.txt completed!
+modelling for syn_0005.txt completed!
+modelling for syn_0013.txt completed!
+modelling for syn_0006.txt completed!
+modelling for syn_0012.txt completed!
+modelling for syn_0009.txt completed!
+modelling for syn_0008.txt completed!
+fcost_dat=16478.1, rmse=1.46708
+isrc=1 rmse=1.55509
+isrc=2 rmse=1.35364
+isrc=3 rmse=1.47604
+isrc=4 rmse=1.4083
+isrc=5 rmse=1.59371
+isrc=6 rmse=1.42853
+isrc=7 rmse=1.41378
+isrc=8 rmse=1.48758
+isrc=9 rmse=1.59857
+isrc=10 rmse=1.44507
+isrc=11 rmse=1.42033
+isrc=12 rmse=1.48303
+isrc=13 rmse=1.52917
+isrc=14 rmse=1.34404
+isrc=15 rmse=1.48839
+isrc=16 rmse=1.41539
+-----------stage 3: adjoint modelling ----------
+it-----0
+0 corners of the cube converged!
+it-----50
+it-----100
+0 corners of the cube converged!
+it-----150
+it-----200
+0 corners of the cube converged!
+it-----250
+it-----300
+0 corners of the cube converged!
+it-----350
+it-----400
+0 corners of the cube converged!
+it-----450
+it-----500
+0 corners of the cube converged!
+it-----550
+it-----600
+0 corners of the cube converged!
+it-----650
+it-----700
+0 corners of the cube converged!
+it-----750
+it-----800
+0 corners of the cube converged!
+it-----850
+it-----900
+0 corners of the cube converged!
+it-----950
+it-----1000
+0 corners of the cube converged!
+it-----1050
+it-----1100
+0 corners of the cube converged!
+it-----1150
+it-----1200
+0 corners of the cube converged!
+it-----1250
+it-----1300
+0 corners of the cube converged!
+it-----1350
+it-----1400
+0 corners of the cube converged!
+it-----1450
+it-----1500
+0 corners of the cube converged!
+it-----1550
+it-----1600
+1 corners of the cube converged!
+it-----1650
+it-----1700
+1 corners of the cube converged!
+it-----1750
+it-----1800
+1 corners of the cube converged!
+it-----1850
+it-----1900
+1 corners of the cube converged!
+it-----1950
+it-----2000
+4 corners of the cube converged!
+it-----2050
+it-----2100
+5 corners of the cube converged!
+it-----2150
+it-----2200
+8 corners of the cube converged!
+-------- stage 4: build the gradient ----------
+-------- stage 5: model regularization ----------
+fcost_Tikhonov=2631.83
+fcost_dat=16478.1
+fcost_mod=2631.83
+fcost=19109.9
+==========================================================
+# iter=20  fk/f0=0.126186
+cfl=0.98
+[vmin, vmax]=[3162.28, 17409.1] m/s
+[rhomin, rhomax]=[1, 30.3078] Ohm-m
+freqmax=25.2982 Hz
+dt=0.0011597 s
+nt=3272
+------stage 1: forward modelling ---------
+it-----0
+0 corners of the cube converged!
+it-----50
+it-----100
+0 corners of the cube converged!
+it-----150
+it-----200
+0 corners of the cube converged!
+it-----250
+it-----300
+0 corners of the cube converged!
+it-----350
+it-----400
+0 corners of the cube converged!
+it-----450
+it-----500
+0 corners of the cube converged!
+it-----550
+it-----600
+0 corners of the cube converged!
+it-----650
+it-----700
+1 corners of the cube converged!
+it-----750
+it-----800
+0 corners of the cube converged!
+it-----850
+it-----900
+0 corners of the cube converged!
+it-----950
+it-----1000
+0 corners of the cube converged!
+it-----1050
+it-----1100
+0 corners of the cube converged!
+it-----1150
+it-----1200
+0 corners of the cube converged!
+it-----1250
+it-----1300
+0 corners of the cube converged!
+it-----1350
+it-----1400
+0 corners of the cube converged!
+it-----1450
+it-----1500
+1 corners of the cube converged!
+it-----1550
+it-----1600
+3 corners of the cube converged!
+it-----1650
+it-----1700
+1 corners of the cube converged!
+it-----1750
+it-----1800
+4 corners of the cube converged!
+it-----1850
+it-----1900
+5 corners of the cube converged!
+it-----1950
+it-----2000
+5 corners of the cube converged!
+it-----2050
+it-----2100
+4 corners of the cube converged!
+it-----2150
+it-----2200
+5 corners of the cube converged!
+modelling for syn_0004.txt completed!
+modelling for syn_0015.txt completed!
+it-----2250
+it-----2300
+6 corners of the cube converged!
+modelling for syn_0007.txt completed!
+modelling for syn_0003.txt completed!
+modelling for syn_0005.txt completed!
+it-----2350
+modelling for syn_0011.txt completed!
+modelling for syn_0014.txt completed!
+it-----2400
+8 corners of the cube converged!
+modelling for syn_0008.txt completed!
+modelling for syn_0001.txt completed!
+------stage 2: adjoint source estimation ---------
+iteration 0 res dat 1.000000e+00 res mod 0.000000e+00 grad 1.000000e+00
+iteration 1 res dat 6.393252e-01 res mod 1.006183e-10 grad 1.426529e-01
+iteration 2 res dat 4.146789e-01 res mod 5.386214e-10 grad 2.070789e-02
+iteration 3 res dat 1.454407e-01 res mod 4.594903e-09 grad 2.625375e-03
+iteration 4 res dat 5.559478e-05 res mod 1.563682e-08 grad 1.815066e-04
+iteration 5 res dat 1.359923e-08 res mod 1.564444e-08 grad 8.705281e-09
+convergence in 6 iterations
+modelling for syn_0006.txt completed!
+modelling for syn_0002.txt completed!
+modelling for syn_0010.txt completed!
+modelling for syn_0016.txt completed!
+modelling for syn_0012.txt completed!
+modelling for syn_0013.txt completed!
+modelling for syn_0009.txt completed!
+fcost_dat=15974.6, rmse=1.44449
+isrc=1 rmse=1.51831
+isrc=2 rmse=1.33473
+isrc=3 rmse=1.42554
+isrc=4 rmse=1.41323
+isrc=5 rmse=1.56741
+isrc=6 rmse=1.40859
+isrc=7 rmse=1.39316
+isrc=8 rmse=1.46921
+isrc=9 rmse=1.57467
+isrc=10 rmse=1.42769
+isrc=11 rmse=1.38858
+isrc=12 rmse=1.48106
+isrc=13 rmse=1.48999
+isrc=14 rmse=1.32699
+isrc=15 rmse=1.44513
+isrc=16 rmse=1.41807
+-----------stage 3: adjoint modelling ----------
+it-----0
+0 corners of the cube converged!
+it-----50
+it-----100
+0 corners of the cube converged!
+it-----150
+it-----200
+0 corners of the cube converged!
+it-----250
+it-----300
+0 corners of the cube converged!
+it-----350
+it-----400
+0 corners of the cube converged!
+it-----450
+it-----500
+0 corners of the cube converged!
+it-----550
+it-----600
+0 corners of the cube converged!
+it-----650
+it-----700
+0 corners of the cube converged!
+it-----750
+it-----800
+0 corners of the cube converged!
+it-----850
+it-----900
+0 corners of the cube converged!
+it-----950
+it-----1000
+0 corners of the cube converged!
+it-----1050
+it-----1100
+0 corners of the cube converged!
+it-----1150
+it-----1200
+0 corners of the cube converged!
+it-----1250
+it-----1300
+0 corners of the cube converged!
+it-----1350
+it-----1400
+0 corners of the cube converged!
+it-----1450
+it-----1500
+0 corners of the cube converged!
+it-----1550
+it-----1600
+1 corners of the cube converged!
+it-----1650
+it-----1700
+1 corners of the cube converged!
+it-----1750
+it-----1800
+1 corners of the cube converged!
+it-----1850
+it-----1900
+3 corners of the cube converged!
+it-----1950
+it-----2000
+4 corners of the cube converged!
+it-----2050
+it-----2100
+8 corners of the cube converged!
+-------- stage 4: build the gradient ----------
+-------- stage 5: model regularization ----------
+fcost_Tikhonov=2352.54
+fcost_dat=15974.6
+fcost_mod=2352.54
+fcost=18327.1
+==========================================================
+# iter=21  fk/f0=0.121017
+cfl=0.98
+[vmin, vmax]=[3162.28, 16002.4] m/s
+[rhomin, rhomax]=[1, 25.6075] Ohm-m
+freqmax=25.2982 Hz
+dt=0.00126165 s
+nt=3007
+------stage 1: forward modelling ---------
+it-----0
+0 corners of the cube converged!
+it-----50
+it-----100
+0 corners of the cube converged!
+it-----150
+it-----200
+0 corners of the cube converged!
+it-----250
+it-----300
+0 corners of the cube converged!
+it-----350
+it-----400
+0 corners of the cube converged!
+it-----450
+it-----500
+0 corners of the cube converged!
+it-----550
+it-----600
+0 corners of the cube converged!
+it-----650
+it-----700
+0 corners of the cube converged!
+it-----750
+it-----800
+0 corners of the cube converged!
+it-----850
+it-----900
+0 corners of the cube converged!
+it-----950
+it-----1000
+1 corners of the cube converged!
+it-----1050
+it-----1100
+0 corners of the cube converged!
+it-----1150
+it-----1200
+0 corners of the cube converged!
+it-----1250
+it-----1300
+1 corners of the cube converged!
+it-----1350
+it-----1400
+1 corners of the cube converged!
+it-----1450
+it-----1500
+0 corners of the cube converged!
+it-----1550
+it-----1600
+1 corners of the cube converged!
+it-----1650
+it-----1700
+3 corners of the cube converged!
+it-----1750
+it-----1800
+4 corners of the cube converged!
+it-----1850
+it-----1900
+5 corners of the cube converged!
+it-----1950
+it-----2000
+6 corners of the cube converged!
+it-----2050
+modelling for syn_0002.txt completed!
+it-----2100
+6 corners of the cube converged!
+modelling for syn_0011.txt completed!
+modelling for syn_0014.txt completed!
+it-----2150
+modelling for syn_0015.txt completed!
+modelling for syn_0003.txt completed!
+it-----2200
+7 corners of the cube converged!
+modelling for syn_0013.txt completed!
+modelling for syn_0010.txt completed!
+modelling for syn_0007.txt completed!
+it-----2250
+it-----2300
+8 corners of the cube converged!
+modelling for syn_0001.txt completed!
+------stage 2: adjoint source estimation ---------
+iteration 0 res dat 1.000000e+00 res mod 0.000000e+00 grad 1.000000e+00
+iteration 1 res dat 6.393220e-01 res mod 1.094188e-10 grad 1.426556e-01
+iteration 2 res dat 4.146714e-01 res mod 5.857341e-10 grad 2.070981e-02
+iteration 3 res dat 1.454385e-01 res mod 4.996327e-09 grad 2.625619e-03
+iteration 4 res dat 2.399972e-05 res mod 1.700733e-08 grad 7.832889e-05
+iteration 5 res dat 1.634592e-08 res mod 1.701080e-08 grad 1.046875e-08
+convergence in 6 iterations
+modelling for syn_0016.txt completed!
+modelling for syn_0008.txt completed!
+modelling for syn_0004.txt completed!
+modelling for syn_0006.txt completed!
+modelling for syn_0009.txt completed!
+modelling for syn_0012.txt completed!
+modelling for syn_0005.txt completed!
+fcost_dat=14964.4, rmse=1.39807
+isrc=1 rmse=1.4282
+isrc=2 rmse=1.29483
+isrc=3 rmse=1.34288
+isrc=4 rmse=1.38901
+isrc=5 rmse=1.50583
+isrc=6 rmse=1.36193
+isrc=7 rmse=1.32899
+isrc=8 rmse=1.52327
+isrc=9 rmse=1.52528
+isrc=10 rmse=1.39333
+isrc=11 rmse=1.34784
+isrc=12 rmse=1.45245
+isrc=13 rmse=1.39672
+isrc=14 rmse=1.29255
+isrc=15 rmse=1.35809
+isrc=16 rmse=1.39571
+-----------stage 3: adjoint modelling ----------
+it-----0
+0 corners of the cube converged!
+it-----50
+it-----100
+0 corners of the cube converged!
+it-----150
+it-----200
+0 corners of the cube converged!
+it-----250
+it-----300
+0 corners of the cube converged!
+it-----350
+it-----400
+0 corners of the cube converged!
+it-----450
+it-----500
+0 corners of the cube converged!
+it-----550
+it-----600
+0 corners of the cube converged!
+it-----650
+it-----700
+0 corners of the cube converged!
+it-----750
+it-----800
+0 corners of the cube converged!
+it-----850
+it-----900
+0 corners of the cube converged!
+it-----950
+it-----1000
+0 corners of the cube converged!
+it-----1050
+it-----1100
+0 corners of the cube converged!
+it-----1150
+it-----1200
+0 corners of the cube converged!
+it-----1250
+it-----1300
+0 corners of the cube converged!
+it-----1350
+it-----1400
+0 corners of the cube converged!
+it-----1450
+it-----1500
+0 corners of the cube converged!
+it-----1550
+it-----1600
+1 corners of the cube converged!
+it-----1650
+it-----1700
+1 corners of the cube converged!
+it-----1750
+it-----1800
+3 corners of the cube converged!
+it-----1850
+it-----1900
+6 corners of the cube converged!
+it-----1950
+it-----2000
+8 corners of the cube converged!
+-------- stage 4: build the gradient ----------
+-------- stage 5: model regularization ----------
+fcost_Tikhonov=2277.27
+fcost_dat=14964.4
+fcost_mod=2277.27
+fcost=17241.6
+==========================================================
+# iter=22  fk/f0=0.113849
+cfl=0.98
+[vmin, vmax]=[3162.28, 15941] m/s
+[rhomin, rhomax]=[1, 25.4117] Ohm-m
+freqmax=25.2982 Hz
+dt=0.0012665 s
+nt=2996
+------stage 1: forward modelling ---------
+it-----0
+0 corners of the cube converged!
+it-----50
+it-----100
+0 corners of the cube converged!
+it-----150
+it-----200
+0 corners of the cube converged!
+it-----250
+it-----300
+0 corners of the cube converged!
+it-----350
+it-----400
+0 corners of the cube converged!
+it-----450
+it-----500
+0 corners of the cube converged!
+it-----550
+it-----600
+0 corners of the cube converged!
+it-----650
+it-----700
+0 corners of the cube converged!
+it-----750
+it-----800
+0 corners of the cube converged!
+it-----850
+it-----900
+0 corners of the cube converged!
+it-----950
+it-----1000
+0 corners of the cube converged!
+it-----1050
+it-----1100
+0 corners of the cube converged!
+it-----1150
+it-----1200
+0 corners of the cube converged!
+it-----1250
+it-----1300
+0 corners of the cube converged!
+it-----1350
+it-----1400
+1 corners of the cube converged!
+it-----1450
+it-----1500
+2 corners of the cube converged!
+it-----1550
+it-----1600
+2 corners of the cube converged!
+it-----1650
+it-----1700
+3 corners of the cube converged!
+it-----1750
+it-----1800
+3 corners of the cube converged!
+it-----1850
+it-----1900
+5 corners of the cube converged!
+it-----1950
+it-----2000
+5 corners of the cube converged!
+it-----2050
+modelling for syn_0015.txt completed!
+modelling for syn_0003.txt completed!
+modelling for syn_0002.txt completed!
+it-----2100
+5 corners of the cube converged!
+it-----2150
+it-----2200
+6 corners of the cube converged!
+modelling for syn_0007.txt completed!
+it-----2250
+it-----2300
+7 corners of the cube converged!
+modelling for syn_0016.txt completed!
+modelling for syn_0014.txt completed!
+modelling for syn_0011.txt completed!
+it-----2350
+modelling for syn_0006.txt completed!
+modelling for syn_0004.txt completed!
+it-----2400
+8 corners of the cube converged!
+modelling for syn_0001.txt completed!
+------stage 2: adjoint source estimation ---------
+iteration 0 res dat 1.000000e+00 res mod 0.000000e+00 grad 1.000000e+00
+iteration 1 res dat 6.393221e-01 res mod 1.098377e-10 grad 1.426562e-01
+iteration 2 res dat 4.146714e-01 res mod 5.879759e-10 grad 2.070991e-02
+iteration 3 res dat 1.454386e-01 res mod 5.015431e-09 grad 2.625639e-03
+iteration 4 res dat 3.508811e-05 res mod 1.707055e-08 grad 1.145647e-04
+iteration 5 res dat 1.037259e-08 res mod 1.707586e-08 grad 6.640279e-09
+convergence in 6 iterations
+modelling for syn_0013.txt completed!
+modelling for syn_0009.txt completed!
+modelling for syn_0008.txt completed!
+modelling for syn_0005.txt completed!
+modelling for syn_0010.txt completed!
+modelling for syn_0012.txt completed!
+fcost_dat=14354.7, rmse=1.36929
+isrc=1 rmse=1.39681
+isrc=2 rmse=1.27789
+isrc=3 rmse=1.28185
+isrc=4 rmse=1.33223
+isrc=5 rmse=1.49279
+isrc=6 rmse=1.33095
+isrc=7 rmse=1.33785
+isrc=8 rmse=1.42741
+isrc=9 rmse=1.51059
+isrc=10 rmse=1.34905
+isrc=11 rmse=1.34907
+isrc=12 rmse=1.52095
+isrc=13 rmse=1.36649
+isrc=14 rmse=1.27987
+isrc=15 rmse=1.29499
+isrc=16 rmse=1.32226
+-----------stage 3: adjoint modelling ----------
+it-----0
+0 corners of the cube converged!
+it-----50
+it-----100
+0 corners of the cube converged!
+it-----150
+it-----200
+0 corners of the cube converged!
+it-----250
+it-----300
+0 corners of the cube converged!
+it-----350
+it-----400
+0 corners of the cube converged!
+it-----450
+it-----500
+0 corners of the cube converged!
+it-----550
+it-----600
+0 corners of the cube converged!
+it-----650
+it-----700
+0 corners of the cube converged!
+it-----750
+it-----800
+0 corners of the cube converged!
+it-----850
+it-----900
+0 corners of the cube converged!
+it-----950
+it-----1000
+0 corners of the cube converged!
+it-----1050
+it-----1100
+0 corners of the cube converged!
+it-----1150
+it-----1200
+0 corners of the cube converged!
+it-----1250
+it-----1300
+0 corners of the cube converged!
+it-----1350
+it-----1400
+0 corners of the cube converged!
+it-----1450
+it-----1500
+0 corners of the cube converged!
+it-----1550
+it-----1600
+0 corners of the cube converged!
+it-----1650
+it-----1700
+1 corners of the cube converged!
+it-----1750
+it-----1800
+4 corners of the cube converged!
+it-----1850
+it-----1900
+7 corners of the cube converged!
+it-----1950
+it-----2000
+8 corners of the cube converged!
+-------- stage 4: build the gradient ----------
+-------- stage 5: model regularization ----------
+fcost_Tikhonov=2155.03
+fcost_dat=14354.7
+fcost_mod=2155.03
+fcost=16509.7
+==========================================================
+# iter=23  fk/f0=0.109016
+cfl=0.98
+[vmin, vmax]=[3162.28, 15867.6] m/s
+[rhomin, rhomax]=[1, 25.1782] Ohm-m
+freqmax=25.2982 Hz
+dt=0.00127236 s
+nt=2982
+------stage 1: forward modelling ---------
+it-----0
+0 corners of the cube converged!
+it-----50
+it-----100
+0 corners of the cube converged!
+it-----150
+it-----200
+0 corners of the cube converged!
+it-----250
+it-----300
+0 corners of the cube converged!
+it-----350
+it-----400
+0 corners of the cube converged!
+it-----450
+it-----500
+0 corners of the cube converged!
+it-----550
+it-----600
+0 corners of the cube converged!
+it-----650
+it-----700
+0 corners of the cube converged!
+it-----750
+it-----800
+0 corners of the cube converged!
+it-----850
+it-----900
+0 corners of the cube converged!
+it-----950
+it-----1000
+0 corners of the cube converged!
+it-----1050
+it-----1100
+0 corners of the cube converged!
+it-----1150
+it-----1200
+0 corners of the cube converged!
+it-----1250
+it-----1300
+0 corners of the cube converged!
+it-----1350
+it-----1400
+0 corners of the cube converged!
+it-----1450
+it-----1500
+2 corners of the cube converged!
+it-----1550
+it-----1600
+2 corners of the cube converged!
+it-----1650
+it-----1700
+2 corners of the cube converged!
+it-----1750
+it-----1800
+5 corners of the cube converged!
+it-----1850
+it-----1900
+5 corners of the cube converged!
+it-----1950
+it-----2000
+6 corners of the cube converged!
+it-----2050
+modelling for syn_0015.txt completed!
+modelling for syn_0002.txt completed!
+it-----2100
+5 corners of the cube converged!
+it-----2150
+modelling for syn_0007.txt completed!
+modelling for syn_0003.txt completed!
+modelling for syn_0004.txt completed!
+it-----2200
+5 corners of the cube converged!
+it-----2250
+modelling for syn_0006.txt completed!
+it-----2300
+7 corners of the cube converged!
+modelling for syn_0014.txt completed!
+modelling for syn_0016.txt completed!
+it-----2350
+it-----2400
+8 corners of the cube converged!
+modelling for syn_0001.txt completed!
+------stage 2: adjoint source estimation ---------
+iteration 0 res dat 1.000000e+00 res mod 0.000000e+00 grad 1.000000e+00
+iteration 1 res dat 6.393216e-01 res mod 1.103428e-10 grad 1.426562e-01
+iteration 2 res dat 4.146702e-01 res mod 5.906824e-10 grad 2.071001e-02
+iteration 3 res dat 1.454378e-01 res mod 5.038487e-09 grad 2.625642e-03
+iteration 4 res dat 4.184791e-05 res mod 1.714884e-08 grad 1.366095e-04
+iteration 5 res dat 1.707919e-08 res mod 1.715437e-08 grad 1.093728e-08
+convergence in 6 iterations
+modelling for syn_0011.txt completed!
+modelling for syn_0008.txt completed!
+modelling for syn_0013.txt completed!
+modelling for syn_0010.txt completed!
+modelling for syn_0005.txt completed!
+modelling for syn_0012.txt completed!
+modelling for syn_0009.txt completed!
+fcost_dat=14063.7, rmse=1.35534
+isrc=1 rmse=1.3909
+isrc=2 rmse=1.27107
+isrc=3 rmse=1.27815
+isrc=4 rmse=1.32336
+isrc=5 rmse=1.48153
+isrc=6 rmse=1.32321
+isrc=7 rmse=1.33045
+isrc=8 rmse=1.41937
+isrc=9 rmse=1.50225
+isrc=10 rmse=1.33476
+isrc=11 rmse=1.3402
+isrc=12 rmse=1.42525
+isrc=13 rmse=1.35985
+isrc=14 rmse=1.27076
+isrc=15 rmse=1.289
+isrc=16 rmse=1.31538
+-----------stage 3: adjoint modelling ----------
+it-----0
+0 corners of the cube converged!
+it-----50
+it-----100
+0 corners of the cube converged!
+it-----150
+it-----200
+0 corners of the cube converged!
+it-----250
+it-----300
+0 corners of the cube converged!
+it-----350
+it-----400
+0 corners of the cube converged!
+it-----450
+it-----500
+0 corners of the cube converged!
+it-----550
+it-----600
+0 corners of the cube converged!
+it-----650
+it-----700
+0 corners of the cube converged!
+it-----750
+it-----800
+0 corners of the cube converged!
+it-----850
+it-----900
+0 corners of the cube converged!
+it-----950
+it-----1000
+0 corners of the cube converged!
+it-----1050
+it-----1100
+0 corners of the cube converged!
+it-----1150
+it-----1200
+0 corners of the cube converged!
+it-----1250
+it-----1300
+0 corners of the cube converged!
+it-----1350
+it-----1400
+0 corners of the cube converged!
+it-----1450
+it-----1500
+0 corners of the cube converged!
+it-----1550
+it-----1600
+0 corners of the cube converged!
+it-----1650
+it-----1700
+1 corners of the cube converged!
+it-----1750
+it-----1800
+4 corners of the cube converged!
+it-----1850
+it-----1900
+7 corners of the cube converged!
+it-----1950
+it-----2000
+8 corners of the cube converged!
+-------- stage 4: build the gradient ----------
+-------- stage 5: model regularization ----------
+fcost_Tikhonov=1932.97
+fcost_dat=14063.7
+fcost_mod=1932.97
+fcost=15996.6
+==========================================================
+# iter=24  fk/f0=0.105628
+cfl=0.98
+[vmin, vmax]=[3162.28, 15831.4] m/s
+[rhomin, rhomax]=[1, 25.0634] Ohm-m
+freqmax=25.2982 Hz
+dt=0.00127527 s
+nt=2975
+------stage 1: forward modelling ---------
+it-----0
+0 corners of the cube converged!
+it-----50
+it-----100
+0 corners of the cube converged!
+it-----150
+it-----200
+0 corners of the cube converged!
+it-----250
+it-----300
+0 corners of the cube converged!
+it-----350
+it-----400
+0 corners of the cube converged!
+it-----450
+it-----500
+0 corners of the cube converged!
+it-----550
+it-----600
+0 corners of the cube converged!
+it-----650
+it-----700
+0 corners of the cube converged!
+it-----750
+it-----800
+0 corners of the cube converged!
+it-----850
+it-----900
+0 corners of the cube converged!
+it-----950
+it-----1000
+0 corners of the cube converged!
+it-----1050
+it-----1100
+0 corners of the cube converged!
+it-----1150
+it-----1200
+0 corners of the cube converged!
+it-----1250
+it-----1300
+0 corners of the cube converged!
+it-----1350
+it-----1400
+1 corners of the cube converged!
+it-----1450
+it-----1500
+2 corners of the cube converged!
+it-----1550
+it-----1600
+2 corners of the cube converged!
+it-----1650
+it-----1700
+3 corners of the cube converged!
+it-----1750
+it-----1800
+5 corners of the cube converged!
+it-----1850
+it-----1900
+6 corners of the cube converged!
+it-----1950
+it-----2000
+5 corners of the cube converged!
+it-----2050
+modelling for syn_0011.txt completed!
+it-----2100
+modelling for syn_0002.txt completed!
+6 corners of the cube converged!
+it-----2150
+modelling for syn_0003.txt completed!
+modelling for syn_0014.txt completed!
+modelling for syn_0010.txt completed!
+modelling for syn_0016.txt completed!
+it-----2200
+6 corners of the cube converged!
+it-----2250
+modelling for syn_0015.txt completed!
+modelling for syn_0007.txt completed!
+modelling for syn_0004.txt completed!
+it-----2300
+8 corners of the cube converged!
+modelling for syn_0001.txt completed!
+------stage 2: adjoint source estimation ---------
+iteration 0 res dat 1.000000e+00 res mod 0.000000e+00 grad 1.000000e+00
+iteration 1 res dat 6.393213e-01 res mod 1.105939e-10 grad 1.426566e-01
+iteration 2 res dat 4.146698e-01 res mod 5.920276e-10 grad 2.071005e-02
+iteration 3 res dat 1.454381e-01 res mod 5.049944e-09 grad 2.625656e-03
+iteration 4 res dat 8.289789e-05 res mod 1.718185e-08 grad 2.706432e-04
+iteration 5 res dat 8.143929e-09 res mod 1.719327e-08 grad 5.212082e-09
+convergence in 6 iterations
+modelling for syn_0013.txt completed!
+modelling for syn_0008.txt completed!
+modelling for syn_0006.txt completed!
+modelling for syn_0005.txt completed!
+modelling for syn_0012.txt completed!
+modelling for syn_0009.txt completed!
+fcost_dat=13866.5, rmse=1.3458
+isrc=1 rmse=1.38066
+isrc=2 rmse=1.25989
+isrc=3 rmse=1.27243
+isrc=4 rmse=1.31723
+isrc=5 rmse=1.47038
+isrc=6 rmse=1.31167
+isrc=7 rmse=1.32269
+isrc=8 rmse=1.40678
+isrc=9 rmse=1.4907
+isrc=10 rmse=1.31865
+isrc=11 rmse=1.33379
+isrc=12 rmse=1.41475
+isrc=13 rmse=1.35009
+isrc=14 rmse=1.25848
+isrc=15 rmse=1.28319
+isrc=16 rmse=1.31209
+-----------stage 3: adjoint modelling ----------
+it-----0
+0 corners of the cube converged!
+it-----50
+it-----100
+0 corners of the cube converged!
+it-----150
+it-----200
+0 corners of the cube converged!
+it-----250
+it-----300
+0 corners of the cube converged!
+it-----350
+it-----400
+0 corners of the cube converged!
+it-----450
+it-----500
+0 corners of the cube converged!
+it-----550
+it-----600
+0 corners of the cube converged!
+it-----650
+it-----700
+0 corners of the cube converged!
+it-----750
+it-----800
+0 corners of the cube converged!
+it-----850
+it-----900
+0 corners of the cube converged!
+it-----950
+it-----1000
+0 corners of the cube converged!
+it-----1050
+it-----1100
+0 corners of the cube converged!
+it-----1150
+it-----1200
+0 corners of the cube converged!
+it-----1250
+it-----1300
+0 corners of the cube converged!
+it-----1350
+it-----1400
+0 corners of the cube converged!
+it-----1450
+it-----1500
+0 corners of the cube converged!
+it-----1550
+it-----1600
+0 corners of the cube converged!
+it-----1650
+it-----1700
+2 corners of the cube converged!
+it-----1750
+it-----1800
+3 corners of the cube converged!
+it-----1850
+it-----1900
+7 corners of the cube converged!
+it-----1950
+it-----2000
+8 corners of the cube converged!
+-------- stage 4: build the gradient ----------
+-------- stage 5: model regularization ----------
+fcost_Tikhonov=1752.63
+fcost_dat=13866.5
+fcost_mod=1752.63
+fcost=15619.1
+==========================================================
+# iter=25  fk/f0=0.103135
+cfl=0.98
+[vmin, vmax]=[3162.28, 15791.2] m/s
+[rhomin, rhomax]=[1, 24.9361] Ohm-m
+freqmax=25.2982 Hz
+dt=0.00127852 s
+nt=2968
+------stage 1: forward modelling ---------
+it-----0
+0 corners of the cube converged!
+it-----50
+it-----100
+0 corners of the cube converged!
+it-----150
+it-----200
+0 corners of the cube converged!
+it-----250
+it-----300
+0 corners of the cube converged!
+it-----350
+it-----400
+0 corners of the cube converged!
+it-----450
+it-----500
+0 corners of the cube converged!
+it-----550
+it-----600
+0 corners of the cube converged!
+it-----650
+it-----700
+0 corners of the cube converged!
+it-----750
+it-----800
+0 corners of the cube converged!
+it-----850
+it-----900
+0 corners of the cube converged!
+it-----950
+it-----1000
+0 corners of the cube converged!
+it-----1050
+it-----1100
+0 corners of the cube converged!
+it-----1150
+it-----1200
+0 corners of the cube converged!
+it-----1250
+it-----1300
+1 corners of the cube converged!
+it-----1350
+it-----1400
+1 corners of the cube converged!
+it-----1450
+it-----1500
+2 corners of the cube converged!
+it-----1550
+it-----1600
+4 corners of the cube converged!
+it-----1650
+it-----1700
+4 corners of the cube converged!
+it-----1750
+it-----1800
+5 corners of the cube converged!
+it-----1850
+it-----1900
+4 corners of the cube converged!
+it-----1950
+modelling for syn_0003.txt completed!
+it-----2000
+4 corners of the cube converged!
+it-----2050
+modelling for syn_0002.txt completed!
+it-----2100
+6 corners of the cube converged!
+it-----2150
+modelling for syn_0007.txt completed!
+it-----2200
+6 corners of the cube converged!
+modelling for syn_0011.txt completed!
+modelling for syn_0015.txt completed!
+modelling for syn_0014.txt completed!
+it-----2250
+modelling for syn_0004.txt completed!
+it-----2300
+7 corners of the cube converged!
+modelling for syn_0012.txt completed!
+modelling for syn_0010.txt completed!
+modelling for syn_0016.txt completed!
+it-----2350
+modelling for syn_0006.txt completed!
+it-----2400
+8 corners of the cube converged!
+modelling for syn_0001.txt completed!
+------stage 2: adjoint source estimation ---------
+iteration 0 res dat 1.000000e+00 res mod 0.000000e+00 grad 1.000000e+00
+iteration 1 res dat 6.393216e-01 res mod 1.108746e-10 grad 1.426562e-01
+iteration 2 res dat 4.146703e-01 res mod 5.935286e-10 grad 2.071005e-02
+iteration 3 res dat 1.454384e-01 res mod 5.062748e-09 grad 2.625669e-03
+iteration 4 res dat 8.036712e-05 res mod 1.722536e-08 grad 2.623651e-04
+iteration 5 res dat 1.278410e-08 res mod 1.723690e-08 grad 8.183673e-09
+convergence in 6 iterations
+modelling for syn_0013.txt completed!
+modelling for syn_0008.txt completed!
+modelling for syn_0005.txt completed!
+modelling for syn_0009.txt completed!
+fcost_dat=13486.1, rmse=1.32722
+isrc=1 rmse=1.35624
+isrc=2 rmse=1.23724
+isrc=3 rmse=1.25995
+isrc=4 rmse=1.30527
+isrc=5 rmse=1.44605
+isrc=6 rmse=1.28736
+isrc=7 rmse=1.31209
+isrc=8 rmse=1.37746
+isrc=9 rmse=1.46492
+isrc=10 rmse=1.30295
+isrc=11 rmse=1.32207
+isrc=12 rmse=1.39955
+isrc=13 rmse=1.32751
+isrc=14 rmse=1.23235
+isrc=15 rmse=1.27057
+isrc=16 rmse=1.30628
+-----------stage 3: adjoint modelling ----------
+it-----0
+0 corners of the cube converged!
+it-----50
+it-----100
+0 corners of the cube converged!
+it-----150
+it-----200
+0 corners of the cube converged!
+it-----250
+it-----300
+0 corners of the cube converged!
+it-----350
+it-----400
+0 corners of the cube converged!
+it-----450
+it-----500
+0 corners of the cube converged!
+it-----550
+it-----600
+0 corners of the cube converged!
+it-----650
+it-----700
+0 corners of the cube converged!
+it-----750
+it-----800
+0 corners of the cube converged!
+it-----850
+it-----900
+0 corners of the cube converged!
+it-----950
+it-----1000
+0 corners of the cube converged!
+it-----1050
+it-----1100
+0 corners of the cube converged!
+it-----1150
+it-----1200
+0 corners of the cube converged!
+it-----1250
+it-----1300
+0 corners of the cube converged!
+it-----1350
+it-----1400
+0 corners of the cube converged!
+it-----1450
+it-----1500
+0 corners of the cube converged!
+it-----1550
+it-----1600
+1 corners of the cube converged!
+it-----1650
+it-----1700
+1 corners of the cube converged!
+it-----1750
+it-----1800
+5 corners of the cube converged!
+it-----1850
+it-----1900
+7 corners of the cube converged!
+it-----1950
+it-----2000
+8 corners of the cube converged!
+-------- stage 4: build the gradient ----------
+-------- stage 5: model regularization ----------
+fcost_Tikhonov=1627.66
+fcost_dat=13486.1
+fcost_mod=1627.66
+fcost=15113.8
+==========================================================
+# iter=26  fk/f0=0.0997988
+cfl=0.98
+[vmin, vmax]=[3162.28, 16152.5] m/s
+[rhomin, rhomax]=[1, 26.0903] Ohm-m
+freqmax=25.2982 Hz
+dt=0.00124992 s
+nt=3035
+------stage 1: forward modelling ---------
+it-----0
+0 corners of the cube converged!
+it-----50
+it-----100
+0 corners of the cube converged!
+it-----150
+it-----200
+0 corners of the cube converged!
+it-----250
+it-----300
+0 corners of the cube converged!
+it-----350
+it-----400
+0 corners of the cube converged!
+it-----450
+it-----500
+1 corners of the cube converged!
+it-----550
+it-----600
+0 corners of the cube converged!
+it-----650
+it-----700
+0 corners of the cube converged!
+it-----750
+it-----800
+0 corners of the cube converged!
+it-----850
+it-----900
+0 corners of the cube converged!
+it-----950
+it-----1000
+0 corners of the cube converged!
+it-----1050
+it-----1100
+0 corners of the cube converged!
+it-----1150
+it-----1200
+0 corners of the cube converged!
+it-----1250
+it-----1300
+0 corners of the cube converged!
+it-----1350
+it-----1400
+1 corners of the cube converged!
+it-----1450
+it-----1500
+4 corners of the cube converged!
+it-----1550
+it-----1600
+3 corners of the cube converged!
+it-----1650
+it-----1700
+3 corners of the cube converged!
+it-----1750
+it-----1800
+3 corners of the cube converged!
+it-----1850
+it-----1900
+5 corners of the cube converged!
+it-----1950
+it-----2000
+4 corners of the cube converged!
+it-----2050
+modelling for syn_0002.txt completed!
+it-----2100
+4 corners of the cube converged!
+it-----2150
+modelling for syn_0007.txt completed!
+it-----2200
+7 corners of the cube converged!
+modelling for syn_0015.txt completed!
+modelling for syn_0016.txt completed!
+it-----2250
+modelling for syn_0003.txt completed!
+modelling for syn_0004.txt completed!
+it-----2300
+7 corners of the cube converged!
+modelling for syn_0014.txt completed!
+modelling for syn_0011.txt completed!
+it-----2350
+it-----2400
+7 corners of the cube converged!
+modelling for syn_0013.txt completed!
+modelling for syn_0010.txt completed!
+it-----2450
+modelling for syn_0008.txt completed!
+modelling for syn_0006.txt completed!
+it-----2500
+8 corners of the cube converged!
+modelling for syn_0001.txt completed!
+------stage 2: adjoint source estimation ---------
+iteration 0 res dat 1.000000e+00 res mod 0.000000e+00 grad 1.000000e+00
+iteration 1 res dat 6.393222e-01 res mod 1.084072e-10 grad 1.426555e-01
+iteration 2 res dat 4.146717e-01 res mod 5.803178e-10 grad 2.070963e-02
+iteration 3 res dat 1.454382e-01 res mod 4.950166e-09 grad 2.625574e-03
+iteration 4 res dat 2.028510e-05 res mod 1.685097e-08 grad 6.620423e-05
+iteration 5 res dat 1.447447e-08 res mod 1.685370e-08 grad 9.271536e-09
+convergence in 6 iterations
+modelling for syn_0005.txt completed!
+modelling for syn_0009.txt completed!
+modelling for syn_0012.txt completed!
+fcost_dat=12966.8, rmse=1.30141
+isrc=1 rmse=1.31882
+isrc=2 rmse=1.20252
+isrc=3 rmse=1.24516
+isrc=4 rmse=1.26178
+isrc=5 rmse=1.40647
+isrc=6 rmse=1.24726
+isrc=7 rmse=1.33291
+isrc=8 rmse=1.34732
+isrc=9 rmse=1.42052
+isrc=10 rmse=1.27444
+isrc=11 rmse=1.34287
+isrc=12 rmse=1.38157
+isrc=13 rmse=1.2952
+isrc=14 rmse=1.19723
+isrc=15 rmse=1.25691
+isrc=16 rmse=1.26524
+-----------stage 3: adjoint modelling ----------
+it-----0
+0 corners of the cube converged!
+it-----50
+it-----100
+0 corners of the cube converged!
+it-----150
+it-----200
+0 corners of the cube converged!
+it-----250
+it-----300
+0 corners of the cube converged!
+it-----350
+it-----400
+0 corners of the cube converged!
+it-----450
+it-----500
+0 corners of the cube converged!
+it-----550
+it-----600
+0 corners of the cube converged!
+it-----650
+it-----700
+0 corners of the cube converged!
+it-----750
+it-----800
+0 corners of the cube converged!
+it-----850
+it-----900
+0 corners of the cube converged!
+it-----950
+it-----1000
+0 corners of the cube converged!
+it-----1050
+it-----1100
+0 corners of the cube converged!
+it-----1150
+it-----1200
+0 corners of the cube converged!
+it-----1250
+it-----1300
+0 corners of the cube converged!
+it-----1350
+it-----1400
+0 corners of the cube converged!
+it-----1450
+it-----1500
+0 corners of the cube converged!
+it-----1550
+it-----1600
+1 corners of the cube converged!
+it-----1650
+it-----1700
+1 corners of the cube converged!
+it-----1750
+it-----1800
+3 corners of the cube converged!
+it-----1850
+it-----1900
+7 corners of the cube converged!
+it-----1950
+it-----2000
+8 corners of the cube converged!
+-------- stage 4: build the gradient ----------
+-------- stage 5: model regularization ----------
+fcost_Tikhonov=1613.35
+fcost_dat=12966.8
+fcost_mod=1613.35
+fcost=14580.1
+==========================================================
+# iter=27  fk/f0=0.0962747
+cfl=0.98
+[vmin, vmax]=[3162.28, 17231.9] m/s
+[rhomin, rhomax]=[1, 29.6938] Ohm-m
+freqmax=25.2982 Hz
+dt=0.00117163 s
+nt=3238
+------stage 1: forward modelling ---------
+it-----0
+0 corners of the cube converged!
+it-----50
+it-----100
+0 corners of the cube converged!
+it-----150
+it-----200
+0 corners of the cube converged!
+it-----250
+it-----300
+0 corners of the cube converged!
+it-----350
+it-----400
+0 corners of the cube converged!
+it-----450
+it-----500
+0 corners of the cube converged!
+it-----550
+it-----600
+1 corners of the cube converged!
+it-----650
+it-----700
+1 corners of the cube converged!
+it-----750
+it-----800
+0 corners of the cube converged!
+it-----850
+it-----900
+0 corners of the cube converged!
+it-----950
+it-----1000
+0 corners of the cube converged!
+it-----1050
+it-----1100
+0 corners of the cube converged!
+it-----1150
+it-----1200
+0 corners of the cube converged!
+it-----1250
+it-----1300
+0 corners of the cube converged!
+it-----1350
+it-----1400
+0 corners of the cube converged!
+it-----1450
+it-----1500
+0 corners of the cube converged!
+it-----1550
+it-----1600
+1 corners of the cube converged!
+it-----1650
+it-----1700
+4 corners of the cube converged!
+it-----1750
+it-----1800
+4 corners of the cube converged!
+it-----1850
+it-----1900
+4 corners of the cube converged!
+it-----1950
+it-----2000
+5 corners of the cube converged!
+it-----2050
+it-----2100
+5 corners of the cube converged!
+it-----2150
+it-----2200
+6 corners of the cube converged!
+it-----2250
+modelling for syn_0014.txt completed!
+modelling for syn_0002.txt completed!
+it-----2300
+7 corners of the cube converged!
+it-----2350
+modelling for syn_0004.txt completed!
+modelling for syn_0015.txt completed!
+modelling for syn_0003.txt completed!
+modelling for syn_0008.txt completed!
+it-----2400
+7 corners of the cube converged!
+it-----2450
+modelling for syn_0007.txt completed!
+modelling for syn_0006.txt completed!
+modelling for syn_0016.txt completed!
+modelling for syn_0010.txt completed!
+modelling for syn_0013.txt completed!
+modelling for syn_0011.txt completed!
+it-----2500
+7 corners of the cube converged!
+it-----2550
+modelling for syn_0009.txt completed!
+it-----2600
+8 corners of the cube converged!
+modelling for syn_0012.txt completed!
+modelling for syn_0001.txt completed!
+------stage 2: adjoint source estimation ---------
+iteration 0 res dat 1.000000e+00 res mod 0.000000e+00 grad 1.000000e+00
+iteration 1 res dat 6.393245e-01 res mod 1.016485e-10 grad 1.426528e-01
+iteration 2 res dat 4.146774e-01 res mod 5.441371e-10 grad 2.070802e-02
+iteration 3 res dat 1.454400e-01 res mod 4.641869e-09 grad 2.625394e-03
+iteration 4 res dat 1.277512e-04 res mod 1.578806e-08 grad 4.169787e-04
+iteration 5 res dat 5.436511e-09 res mod 1.580436e-08 grad 3.478648e-09
+convergence in 6 iterations
+modelling for syn_0005.txt completed!
+fcost_dat=12520.1, rmse=1.2788
+isrc=1 rmse=1.30202
+isrc=2 rmse=1.19373
+isrc=3 rmse=1.23339
+isrc=4 rmse=1.2457
+isrc=5 rmse=1.38597
+isrc=6 rmse=1.23335
+isrc=7 rmse=1.31277
+isrc=8 rmse=1.31751
+isrc=9 rmse=1.39867
+isrc=10 rmse=1.24672
+isrc=11 rmse=1.31687
+isrc=12 rmse=1.31371
+isrc=13 rmse=1.28092
+isrc=14 rmse=1.18277
+isrc=15 rmse=1.22584
+isrc=16 rmse=1.24828
+-----------stage 3: adjoint modelling ----------
+it-----0
+0 corners of the cube converged!
+it-----50
+it-----100
+0 corners of the cube converged!
+it-----150
+it-----200
+0 corners of the cube converged!
+it-----250
+it-----300
+0 corners of the cube converged!
+it-----350
+it-----400
+0 corners of the cube converged!
+it-----450
+it-----500
+0 corners of the cube converged!
+it-----550
+it-----600
+0 corners of the cube converged!
+it-----650
+it-----700
+0 corners of the cube converged!
+it-----750
+it-----800
+0 corners of the cube converged!
+it-----850
+it-----900
+0 corners of the cube converged!
+it-----950
+it-----1000
+0 corners of the cube converged!
+it-----1050
+it-----1100
+0 corners of the cube converged!
+it-----1150
+it-----1200
+0 corners of the cube converged!
+it-----1250
+it-----1300
+0 corners of the cube converged!
+it-----1350
+it-----1400
+0 corners of the cube converged!
+it-----1450
+it-----1500
+0 corners of the cube converged!
+it-----1550
+it-----1600
+0 corners of the cube converged!
+it-----1650
+it-----1700
+0 corners of the cube converged!
+it-----1750
+it-----1800
+1 corners of the cube converged!
+it-----1850
+it-----1900
+4 corners of the cube converged!
+it-----1950
+it-----2000
+7 corners of the cube converged!
+it-----2050
+it-----2100
+8 corners of the cube converged!
+-------- stage 4: build the gradient ----------
+-------- stage 5: model regularization ----------
+fcost_Tikhonov=1589.91
+fcost_dat=12520.1
+fcost_mod=1589.91
+fcost=14110
+==========================================================
+# iter=28  fk/f0=0.0931707
+cfl=0.98
+[vmin, vmax]=[3162.28, 17281.5] m/s
+[rhomin, rhomax]=[1, 29.8652] Ohm-m
+freqmax=25.2982 Hz
+dt=0.00116826 s
+nt=3248
+------stage 1: forward modelling ---------
+it-----0
+0 corners of the cube converged!
+it-----50
+it-----100
+0 corners of the cube converged!
+it-----150
+it-----200
+0 corners of the cube converged!
+it-----250
+it-----300
+0 corners of the cube converged!
+it-----350
+it-----400
+0 corners of the cube converged!
+it-----450
+it-----500
+0 corners of the cube converged!
+it-----550
+it-----600
+0 corners of the cube converged!
+it-----650
+it-----700
+1 corners of the cube converged!
+it-----750
+it-----800
+0 corners of the cube converged!
+it-----850
+it-----900
+0 corners of the cube converged!
+it-----950
+it-----1000
+0 corners of the cube converged!
+it-----1050
+it-----1100
+0 corners of the cube converged!
+it-----1150
+it-----1200
+0 corners of the cube converged!
+it-----1250
+it-----1300
+0 corners of the cube converged!
+it-----1350
+it-----1400
+0 corners of the cube converged!
+it-----1450
+it-----1500
+1 corners of the cube converged!
+it-----1550
+it-----1600
+2 corners of the cube converged!
+it-----1650
+it-----1700
+2 corners of the cube converged!
+it-----1750
+it-----1800
+4 corners of the cube converged!
+it-----1850
+it-----1900
+4 corners of the cube converged!
+it-----1950
+it-----2000
+5 corners of the cube converged!
+it-----2050
+it-----2100
+6 corners of the cube converged!
+it-----2150
+modelling for syn_0015.txt completed!
+it-----2200
+6 corners of the cube converged!
+it-----2250
+modelling for syn_0014.txt completed!
+it-----2300
+5 corners of the cube converged!
+it-----2350
+modelling for syn_0004.txt completed!
+modelling for syn_0002.txt completed!
+modelling for syn_0003.txt completed!
+modelling for syn_0007.txt completed!
+it-----2400
+7 corners of the cube converged!
+modelling for syn_0010.txt completed!
+modelling for syn_0016.txt completed!
+modelling for syn_0011.txt completed!
+modelling for syn_0013.txt completed!
+it-----2450
+it-----2500
+7 corners of the cube converged!
+it-----2550
+modelling for syn_0006.txt completed!
+modelling for syn_0008.txt completed!
+it-----2600
+8 corners of the cube converged!
+modelling for syn_0001.txt completed!
+------stage 2: adjoint source estimation ---------
+iteration 0 res dat 1.000000e+00 res mod 0.000000e+00 grad 1.000000e+00
+iteration 1 res dat 6.393253e-01 res mod 1.013578e-10 grad 1.426533e-01
+iteration 2 res dat 4.146783e-01 res mod 5.425803e-10 grad 2.070807e-02
+iteration 3 res dat 1.454406e-01 res mod 4.628635e-09 grad 2.625413e-03
+iteration 4 res dat 2.190683e-04 res mod 1.573039e-08 grad 7.145513e-04
+iteration 5 res dat 1.702297e-08 res mod 1.575913e-08 grad 1.090138e-08
+convergence in 6 iterations
+modelling for syn_0012.txt completed!
+modelling for syn_0005.txt completed!
+modelling for syn_0009.txt completed!
+fcost_dat=12356.5, rmse=1.27042
+isrc=1 rmse=1.2983
+isrc=2 rmse=1.18845
+isrc=3 rmse=1.22138
+isrc=4 rmse=1.24384
+isrc=5 rmse=1.37825
+isrc=6 rmse=1.2296
+isrc=7 rmse=1.29716
+isrc=8 rmse=1.30938
+isrc=9 rmse=1.39289
+isrc=10 rmse=1.23398
+isrc=11 rmse=1.30079
+isrc=12 rmse=1.29366
+isrc=13 rmse=1.27787
+isrc=14 rmse=1.17906
+isrc=15 rmse=1.21507
+isrc=16 rmse=1.24473
+-----------stage 3: adjoint modelling ----------
+it-----0
+0 corners of the cube converged!
+it-----50
+it-----100
+0 corners of the cube converged!
+it-----150
+it-----200
+0 corners of the cube converged!
+it-----250
+it-----300
+0 corners of the cube converged!
+it-----350
+it-----400
+0 corners of the cube converged!
+it-----450
+it-----500
+0 corners of the cube converged!
+it-----550
+it-----600
+0 corners of the cube converged!
+it-----650
+it-----700
+0 corners of the cube converged!
+it-----750
+it-----800
+0 corners of the cube converged!
+it-----850
+it-----900
+0 corners of the cube converged!
+it-----950
+it-----1000
+0 corners of the cube converged!
+it-----1050
+it-----1100
+0 corners of the cube converged!
+it-----1150
+it-----1200
+0 corners of the cube converged!
+it-----1250
+it-----1300
+0 corners of the cube converged!
+it-----1350
+it-----1400
+0 corners of the cube converged!
+it-----1450
+it-----1500
+0 corners of the cube converged!
+it-----1550
+it-----1600
+1 corners of the cube converged!
+it-----1650
+it-----1700
+1 corners of the cube converged!
+it-----1750
+it-----1800
+4 corners of the cube converged!
+it-----1850
+it-----1900
+5 corners of the cube converged!
+it-----1950
+it-----2000
+6 corners of the cube converged!
+it-----2050
+it-----2100
+8 corners of the cube converged!
+-------- stage 4: build the gradient ----------
+-------- stage 5: model regularization ----------
+fcost_Tikhonov=1423.42
+fcost_dat=12356.5
+fcost_mod=1423.42
+fcost=13780
+==========================================================
+# iter=29  fk/f0=0.0909912
+cfl=0.98
+[vmin, vmax]=[3162.28, 17618.7] m/s
+[rhomin, rhomax]=[1, 31.0418] Ohm-m
+freqmax=25.2982 Hz
+dt=0.0011459 s
+nt=3311
+------stage 1: forward modelling ---------
+it-----0
+0 corners of the cube converged!
+it-----50
+it-----100
+0 corners of the cube converged!
+it-----150
+it-----200
+0 corners of the cube converged!
+it-----250
+it-----300
+0 corners of the cube converged!
+it-----350
+it-----400
+0 corners of the cube converged!
+it-----450
+it-----500
+0 corners of the cube converged!
+it-----550
+it-----600
+0 corners of the cube converged!
+it-----650
+it-----700
+0 corners of the cube converged!
+it-----750
+it-----800
+0 corners of the cube converged!
+it-----850
+it-----900
+0 corners of the cube converged!
+it-----950
+it-----1000
+0 corners of the cube converged!
+it-----1050
+it-----1100
+0 corners of the cube converged!
+it-----1150
+it-----1200
+0 corners of the cube converged!
+it-----1250
+it-----1300
+0 corners of the cube converged!
+it-----1350
+it-----1400
+0 corners of the cube converged!
+it-----1450
+it-----1500
+1 corners of the cube converged!
+it-----1550
+it-----1600
+0 corners of the cube converged!
+it-----1650
+it-----1700
+2 corners of the cube converged!
+it-----1750
+it-----1800
+4 corners of the cube converged!
+it-----1850
+it-----1900
+5 corners of the cube converged!
+it-----1950
+it-----2000
+5 corners of the cube converged!
+it-----2050
+it-----2100
+5 corners of the cube converged!
+it-----2150
+it-----2200
+5 corners of the cube converged!
+it-----2250
+modelling for syn_0002.txt completed!
+it-----2300
+6 corners of the cube converged!
+it-----2350
+modelling for syn_0015.txt completed!
+modelling for syn_0016.txt completed!
+it-----2400
+8 corners of the cube converged!
+modelling for syn_0001.txt completed!
+------stage 2: adjoint source estimation ---------
+iteration 0 res dat 1.000000e+00 res mod 0.000000e+00 grad 1.000000e+00
+iteration 1 res dat 6.393257e-01 res mod 9.942699e-11 grad 1.426523e-01
+iteration 2 res dat 4.146801e-01 res mod 5.322452e-10 grad 2.070766e-02
+iteration 3 res dat 1.454415e-01 res mod 4.540551e-09 grad 2.625362e-03
+iteration 4 res dat 2.022789e-04 res mod 1.543393e-08 grad 6.599171e-04
+iteration 5 res dat 3.623444e-09 res mod 1.545951e-08 grad 2.314290e-09
+convergence in 6 iterations
+modelling for syn_0008.txt completed!
+modelling for syn_0003.txt completed!
+modelling for syn_0011.txt completed!
+modelling for syn_0014.txt completed!
+modelling for syn_0004.txt completed!
+modelling for syn_0007.txt completed!
+modelling for syn_0006.txt completed!
+modelling for syn_0010.txt completed!
+modelling for syn_0009.txt completed!
+modelling for syn_0012.txt completed!
+modelling for syn_0013.txt completed!
+modelling for syn_0005.txt completed!
+fcost_dat=12205.7, rmse=1.26264
+isrc=1 rmse=1.2908
+isrc=2 rmse=1.18033
+isrc=3 rmse=1.21451
+isrc=4 rmse=1.24081
+isrc=5 rmse=1.36644
+isrc=6 rmse=1.22184
+isrc=7 rmse=1.28968
+isrc=8 rmse=1.29549
+isrc=9 rmse=1.38033
+isrc=10 rmse=1.23102
+isrc=11 rmse=1.29295
+isrc=12 rmse=1.28627
+isrc=13 rmse=1.27089
+isrc=14 rmse=1.1717
+isrc=15 rmse=1.20757
+isrc=16 rmse=1.24057
+-----------stage 3: adjoint modelling ----------
+it-----0
+0 corners of the cube converged!
+it-----50
+it-----100
+0 corners of the cube converged!
+it-----150
+it-----200
+0 corners of the cube converged!
+it-----250
+it-----300
+0 corners of the cube converged!
+it-----350
+it-----400
+0 corners of the cube converged!
+it-----450
+it-----500
+0 corners of the cube converged!
+it-----550
+it-----600
+0 corners of the cube converged!
+it-----650
+it-----700
+0 corners of the cube converged!
+it-----750
+it-----800
+0 corners of the cube converged!
+it-----850
+it-----900
+0 corners of the cube converged!
+it-----950
+it-----1000
+0 corners of the cube converged!
+it-----1050
+it-----1100
+0 corners of the cube converged!
+it-----1150
+it-----1200
+0 corners of the cube converged!
+it-----1250
+it-----1300
+0 corners of the cube converged!
+it-----1350
+it-----1400
+0 corners of the cube converged!
+it-----1450
+it-----1500
+0 corners of the cube converged!
+it-----1550
+it-----1600
+0 corners of the cube converged!
+it-----1650
+it-----1700
+1 corners of the cube converged!
+it-----1750
+it-----1800
+1 corners of the cube converged!
+it-----1850
+it-----1900
+4 corners of the cube converged!
+it-----1950
+it-----2000
+6 corners of the cube converged!
+it-----2050
+it-----2100
+8 corners of the cube converged!
+-------- stage 4: build the gradient ----------
+-------- stage 5: model regularization ----------
+fcost_Tikhonov=1311.09
+fcost_dat=12205.7
+fcost_mod=1311.09
+fcost=13516.8
+  Current date and time: 26-Apr-2023 09:56:12

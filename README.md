@@ -125,7 +125,7 @@ The output after inversion:
 
   ...
 
-
+I output all relevant information during nonlinear CSEM inversion into ASCII file out.txt by 'mpirun -n 16 ../bin/fdtd $(cat inputpar.txt) >&out.txt' in run.sh. You can check out all these details.
 
 -------------------------------------
 Visualization of the numerical result
