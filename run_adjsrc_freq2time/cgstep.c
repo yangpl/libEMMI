@@ -1,4 +1,4 @@
-/* Claerbout's conjugate-gradient iteration for complex numbers. */
+/* Claerbout's conjugate-gradient iteration */
 /*
   Copyright (C) 2004 University of Texas at Austin
   
@@ -24,9 +24,16 @@ static float * S;  /* model step */
 static float * Ss; /* residual step */
 static bool Allocated = false; /* if S and Ss are allocated */
 
-static float  dotprod (int n, const float * x, const float * y);
+static float  dotprod (int n, const float * x, const float * y)
 /* float  dot product */
-float blas_scnrm2 (int n, const void* x, int sx) ;
+{
+  float  prod;
+  int i;
+
+  prod = 0.0;
+  for (i = 0; i < n; i++) prod += x[i]*y[i];
+  return prod;
+}
 
 void sf_cgstep( bool forget             /* restart flag */, 
 		 int nx                  /* model size */, 
@@ -36,8 +43,7 @@ void sf_cgstep( bool forget             /* restart flag */,
 		 float * rr       /* data residual [ny] */,
 		 const float * gg /* conjugate gradient [ny] */) 
 /*< Step of Claerbout's conjugate-gradient iteration for float  operators. 
-  The data residual is rr = A x - dat
-  >*/
+  The data residual is rr = A x - dat  >*/
 {
   float  sds, gdg, gds, sdg, determ, gdr, sdr, alfa, beta;
   int i;
@@ -54,8 +60,8 @@ void sf_cgstep( bool forget             /* restart flag */,
       Ss[i] = 0.0;
     }    
 
-    beta = 0.0+I*0.0;
-    if (blas_scnrm2(ny,gg,1) <= 0.) return;
+    beta = 0.0;
+    if (dotprod(ny, gg, gg) <= 0.) return;
     alfa = - dotprod( ny, gg, rr) / dotprod(ny, gg, gg);
   } else {
     /* search plane by solving 2-by-2
@@ -98,32 +104,4 @@ void sf_cgstep_close (void)
     free (Ss);
     Allocated = false;
   }
-}
-
-static float  dotprod (int n, const float * x, const float * y)
-/* float  dot product */
-{
-  float  prod;
-  int i;
-
-  prod = 0.0;
-  for (i = 0; i < n; i++) prod += x[i]*y[i];
-  return prod;
-}
-
-float blas_scnrm2 (int n, const void* x, int sx) 
-/*< sum |x_i|^2 >*/
-{
-  int i, ix;
-  float xn;
-  const float * c;
-
-  c = (const float *) x;
-
-  xn = 0.0;
-  for (i=0; i < n; i++) {
-    ix = i*sx;
-    xn += c[ix]*c[ix];
-  }
-  return xn;
 }
