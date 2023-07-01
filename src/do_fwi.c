@@ -48,14 +48,14 @@ void do_fwi(acqui_t *acqui, emf_t *emf)
   
   /*-------------------------------------------------------------------------*/
   if(!getparint("npar", &fwi->npar)) fwi->npar = 1;/* number of inversion parameters */
+  if(!(j=countparval("idxpar"))) err("Need lower bound of parameters idxpar= vector");
+  if(j!=fwi->npar) err("must have length[idxpar]=%d", fwi->npar);
   fwi->idxpar = alloc1int(fwi->npar);
   getparint("idxpar", fwi->idxpar);/* indices of the inversion parameters */
   if(opt->bound) {
-    if(!(j=countparval("minpar"))) 
-      err("Need lower bound of parameters minpar= vector");
+    if(!(j=countparval("minpar"))) err("Need lower bound of parameters minpar= vector");
     if(j!=fwi->npar) err("must have length[idxpar]=length[minpar]");
-    if(!(j=countparval("maxpar"))) 
-      err("Need upper bound of parameters maxpar= vector");
+    if(!(j=countparval("maxpar"))) err("Need upper bound of parameters maxpar= vector");
     if(j!=fwi->npar) err("must have length[idxpar]=length[maxpar]");
 
     fwi->minpar=alloc1float(fwi->npar);
@@ -233,10 +233,10 @@ void do_fwi(acqui_t *acqui, emf_t *emf)
 	fwrite(&emf->rho[0][0][0], emf->n123*sizeof(float), 1, fp);
 	fclose(fp);
 
-	if(fwi->iter==0) fp=fopen("param_iter", "wb");
-	else             fp=fopen("param_iter", "ab");
-	fwrite(&emf->rho[0][0][0], emf->n123*sizeof(float), 1, fp);
-	fclose(fp);
+	/* if(fwi->iter==0) fp=fopen("param_iter", "wb"); */
+	/* else             fp=fopen("param_iter", "ab"); */
+	/* fwrite(&emf->rho[0][0][0], emf->n123*sizeof(float), 1, fp); */
+	/* fclose(fp); */
       }
       if(emf->addnoise && 2.*fwi->fcost_dat <= fwi->mse){//reach target MSE misfit 
 	if(opt->verb){
