@@ -1,0 +1,40 @@
+[len1,len2,len3]=[18000, 18000, 3500]
+[n1,n2,n3]=[101, 101, 101]
+[d1,d2,d3]=[180, 180, 35]
+3.2-git	sfgrid3d	run_mcsem_test2/run_fwi_nugrid2/create_3d_seafloor:	hit1006@hit1006-Precision-7920-Tower	Mon Jul  3 21:22:51 2023
+
+	o1=-9000
+	d2=180
+	n2=101
+	o2=-9000
+	d3=35
+	n3=101
+	data_format="native_float"
+	o3=0
+	esize=4
+	in="stdout"
+	d1=180
+	n1=101
+	in="stdin"
+
+3.2-git	sfmath	run_mcsem_test2/run_fwi_nugrid2/create_3d_seafloor:	hit1006@hit1006-Precision-7920-Tower	Mon Jul  3 21:22:51 2023
+
+	x2=2
+	input=0
+	x3=3
+	data_format="native_float"
+	esize=4
+	in="stdout"
+	x1=1
+	in="stdin"
+
+3.2-git	sfput	run_mcsem_test2/run_fwi_nugrid2/create_3d_seafloor:	hit1006@hit1006-Precision-7920-Tower	Mon Jul  3 21:22:51 2023
+
+	unit2=m
+	label3=Z
+	unit3=m
+	data_format="native_float"
+	in="/var/tmp/run_mcsem_test2/run_fwi_nugrid2/create_3d_seafloor/rhoinit.rsf@"
+	label1=X
+	unit1=m
+	label2=Y

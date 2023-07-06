@@ -1,0 +1,131 @@
+from rsf.proj import *
+
+####################################################################
+nx=91
+ny=91
+nz=91
+n1=101
+n2=101
+n3=101
+o1=-9
+o2=-9
+o3=-9
+
+Flow('rhotrue',None,
+	'''
+	sfgrid3d fmodin=rho fx1nu=x1nu fx2nu=x2nu fx3nu=x3nu
+	nx=%d ny=%d nz=%d n1=%d n2=%d n3=%d o1=%g o2=%g o3=%g |
+	sfput label1=X label2=Y label3=Z unit1=m unit2=m unit3=m
+	'''%(nx,ny,nz,n1,n2,n3,o1,o2,o3))
+
+Flow('rhoinit',None,
+	'''
+	sfgrid3d fmodin=rho_init fx1nu=x1nu fx2nu=x2nu fx3nu=x3nu
+	nx=%d ny=%d nz=%d n1=%d n2=%d n3=%d o1=%g o2=%g o3=%g |
+	sfput label1=X label2=Y label3=Z unit1=m unit2=m unit3=m
+	'''%(nx,ny,nz,n1,n2,n3,o1,o2,o3))
+
+iz=63
+ix=50
+iy=50
+Plot('rhotrue',
+       '''
+       byte allpos=y gainpanel=all clip=10 scalebar=y bar=bar.rsf minval=0 maxval=5 |
+       sftransp plane=13 | sftransp plane=23 |
+       grey3 flat=y frame1=%d frame2=%d frame3=%d color=j mean=y title="(a)"  scalebar=y bar=bar.rsf
+       '''%(iz,ix,iy))
+Plot('rhoinit',
+       '''
+       byte allpos=y gainpanel=all clip=10 scalebar=y bar=bar.rsf minval=0 maxval=5 |
+       sftransp plane=13 | sftransp plane=23 |
+       grey3 flat=y frame1=%d frame2=%d frame3=%d color=j mean=y title="(b)" scalebar=y bar=bar.rsf
+       '''%(iz,ix,iy))
+
+Result('rho', 'rhotrue rhoinit', 'SideBySideIso')
+
+Flow('gv',None,
+	'''
+	sfgrid3d fmodin=gradient_fwi_logRv fx1nu=x1nu fx2nu=x2nu fx3nu=x3nu
+	nx=%d ny=%d nz=%d n1=%d n2=%d n3=%d o1=%g o2=%g o3=%g |
+	sfput label1=X label2=Y label3=Z unit1=m unit2=m unit3=m
+	'''%(nx,ny,nz,n1,n2,n3,o1,o2,o3))
+Flow('gh',None,
+	'''
+	sfgrid3d fmodin=gradient_fwi_logRh fx1nu=x1nu fx2nu=x2nu fx3nu=x3nu
+	nx=%d ny=%d nz=%d n1=%d n2=%d n3=%d o1=%g o2=%g o3=%g |
+	sfput label1=X label2=Y label3=Z unit1=m unit2=m unit3=m
+	'''%(nx,ny,nz,n1,n2,n3,o1,o2,o3))
+
+Plot('gv',
+       '''
+       byte allpos=n gainpanel=all |
+       sftransp plane=13 | sftransp plane=23 |
+       grey3 flat=y frame1=%d frame2=%d frame3=%d color=j mean=y title=
+       '''%(iz,ix,iy))
+Plot('gh',
+       '''
+       byte allpos=n gainpanel=all |
+       sftransp plane=13 | sftransp plane=23 |
+       grey3 flat=y frame1=%d frame2=%d frame3=%d color=j mean=y title=
+       '''%(iz,ix,iy))
+
+Result('grad', 'gv gh', 'SideBySideIso')
+
+
+Flow('Rv',None,
+	'''
+	sfgrid3d fmodin=param_final_Rv fx1nu=x1nu fx2nu=x2nu fx3nu=x3nu
+	nx=%d ny=%d nz=%d n1=%d n2=%d n3=%d o1=%g o2=%g o3=%g |
+	sfmath output='log(input)/log(10.)' |
+	sfput label1=X label2=Y label3=Z unit1=m unit2=m unit3=m
+	'''%(nx,ny,nz,n1,n2,n3,o1,o2,o3))
+Flow('Rh',None,
+	'''
+	sfgrid3d fmodin=param_final_Rh fx1nu=x1nu fx2nu=x2nu fx3nu=x3nu
+	nx=%d ny=%d nz=%d n1=%d n2=%d n3=%d o1=%g o2=%g o3=%g |
+	sfmath output='log(input)/log(10.)' |
+	sfput label1=X label2=Y label3=Z unit1=m unit2=m unit3=m
+	'''%(nx,ny,nz,n1,n2,n3,o1,o2,o3))
+
+#Plot('Rv',
+#       '''
+#       byte allpos=y gainpanel=all clip=30 scalebar=y bar=bar.rsf  |	
+#       sftransp plane=13 | sftransp plane=23 |
+#       grey3 flat=y frame1=%d frame2=%d frame3=%d color=j mean=y title= scalebar=y bar=bar.rsf 
+#       '''%(iz,ix,iy))
+#
+#Plot('Rh',
+#       '''
+#       byte allpos=y gainpanel=all clip=30 scalebar=y bar=bar.rsf  |	
+#       sftransp plane=13 | sftransp plane=23 |
+#       grey3 flat=y frame1=%d frame2=%d frame3=%d color=j mean=y title= scalebar=y bar=bar.rsf 
+#       '''%(iz,ix,iy))
+#
+
+Plot('Rv',
+      '''
+      byte allpos=n gainpanel=all scalebar=y bar=bar.rsf minval=-1 maxval=2|
+      sftransp plane=13 | sftransp plane=23 |
+      grey3 flat=y frame1=%d frame2=%d frame3=%d color=j mean=y title='(a) Rv' scalebar=y bar=bar.rsf barlabel='log10(R)'
+      '''%(iz-3,ix,iy))
+
+Plot('Rh',
+      '''
+      byte allpos=n gainpanel=all scalebar=y bar=bar.rsf minval=-1 maxval=2|
+      sftransp plane=13 | sftransp plane=23 |
+      grey3 flat=y frame1=%d frame2=%d frame3=%d color=j mean=y title='(b) Rh' scalebar=y bar=bar.rsf barlabel='log10(R)'
+      '''%(iz-3,ix,iy))
+
+
+Plot('rhot', 'rhotrue',
+      '''
+      sfmath output='log(input)/log(10.)' |
+      byte allpos=n gainpanel=all scalebar=y bar=bar.rsf minval=-1 maxval=2|
+      sftransp plane=13 | sftransp plane=23 |
+      grey3 flat=y frame1=%d frame2=%d frame3=%d color=j mean=y title='(c) Rtrue' scalebar=y bar=bar.rsf barlabel='log10(R)'
+      '''%(iz,ix,iy))
+
+
+Result('Rinv', 'Rv Rh rhot', 'TwoRows')
+
+End()

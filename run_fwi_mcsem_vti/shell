@@ -1,0 +1,601 @@
+hit1006@hit1006-Precision-7920-Tower:~/Desktop/run_mcsem_test2/run_fwi_nugrid2$ nohup: redirecting stderr to stdout
+ls
+a.out                               gradient_fwi_logRh          SConstruct~            syn_0001.txt
+bar.rsf                             gradient_fwi_logRv          sig_misfit_0001.txt    syn_0002.txt
+create_3d_seafloor                  gradient_tikhonov           sig_misfit_0002.txt    syn_0003.txt
+create_acquisition_crosslines.f90   ibathy                      sig_misfit_0003.txt    syn_0004.txt
+create_acquisition_crosslines.f90~  inputpar.txt                sig_misfit_0004.txt    syn_0005.txt
+emf_0001.txt                        iterate.txt                 sig_misfit_0005.txt    syn_0006.txt
+emf_0002.txt                        main                        sig_misfit_0006.txt    syn_0007.txt
+emf_0003.txt                        noup.txt                    sig_misfit_0007.txt    syn_0008.txt
+emf_0004.txt                        out                         sig_misfit_0008.txt    syn_0009.txt
+emf_0005.txt                        param_final_Rh              sig_misfit_0009.txt    syn_0010.txt
+emf_0006.txt                        param_final_Rv              sig_misfit_0010.txt    syn_0011.txt
+emf_0007.txt                        plot_3d_slices.m            sig_misfit_0011.txt    syn_0012.txt
+emf_0008.txt                        plot_emdata.py              sig_misfit_0012.txt    syn_0013.txt
+emf_0009.txt                        plot_histogram.py           sig_misfit_0013.txt    syn_0014.txt
+emf_0010.txt                        plot_line_sigmisfit.py      sig_misfit_0014.txt    syn_0015.txt
+emf_0011.txt                        plot_scatter_sigmisfit.py   sig_misfit_0015.txt    syn_0016.txt
+emf_0012.txt                        plot_scatter_sigmisfit.py~  sig_misfit_0016.txt    syn_0017.txt
+emf_0013.txt                        plot_stem_sigmisfit.py      sig_misfit_0017.txt    syn_0018.txt
+emf_0014.txt                        plot_survey_layout.gnu      sig_misfit_0018.txt    syn_0019.txt
+emf_0015.txt                        receivers.txt               sig_misfit_0019.txt    syn_0020.txt
+emf_0016.txt                        rho                         sig_misfit_0020.txt    syn_0021.txt
+emf_0017.txt                        rho_init                    sig_misfit_0021.txt    syn_0022.txt
+emf_0018.txt                        Rh.rsf                      sig_misfit_0022.txt    syn_0023.txt
+emf_0019.txt                        Rh.vpl                      sig_misfit_0023.txt    syn_0024.txt
+emf_0020.txt                        rmse_misfit.txt             sig_misfit_0024.txt    syn_0025.txt
+emf_0021.txt                        run.sh                      sig_misfit_0025.txt    x1nu
+emf_0022.txt                        run.sh~                     sigmisfit_scatter.png  x2nu
+emf_0023.txt                        Rv.rsf                      sources.txt            x3nu
+emf_0024.txt                        Rv.vpl                      src_rec_table.txt
+emf_0025.txt                        SConstruct                  survey.png
+hit1006@hit1006-Precision-7920-Tower:~/Desktop/run_mcsem_test2/run_fwi_nugrid2$ rm *_00*.txt
+hit1006@hit1006-Precision-7920-Tower:~/Desktop/run_mcsem_test2/run_fwi_nugrid2$ ls
+a.out                               param_final_Rv              run.sh
+bar.rsf                             plot_3d_slices.m            run.sh~
+create_3d_seafloor                  plot_emdata.py              Rv.rsf
+create_acquisition_crosslines.f90   plot_histogram.py           Rv.vpl
+create_acquisition_crosslines.f90~  plot_line_sigmisfit.py      SConstruct
+gradient_fwi_logRh                  plot_scatter_sigmisfit.py   SConstruct~
+gradient_fwi_logRv                  plot_scatter_sigmisfit.py~  sigmisfit_scatter.png
+gradient_tikhonov                   plot_stem_sigmisfit.py      sources.txt
+ibathy                              plot_survey_layout.gnu      src_rec_table.txt
+inputpar.txt                        receivers.txt               survey.png
+iterate.txt                         rho                         x1nu
+main                                rho_init                    x2nu
+noup.txt                            Rh.rsf                      x3nu
+out                                 Rh.vpl
+param_final_Rh                      rmse_misfit.txt
+hit1006@hit1006-Precision-7920-Tower:~/Desktop/run_mcsem_test2/run_fwi_nugrid2$ rm gradient_*
+hit1006@hit1006-Precision-7920-Tower:~/Desktop/run_mcsem_test2/run_fwi_nugrid2$ ls
+a.out                               plot_emdata.py              run.sh~
+bar.rsf                             plot_histogram.py           Rv.rsf
+create_3d_seafloor                  plot_line_sigmisfit.py      Rv.vpl
+create_acquisition_crosslines.f90   plot_scatter_sigmisfit.py   SConstruct
+create_acquisition_crosslines.f90~  plot_scatter_sigmisfit.py~  SConstruct~
+ibathy                              plot_stem_sigmisfit.py      sigmisfit_scatter.png
+inputpar.txt                        plot_survey_layout.gnu      sources.txt
+iterate.txt                         receivers.txt               src_rec_table.txt
+main                                rho                         survey.png
+noup.txt                            rho_init                    x1nu
+out                                 Rh.rsf                      x2nu
+param_final_Rh                      Rh.vpl                      x3nu
+param_final_Rv                      rmse_misfit.txt
+plot_3d_slices.m                    run.sh
+hit1006@hit1006-Precision-7920-Tower:~/Desktop/run_mcsem_test2/run_fwi_nugrid2$ rm *~
+hit1006@hit1006-Precision-7920-Tower:~/Desktop/run_mcsem_test2/run_fwi_nugrid2$ ls
+a.out                              plot_3d_slices.m           rmse_misfit.txt
+bar.rsf                            plot_emdata.py             run.sh
+create_3d_seafloor                 plot_histogram.py          Rv.rsf
+create_acquisition_crosslines.f90  plot_line_sigmisfit.py     Rv.vpl
+ibathy                             plot_scatter_sigmisfit.py  SConstruct
+inputpar.txt                       plot_stem_sigmisfit.py     sigmisfit_scatter.png
+iterate.txt                        plot_survey_layout.gnu     sources.txt
+main                               receivers.txt              src_rec_table.txt
+noup.txt                           rho                        survey.png
+out                                rho_init                   x1nu
+param_final_Rh                     Rh.rsf                     x2nu
+param_final_Rv                     Rh.vpl                     x3nu
+hit1006@hit1006-Precision-7920-Tower:~/Desktop/run_mcsem_test2/run_fwi_nugrid2$ bash run.sh 
+hit1006@hit1006-Precision-7920-Tower:~/Desktop/run_mcsem_test2/run_fwi_nugrid2$ top
+top - 21:26:40 up 5 days, 20:44,  1 user,  load average: 0.40, 0.79, 5.93
+Tasks: 1344 total,   2 running, 1342 sleeping,   0 stopped,   0 zombie
+%Cpu(s):  0.3 us,  0.3 sy,  0.0 ni, 99.4 id,  0.0 wa,  0.0 hi,  0.0 si,  0.0 st
+MiB Mem : 128541.0 total, 115605.1 free,   5259.2 used,   7676.7 buff/cache
+MiB Swap:   2048.0 total,   2048.0 free,      0.0 used. 122234.1 avail Mem 
+
+    PID USER      PR  NI    VIRT    RES    SHR S  %CPU  %MEM     TIME+ COMMAND                     
+   3698 hit1006   20   0 7342136 776188 165712 S  36.8   0.6 256:59.92 gnome-shell                 
+ 526082 hit1006   20   0   13352   5204   3224 R  21.1   0.0   0:00.07 top                         
+   3474 root      20   0  377368 191276  84384 S  10.5   0.1  60:51.63 Xorg                        
+  13083 hit1006   20   0  718252  16248   8820 S   5.3   0.0  46:15.74 frpc                        
+ 291859 hit1006   20   0  718764  16808   8964 S   5.3   0.0  40:37.72 frpc                        
+ 478045 hit1006   20   0  719020  15508   8900 S   5.3   0.0  22:10.64 frpc                        
+ 511154 hit1006   20   0  718764  16024   8840 S   5.3   0.0   3:44.38 frpc                        
+ 515553 hit1006   20   0  718764  15788   8776 S   5.3   0.0   2:13.78 frpc                        
+      1 root      20   0  169776  13092   8252 S   0.0   0.0   0:51.24 systemd                     
+      2 root      20   0       0      0      0 S   0.0   0.0   0:01.18 kthreadd                    
+      3 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 rcu_gp                      
+      4 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 rcu_par_gp                  
+      6 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 kworker/0:0H-kblockd        
+     10 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 mm_percpu_wq                
+     11 root      20   0       0      0      0 S   0.0   0.0   0:00.00 rcu_tasks_rude_             
+     12 root      20   0       0      0      0 S   0.0   0.0   0:00.00 rcu_tasks_trace             
+     13 root      20   0       0      0      0 S   0.0   0.0   1:48.84 ksoftirqd/0                 
+     14 root      20   0       0      0      0 R   0.0   0.0  10:12.16 rcu_sched                   
+     15 root      rt   0       0      0      0 S   0.0   0.0   0:02.97 migration/0                 
+     16 root     -51   0       0      0      0 S   0.0   0.0   0:00.00 idle_inject/0               
+     17 root      20   0       0      0      0 S   0.0   0.0   0:00.00 cpuhp/0                     
+     18 root      20   0       0      0      0 S   0.0   0.0   0:00.00 cpuhp/1                     
+     19 root     -51   0       0      0      0 S   0.0   0.0   0:00.00 idle_inject/1               
+     20 root      rt   0       0      0      0 S   0.0   0.0   0:04.37 migration/1                 
+     21 root      20   0       0      0      0 S   0.0   0.0   0:30.69 ksoftirqd/1                 
+     23 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 kworker/1:0H-kblockd        
+     24 root      20   0       0      0      0 S   0.0   0.0   0:00.00 cpuhp/2                     
+     25 root     -51   0       0      0      0 S   0.0   0.0   0:00.00 idle_inject/2               
+     26 root      rt   0       0      0      0 S   0.0   0.0   0:03.62 migration/2                 
+     27 root      20   0       0      0      0 S   0.0   0.0   0:25.71 ksoftirqd/2                 
+     29 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 kworker/2:0H-kblockd        
+     30 root      20   0       0      0      0 S   0.0   0.0   0:00.00 cpuhp/3                     
+     31 root     -51   0       0      0      0 S   0.0   0.0   0:00.00 idle_inject/3               
+     32 root      rt   0       0      0      0 S   0.0   0.0   0:04.20 migration/3                 
+     33 root      20   0       0      0      0 S   0.0   0.0   0:11.79 ksoftirqd/3                 
+     35 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 kworker/3:0H-kblockd        
+     36 root      20   0       0      0      0 S   0.0   0.0   0:00.00 cpuhp/4                     
+     37 root     -51   0       0      0      0 S   0.0   0.0   0:00.00 idle_inject/4               
+     38 root      rt   0       0      0      0 S   0.0   0.0   0:03.58 migration/4                 
+     39 root      20   0       0      0      0 S   0.0   0.0   0:16.23 ksoftirqd/4                 
+     41 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 kworker/4:0H-events_highpri 
+     42 root      20   0       0      0      0 S   0.0   0.0   0:00.00 cpuhp/5                     
+     43 root     -51   0       0      0      0 S   0.0   0.0   0:00.00 idle_inject/5               
+     44 root      rt   0       0      0      0 S   0.0   0.0   0:04.21 migration/5                 
+     45 root      20   0       0      0      0 S   0.0   0.0   0:08.07 ksoftirqd/5                 top - 21:26:43 up 5 days, 20:44,  1 user,  load average: 0.40, 0.79, 5.93
+Tasks: 1344 total,   1 running, 1343 sleeping,   0 stopped,   0 zombie
+%Cpu(s):  0.1 us,  0.1 sy,  0.0 ni, 99.8 id,  0.0 wa,  0.0 hi,  0.0 si,  0.0 st
+MiB Mem : 128541.0 total, 115606.2 free,   5258.1 used,   7676.7 buff/cache
+MiB Swap:   2048.0 total,   2048.0 free,      0.0 used. 122235.2 avail Mem 
+
+    PID USER      PR  NI    VIRT    RES    SHR S  %CPU  %MEM     TIME+ COMMAND                     
+   3698 hit1006   20   0 7342136 776188 165712 S   4.3   0.6 257:00.05 gnome-shell                 
+ 525984 hit1006   20   0  222788  35180  22564 S   1.3   0.0   0:00.83 emacs                       
+   3474 root      20   0  377368 191276  84384 S   1.0   0.1  60:51.66 Xorg                        
+ 526082 hit1006   20   0   13320   5392   3224 R   1.0   0.0   0:00.10 top                         
+  15360 hit1006   20   0  718764  15440   8948 S   0.7   0.0  53:18.70 frpc                        
+  19663 hit1006   20   0  721068  17976   8908 S   0.7   0.0  59:18.04 frpc                        
+ 468513 hit1006   20   0  719276  16244   8836 S   0.7   0.0  17:34.53 frpc                        
+ 472357 hit1006   20   0  718508  16404   9080 S   0.7   0.0  19:30.65 frpc                        
+ 478782 hit1006   20   0  718764  16212   8956 S   0.7   0.0  22:58.55 frpc                        
+ 484167 hit1006   20   0  718764  16328   8840 S   0.7   0.0  21:36.25 frpc                        
+ 503308 hit1006   20   0  718572  16260   8776 S   0.7   0.0   6:03.19 frpc                        
+ 513489 hit1006   20   0  718252  15728   8900 S   0.7   0.0   3:25.72 frpc                        
+ 523978 hit1006   20   0  716716  15200   8700 S   0.7   0.0   0:04.49 frpc                        
+ 524797 root      20   0       0      0      0 I   0.7   0.0   0:01.62 kworker/u224:0-phy0         
+ 524893 hit1006   20   0  818116  53704  38860 S   0.7   0.0   0:16.71 gnome-terminal-             
+     14 root      20   0       0      0      0 I   0.3   0.0  10:12.17 rcu_sched                   
+   1931 message+  20   0    9944   6420   3792 S   0.3   0.0   7:50.37 dbus-daemon                 
+   1944 root      20   0   82160   3824   3232 S   0.3   0.0   7:24.50 irqbalance                  
+   3395 hit1006   39  19 1147700  64148  16552 S   0.3   0.0  47:10.09 tracker-miner-f             
+   3863 hit1006   20   0  465440  11428   9512 S   0.3   0.0   8:11.37 gsd-sharing                 
+  13083 hit1006   20   0  718252  16248   8820 S   0.3   0.0  46:15.75 frpc                        
+  14621 hit1006   20   0  719020  16008   9012 S   0.3   0.0  40:25.87 frpc                        
+  20104 hit1006   20   0  718508  16432   8956 S   0.3   0.0  39:01.05 frpc                        
+  20953 hit1006   20   0  717996  15320   8892 S   0.3   0.0  37:14.32 frpc                        
+  21959 hit1006   20   0  718508  16584   8948 S   0.3   0.0  43:57.07 frpc                        
+  24755 hit1006   20   0  718252  16336   8952 S   0.3   0.0  49:54.28 frpc                        
+ 287232 hit1006   20   0  719276  15428   8900 S   0.3   0.0  33:53.18 frpc                        
+ 289636 hit1006   20   0  718508  15060   8904 S   0.3   0.0  39:20.56 frpc                        
+ 290017 hit1006   20   0  719020  15144   8900 S   0.3   0.0  34:08.36 frpc                        
+ 291859 hit1006   20   0  718764  16808   8964 S   0.3   0.0  40:37.73 frpc                        
+ 293280 hit1006   20   0  718764  16324   8900 S   0.3   0.0  34:23.62 frpc                        
+ 296695 hit1006   20   0  718764  15788   8900 S   0.3   0.0  41:40.17 frpc                        
+ 299204 hit1006   20   0  718508  15588   8956 S   0.3   0.0  30:29.51 frpc                        
+ 302029 hit1006   20   0  718764  15452   8956 S   0.3   0.0  19:25.22 frpc                        
+ 321816 root      20   0       0      0      0 I   0.3   0.0   2:17.15 kworker/30:1-events         
+ 322975 hit1006   20   0  718764  16652   8900 S   0.3   0.0  28:46.97 frpc                        
+ 356654 hit1006   20   0  718508  16160   8956 S   0.3   0.0  28:08.30 frpc                        
+ 356959 hit1006   20   0  719020  16004   8776 S   0.3   0.0  28:57.49 frpc                        
+ 357173 hit1006   20   0  718764  15608   8956 S   0.3   0.0  19:28.40 frpc                        
+ 357653 hit1006   20   0  719276  15632   8900 S   0.3   0.0  30:59.03 frpc                        
+ 357768 hit1006   20   0  718764  16180   8840 S   0.3   0.0  33:17.57 frpc                        
+ 358486 hit1006   20   0  719276  15468   9080 S   0.3   0.0  34:10.99 frpc                        
+ 368338 hit1006   20   0  718764  15096   8840 S   0.3   0.0  43:14.70 frpc                        
+ 368859 hit1006   20   0  719020  15672   8840 S   0.3   0.0  32:11.67 frpc                        
+ 370660 hit1006   20   0  717996  16224   8960 S   0.3   0.0  40:08.24 frpc                        top - 21:26:46 up 5 days, 20:44,  1 user,  load average: 0.37, 0.78, 5.89
+Tasks: 1344 total,   1 running, 1343 sleeping,   0 stopped,   0 zombie
+%Cpu(s):  0.1 us,  0.1 sy,  0.0 ni, 99.8 id,  0.0 wa,  0.0 hi,  0.0 si,  0.0 st
+MiB Mem : 128541.0 total, 115607.1 free,   5257.1 used,   7676.7 buff/cache
+MiB Swap:   2048.0 total,   2048.0 free,      0.0 used. 122236.2 avail Mem 
+
+    PID USER      PR  NI    VIRT    RES    SHR S  %CPU  %MEM     TIME+ COMMAND                     
+   3698 hit1006   20   0 7342136 776188 165712 S   4.0   0.6 257:00.17 gnome-shell                 
+ 526082 hit1006   20   0   13320   5392   3224 R   1.3   0.0   0:00.14 top                         
+   3474 root      20   0  377368 191276  84384 S   1.0   0.1  60:51.69 Xorg                        
+ 525984 hit1006   20   0  222788  35180  22564 S   1.0   0.0   0:00.86 emacs                       
+  18548 hit1006   20   0  718764  16748   8884 S   0.7   0.0  25:23.60 frpc                        
+  19836 hit1006   20   0  718764  14448   8952 S   0.7   0.0  36:55.29 frpc                        
+  21959 hit1006   20   0  718508  16584   8948 S   0.7   0.0  43:57.09 frpc                        
+  24755 hit1006   20   0  718252  16336   8952 S   0.7   0.0  49:54.30 frpc                        
+ 295519 hit1006   20   0  719020  15372   8900 S   0.7   0.0  30:16.25 frpc                        
+ 357653 hit1006   20   0  719276  15632   8900 S   0.7   0.0  30:59.05 frpc                        
+ 357768 hit1006   20   0  718764  16180   8840 S   0.7   0.0  33:17.59 frpc                        
+ 452738 hit1006   20   0  718764  15912   8840 S   0.7   0.0  25:34.35 frpc                        
+ 462296 hit1006   20   0  718764  16432   8964 S   0.7   0.0  30:30.98 frpc                        
+ 463373 hit1006   20   0  719276  15396   8900 S   0.7   0.0  16:44.54 frpc                        
+ 469896 hit1006   20   0  719276  16228   8840 S   0.7   0.0  26:34.63 frpc                        
+ 477147 hit1006   20   0  718252  15932   8900 S   0.7   0.0  14:45.86 frpc                        
+ 488531 hit1006   20   0  719020  16168   8896 S   0.7   0.0  16:58.74 frpc                        
+ 490877 hit1006   20   0  718508  15692   8840 S   0.7   0.0  13:45.73 frpc                        
+ 513489 hit1006   20   0  718252  15728   8900 S   0.7   0.0   3:25.74 frpc                        
+ 515553 hit1006   20   0  718764  15788   8776 S   0.7   0.0   2:13.80 frpc                        
+ 522702 hit1006   20   0  718252  15436   8764 S   0.7   0.0   0:17.67 frpc                        
+ 524082 hit1006   20   0  717228  14812   8760 S   0.7   0.0   0:01.31 frpc                        
+ 524375 hit1006   20   0  716972  14416   8460 S   0.7   0.0   0:01.15 frpc                        
+ 524893 hit1006   20   0  818116  53704  38860 S   0.7   0.0   0:16.73 gnome-terminal-             
+   1933 root      20   0  336668  21060  17132 S   0.3   0.0  38:19.16 NetworkManager              
+   3135 gdm       20   0 6641520 223028 126296 S   0.3   0.2  18:11.79 gnome-shell                 
+  12423 hit1006   20   0  718508  15508   8880 S   0.3   0.0  38:22.70 frpc                        
+  13083 hit1006   20   0  718252  16248   8820 S   0.3   0.0  46:15.76 frpc                        
+  14621 hit1006   20   0  719020  16008   9012 S   0.3   0.0  40:25.88 frpc                        
+  15360 hit1006   20   0  718764  15440   8948 S   0.3   0.0  53:18.71 frpc                        
+  19663 hit1006   20   0  721068  17976   8908 S   0.3   0.0  59:18.05 frpc                        
+  23674 hit1006   20   0  718508  15156   8888 S   0.3   0.0  43:50.91 frpc                        
+ 289636 hit1006   20   0  718508  15060   8904 S   0.3   0.0  39:20.57 frpc                        
+ 290017 hit1006   20   0  719020  15144   8900 S   0.3   0.0  34:08.37 frpc                        
+ 293280 hit1006   20   0  718764  16336   8900 S   0.3   0.0  34:23.63 frpc                        
+ 296695 hit1006   20   0  718764  15788   8900 S   0.3   0.0  41:40.18 frpc                        
+ 299204 hit1006   20   0  718508  15588   8956 S   0.3   0.0  30:29.52 frpc                        
+ 317578 hit1006   20   0  718252  15516   8900 S   0.3   0.0  33:25.14 frpc                        
+ 322173 hit1006   20   0  719020  16140   9080 S   0.3   0.0  23:37.46 frpc                        
+ 322496 hit1006   20   0  719020  15568   9016 S   0.3   0.0  29:31.24 frpc                        
+ 322975 hit1006   20   0  718764  16652   8900 S   0.3   0.0  28:46.98 frpc                        
+ 356959 hit1006   20   0  719020  16004   8776 S   0.3   0.0  28:57.50 frpc                        
+ 357173 hit1006   20   0  718764  15608   8956 S   0.3   0.0  19:28.41 frpc                        
+ 358486 hit1006   20   0  719276  15468   9080 S   0.3   0.0  34:11.00 frpc                        
+ 368859 hit1006   20   0  719020  15672   8840 S   0.3   0.0  32:11.68 frpc                        q
+
+hit1006@hit1006-Precision-7920-Tower:~/Desktop/run_mcsem_test2/run_fwi_nugrid2$ ls
+a.out                              plot_3d_slices.m           rmse_misfit.txt
+bar.rsf                            plot_emdata.py             run.sh
+create_3d_seafloor                 plot_histogram.py          Rv.rsf
+create_acquisition_crosslines.f90  plot_line_sigmisfit.py     Rv.vpl
+ibathy                             plot_scatter_sigmisfit.py  SConstruct
+inputpar.txt                       plot_stem_sigmisfit.py     sigmisfit_scatter.png
+iterate.txt                        plot_survey_layout.gnu     sources.txt
+main                               receivers.txt              src_rec_table.txt
+noup.txt                           rho                        survey.png
+out                                rho_init                   x1nu
+param_final_Rh                     Rh.rsf                     x2nu
+param_final_Rv                     Rh.vpl                     x3nu
+hit1006@hit1006-Precision-7920-Tower:~/Desktop/run_mcsem_test2/run_fwi_nugrid2$ cd ../src/
+hit1006@hit1006-Precision-7920-Tower:~/Desktop/run_mcsem_test2/src$ make
+find . -name "*.o"   -exec rm {} \;
+find . -name "*.c%"  -exec rm {} \;
+find . -name "*.bck" -exec rm {} \;
+find . -name "*~"    -exec rm {} \;
+find . -name "\#*"   -exec rm {} \;
+rm -f fg_mod_reg.o acqui_init_close.o fcost_adjoint_source.o airwave_bc.o inject_src_fwd.o triangle_smoothing.o do_fwi.o build_Hv.o fdtd.o main.o check_convergence.o cgstep.o nugrid_init_close.o find_index.o fg_fwi.o inject_src_adj.o regularization.o adjsrc_freq2time.o emf_init_close.o sanity_check.o extract_emf.o cstd.o gradient_precondition.o dtft.o cal_data_uncertainty.o build_gradient.o do_modeling.o lbfgs.o vandermonde.o homogenization.o cpml.o compute_green_function.o extend_model.o interpolation.o matmult.o computing_box.o frannor.o read_write_data.o log_exp_scaling.o ../bin/fdtd
+mpicc  -g -Wall  -c check_convergence.c -o check_convergence.o -I../include -lm -lmpi -fopenmp -lpthread -lfftw3
+mpicc  -g -Wall  -c cal_data_uncertainty.c -o cal_data_uncertainty.o -I../include -lm -lmpi -fopenmp -lpthread -lfftw3
+mpicc  -g -Wall  -c dtft.c -o dtft.o -I../include -lm -lmpi -fopenmp -lpthread -lfftw3
+mpicc  -g -Wall  -c airwave_bc.c -o airwave_bc.o -I../include -lm -lmpi -fopenmp -lpthread -lfftw3
+mpicc  -g -Wall  -c nugrid_init_close.c -o nugrid_init_close.o -I../include -lm -lmpi -fopenmp -lpthread -lfftw3
+mpicc  -g -Wall  -c matmult.c -o matmult.o -I../include -lm -lmpi -fopenmp -lpthread -lfftw3
+mpicc  -g -Wall  -c build_gradient.c -o build_gradient.o -I../include -lm -lmpi -fopenmp -lpthread -lfftw3
+build_gradient.c: In function ‘build_gradient’:
+build_gradient.c:17:17: warning: variable ‘d3s’ set but not used [-Wunused-but-set-variable]
+   17 |   float gh, gv, d3s, d3n;
+      |                 ^~~
+mpicc  -g -Wall  -c triangle_smoothing.c -o triangle_smoothing.o -I../include -lm -lmpi -fopenmp -lpthread -lfftw3
+mpicc  -g -Wall  -c main.c -o main.o -I../include -lm -lmpi -fopenmp -lpthread -lfftw3
+mpicc  -g -Wall  -c cstd.c -o cstd.o -I../include -lm -lmpi -fopenmp -lpthread -lfftw3
+mpicc  -g -Wall  -c gradient_precondition.c -o gradient_precondition.o -I../include -lm -lmpi -fopenmp -lpthread -lfftw3
+mpicc  -g -Wall  -c fcost_adjoint_source.c -o fcost_adjoint_source.o -I../include -lm -lmpi -fopenmp -lpthread -lfftw3
+mpicc  -g -Wall  -c inject_src_fwd.c -o inject_src_fwd.o -I../include -lm -lmpi -fopenmp -lpthread -lfftw3
+mpicc  -g -Wall  -c do_fwi.c -o do_fwi.o -I../include -lm -lmpi -fopenmp -lpthread -lfftw3
+mpicc  -g -Wall  -c extract_emf.c -o extract_emf.o -I../include -lm -lmpi -fopenmp -lpthread -lfftw3
+mpicc  -g -Wall  -c do_modeling.c -o do_modeling.o -I../include -lm -lmpi -fopenmp -lpthread -lfftw3
+mpicc  -g -Wall  -c adjsrc_freq2time.c -o adjsrc_freq2time.o -I../include -lm -lmpi -fopenmp -lpthread -lfftw3
+mpicc  -g -Wall  -c vandermonde.c -o vandermonde.o -I../include -lm -lmpi -fopenmp -lpthread -lfftw3
+mpicc  -g -Wall  -c homogenization.c -o homogenization.o -I../include -lm -lmpi -fopenmp -lpthread -lfftw3
+mpicc  -g -Wall  -c cpml.c -o cpml.o -I../include -lm -lmpi -fopenmp -lpthread -lfftw3
+mpicc  -g -Wall  -c fdtd.c -o fdtd.o -I../include -lm -lmpi -fopenmp -lpthread -lfftw3
+mpicc  -g -Wall  -c lbfgs.c -o lbfgs.o -I../include -lm -lmpi -fopenmp -lpthread -lfftw3
+mpicc  -g -Wall  -c compute_green_function.c -o compute_green_function.o -I../include -lm -lmpi -fopenmp -lpthread -lfftw3
+mpicc  -g -Wall  -c regularization.c -o regularization.o -I../include -lm -lmpi -fopenmp -lpthread -lfftw3
+mpicc  -g -Wall  -c extend_model.c -o extend_model.o -I../include -lm -lmpi -fopenmp -lpthread -lfftw3
+mpicc  -g -Wall  -c acqui_init_close.c -o acqui_init_close.o -I../include -lm -lmpi -fopenmp -lpthread -lfftw3
+mpicc  -g -Wall  -c cgstep.c -o cgstep.o -I../include -lm -lmpi -fopenmp -lpthread -lfftw3
+mpicc  -g -Wall  -c fg_mod_reg.c -o fg_mod_reg.o -I../include -lm -lmpi -fopenmp -lpthread -lfftw3
+fg_mod_reg.c: In function ‘fg_mod_reg’:
+fg_mod_reg.c:30:22: warning: unused variable ‘j’ [-Wunused-variable]
+   30 |   int i1, i2, i3, i, j, k, offset;
+      |                      ^
+mpicc  -g -Wall  -c interpolation.c -o interpolation.o -I../include -lm -lmpi -fopenmp -lpthread -lfftw3
+mpicc  -g -Wall  -c find_index.c -o find_index.o -I../include -lm -lmpi -fopenmp -lpthread -lfftw3
+mpicc  -g -Wall  -c fg_fwi.c -o fg_fwi.o -I../include -lm -lmpi -fopenmp -lpthread -lfftw3
+mpicc  -g -Wall  -c sanity_check.c -o sanity_check.o -I../include -lm -lmpi -fopenmp -lpthread -lfftw3
+mpicc  -g -Wall  -c inject_src_adj.c -o inject_src_adj.o -I../include -lm -lmpi -fopenmp -lpthread -lfftw3
+mpicc  -g -Wall  -c computing_box.c -o computing_box.o -I../include -lm -lmpi -fopenmp -lpthread -lfftw3
+mpicc  -g -Wall  -c frannor.c -o frannor.o -I../include -lm -lmpi -fopenmp -lpthread -lfftw3
+mpicc  -g -Wall  -c emf_init_close.c -o emf_init_close.o -I../include -lm -lmpi -fopenmp -lpthread -lfftw3
+mpicc  -g -Wall  -c read_write_data.c -o read_write_data.o -I../include -lm -lmpi -fopenmp -lpthread -lfftw3
+mpicc  -g -Wall  -c log_exp_scaling.c -o log_exp_scaling.o -I../include -lm -lmpi -fopenmp -lpthread -lfftw3
+mpicc  -g -Wall  -c build_Hv.c -o build_Hv.o -I../include -lm -lmpi -fopenmp -lpthread -lfftw3
+mpicc  -g -Wall  -o ../bin/fdtd fg_mod_reg.o acqui_init_close.o fcost_adjoint_source.o airwave_bc.o inject_src_fwd.o triangle_smoothing.o do_fwi.o build_Hv.o fdtd.o main.o check_convergence.o cgstep.o nugrid_init_close.o find_index.o fg_fwi.o inject_src_adj.o regularization.o adjsrc_freq2time.o emf_init_close.o sanity_check.o extract_emf.o cstd.o gradient_precondition.o dtft.o cal_data_uncertainty.o build_gradient.o do_modeling.o lbfgs.o vandermonde.o homogenization.o cpml.o compute_green_function.o extend_model.o interpolation.o matmult.o computing_box.o frannor.o read_write_data.o log_exp_scaling.o -lm -lmpi -fopenmp -lpthread -lfftw3
+hit1006@hit1006-Precision-7920-Tower:~/Desktop/run_mcsem_test2/src$ cd ../run_fwi_nugrid
+bash: cd: ../run_fwi_nugrid: No such file or directory
+hit1006@hit1006-Precision-7920-Tower:~/Desktop/run_mcsem_test2/src$ cd ../run_fwi_nugrid2
+hit1006@hit1006-Precision-7920-Tower:~/Desktop/run_mcsem_test2/run_fwi_nugrid2$ ls
+a.out                              plot_3d_slices.m           rmse_misfit.txt
+bar.rsf                            plot_emdata.py             run.sh
+create_3d_seafloor                 plot_histogram.py          Rv.rsf
+create_acquisition_crosslines.f90  plot_line_sigmisfit.py     Rv.vpl
+ibathy                             plot_scatter_sigmisfit.py  SConstruct
+inputpar.txt                       plot_stem_sigmisfit.py     sigmisfit_scatter.png
+iterate.txt                        plot_survey_layout.gnu     sources.txt
+main                               receivers.txt              src_rec_table.txt
+noup.txt                           rho                        survey.png
+out                                rho_init                   x1nu
+param_final_Rh                     Rh.rsf                     x2nu
+param_final_Rv                     Rh.vpl                     x3nu
+hit1006@hit1006-Precision-7920-Tower:~/Desktop/run_mcsem_test2/run_fwi_nugrid2$ bash run.sh 
+hit1006@hit1006-Precision-7920-Tower:~/Desktop/run_mcsem_test2/run_fwi_nugrid2$ top
+top - 21:27:13 up 5 days, 20:45,  1 user,  load average: 1.69, 1.03, 5.81
+Tasks: 1346 total,   1 running, 1345 sleeping,   0 stopped,   0 zombie
+%Cpu(s):  0.7 us,  0.3 sy,  0.0 ni, 98.9 id,  0.0 wa,  0.0 hi,  0.0 si,  0.0 st
+MiB Mem : 128541.0 total, 115589.5 free,   5274.4 used,   7677.1 buff/cache
+MiB Swap:   2048.0 total,   2048.0 free,      0.0 used. 122218.7 avail Mem 
+
+    PID USER      PR  NI    VIRT    RES    SHR S  %CPU  %MEM     TIME+ COMMAND                     
+   3698 hit1006   20   0 7342136 776160 165720 S  38.9   0.6 257:04.98 gnome-shell                 
+ 526626 hit1006   20   0   13352   5092   3108 R  16.7   0.0   0:00.06 top                         
+   3474 root      20   0  377368 191276  84384 S  11.1   0.1  60:52.82 Xorg                        
+ 357173 hit1006   20   0  718764  15568   8956 S   5.6   0.0  19:28.50 frpc                        
+ 444944 hit1006   20   0  719020  15980   8956 S   5.6   0.0  26:41.60 frpc                        
+ 452393 hit1006   20   0  719276  16416   8904 S   5.6   0.0  24:12.42 frpc                        
+ 478782 hit1006   20   0  718764  16048   8956 S   5.6   0.0  22:58.66 frpc                        
+ 490144 hit1006   20   0  719532  16480   8900 S   5.6   0.0  10:45.94 frpc                        
+ 523978 hit1006   20   0  716716  15200   8700 S   5.6   0.0   0:04.58 frpc                        
+      1 root      20   0  169776  13092   8252 S   0.0   0.0   0:51.24 systemd                     
+      2 root      20   0       0      0      0 S   0.0   0.0   0:01.18 kthreadd                    
+      3 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 rcu_gp                      
+      4 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 rcu_par_gp                  
+      6 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 kworker/0:0H-kblockd        
+     10 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 mm_percpu_wq                
+     11 root      20   0       0      0      0 S   0.0   0.0   0:00.00 rcu_tasks_rude_             
+     12 root      20   0       0      0      0 S   0.0   0.0   0:00.00 rcu_tasks_trace             
+     13 root      20   0       0      0      0 S   0.0   0.0   1:48.84 ksoftirqd/0                 
+     14 root      20   0       0      0      0 I   0.0   0.0  10:12.21 rcu_sched                   
+     15 root      rt   0       0      0      0 S   0.0   0.0   0:02.97 migration/0                 
+     16 root     -51   0       0      0      0 S   0.0   0.0   0:00.00 idle_inject/0               
+     17 root      20   0       0      0      0 S   0.0   0.0   0:00.00 cpuhp/0                     
+     18 root      20   0       0      0      0 S   0.0   0.0   0:00.00 cpuhp/1                     
+     19 root     -51   0       0      0      0 S   0.0   0.0   0:00.00 idle_inject/1               
+     20 root      rt   0       0      0      0 S   0.0   0.0   0:04.37 migration/1                 
+     21 root      20   0       0      0      0 S   0.0   0.0   0:30.69 ksoftirqd/1                 
+     23 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 kworker/1:0H-kblockd        
+     24 root      20   0       0      0      0 S   0.0   0.0   0:00.00 cpuhp/2                     
+     25 root     -51   0       0      0      0 S   0.0   0.0   0:00.00 idle_inject/2               
+     26 root      rt   0       0      0      0 S   0.0   0.0   0:03.62 migration/2                 
+     27 root      20   0       0      0      0 S   0.0   0.0   0:25.71 ksoftirqd/2                 
+     29 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 kworker/2:0H-kblockd        
+     30 root      20   0       0      0      0 S   0.0   0.0   0:00.00 cpuhp/3                     
+     31 root     -51   0       0      0      0 S   0.0   0.0   0:00.00 idle_inject/3               
+     32 root      rt   0       0      0      0 S   0.0   0.0   0:04.20 migration/3                 
+     33 root      20   0       0      0      0 S   0.0   0.0   0:11.79 ksoftirqd/3                 
+     35 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 kworker/3:0H-kblockd        
+     36 root      20   0       0      0      0 S   0.0   0.0   0:00.00 cpuhp/4                     
+     37 root     -51   0       0      0      0 S   0.0   0.0   0:00.00 idle_inject/4               
+     38 root      rt   0       0      0      0 S   0.0   0.0   0:03.58 migration/4                 
+     39 root      20   0       0      0      0 S   0.0   0.0   0:16.23 ksoftirqd/4                 
+     41 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 kworker/4:0H-events_highpri 
+     42 root      20   0       0      0      0 S   0.0   0.0   0:00.00 cpuhp/5                     
+     43 root     -51   0       0      0      0 S   0.0   0.0   0:00.00 idle_inject/5               
+     44 root      rt   0       0      0      0 S   0.0   0.0   0:04.21 migration/5                 top - 21:27:16 up 5 days, 20:45,  1 user,  load average: 1.69, 1.03, 5.81
+Tasks: 1346 total,   1 running, 1345 sleeping,   0 stopped,   0 zombie
+%Cpu(s):  0.1 us,  0.1 sy,  0.0 ni, 99.8 id,  0.0 wa,  0.0 hi,  0.0 si,  0.0 st
+MiB Mem : 128541.0 total, 115589.1 free,   5274.8 used,   7677.1 buff/cache
+MiB Swap:   2048.0 total,   2048.0 free,      0.0 used. 122218.4 avail Mem 
+
+    PID USER      PR  NI    VIRT    RES    SHR S  %CPU  %MEM     TIME+ COMMAND                     
+   3698 hit1006   20   0 7342136 776160 165720 S   3.6   0.6 257:05.09 gnome-shell                 
+ 526626 hit1006   20   0   13320   5280   3108 R   1.3   0.0   0:00.10 top                         
+   3474 root      20   0  377368 191276  84384 S   1.0   0.1  60:52.85 Xorg                        
+ 525984 hit1006   20   0  223112  35584  22556 S   1.0   0.0   0:03.18 emacs                       
+  14621 hit1006   20   0  719020  16008   9012 S   0.7   0.0  40:25.98 frpc                        
+ 294944 hit1006   20   0  718508  15356   8964 S   0.7   0.0  40:50.52 frpc                        
+ 357173 hit1006   20   0  718764  15568   8956 S   0.7   0.0  19:28.52 frpc                        
+ 357653 hit1006   20   0  719276  15632   8900 S   0.7   0.0  30:59.15 frpc                        
+ 370660 hit1006   20   0  717996  16224   8960 S   0.7   0.0  40:08.36 frpc                        
+ 371705 hit1006   20   0  718508  16276   8840 S   0.7   0.0  20:54.13 frpc                        
+ 452608 hit1006   20   0  718764  16272   8900 S   0.7   0.0  31:10.17 frpc                        
+ 471814 hit1006   20   0  718764  16052   8840 S   0.7   0.0  21:22.79 frpc                        
+ 475640 hit1006   20   0  718828  15944   8960 S   0.7   0.0  18:13.61 frpc                        
+ 482987 hit1006   20   0  717996  16284   8900 S   0.7   0.0  17:27.93 frpc                        
+ 503308 hit1006   20   0  718572  16260   8776 S   0.7   0.0   6:03.31 frpc                        
+ 503444 hit1006   20   0  718764  15588   8836 S   0.7   0.0   8:00.79 frpc                        
+ 511154 hit1006   20   0  718764  16024   8840 S   0.7   0.0   3:44.50 frpc                        
+ 511235 hit1006   20   0  718508  15576   8900 S   0.7   0.0   4:39.03 frpc                        
+ 513881 hit1006   20   0  717996  15000   8776 S   0.7   0.0   3:36.58 frpc                        
+ 524082 hit1006   20   0  717228  14812   8760 S   0.7   0.0   0:01.41 frpc                        
+ 524375 hit1006   20   0  716972  14416   8460 S   0.7   0.0   0:01.24 frpc                        
+ 524893 hit1006   20   0  818116  53704  38860 S   0.7   0.0   0:17.58 gnome-terminal-             
+ 525038 hit1006   20   0  716716  14264   8328 S   0.7   0.0   0:01.02 frpc                        
+     14 root      20   0       0      0      0 I   0.3   0.0  10:12.22 rcu_sched                   
+   1877 systemd+  20   0   24808  13460   9136 S   0.3   0.0   2:17.46 systemd-resolve             
+   1933 root      20   0  336668  21060  17132 S   0.3   0.0  38:19.19 NetworkManager              
+   3395 hit1006   39  19 1147700  64148  16552 S   0.3   0.0  47:10.18 tracker-miner-f             
+  18548 hit1006   20   0  718764  16748   8884 S   0.3   0.0  25:23.68 frpc                        
+  19166 hit1006   20   0  718764  15872   8884 S   0.3   0.0  41:16.44 frpc                        
+  19836 hit1006   20   0  718764  14448   8952 S   0.3   0.0  36:55.39 frpc                        
+  20104 hit1006   20   0  718508  16432   8956 S   0.3   0.0  39:01.15 frpc                        
+  21959 hit1006   20   0  718508  16584   8948 S   0.3   0.0  43:57.18 frpc                        
+  24755 hit1006   20   0  718252  16336   8952 S   0.3   0.0  49:54.39 frpc                        
+ 289636 hit1006   20   0  718508  15060   8904 S   0.3   0.0  39:20.65 frpc                        
+ 290017 hit1006   20   0  719020  15144   8900 S   0.3   0.0  34:08.47 frpc                        
+ 291859 hit1006   20   0  718764  16808   8964 S   0.3   0.0  40:37.84 frpc                        
+ 293280 hit1006   20   0  718764  16488   8900 S   0.3   0.0  34:23.74 frpc                        
+ 299204 hit1006   20   0  718508  15588   8956 S   0.3   0.0  30:29.62 frpc                        
+ 302029 hit1006   20   0  718764  15452   8956 S   0.3   0.0  19:25.23 frpc                        
+ 317578 hit1006   20   0  718252  15516   8900 S   0.3   0.0  33:25.25 frpc                        
+ 322975 hit1006   20   0  718764  16652   8900 S   0.3   0.0  28:47.09 frpc                        
+ 356959 hit1006   20   0  719020  16004   8776 S   0.3   0.0  28:57.60 frpc                        
+ 357768 hit1006   20   0  718764  16180   8840 S   0.3   0.0  33:17.69 frpc                        
+ 358486 hit1006   20   0  719276  15468   9080 S   0.3   0.0  34:11.11 frpc                        
+ 444944 hit1006   20   0  719020  15980   8956 S   0.3   0.0  26:41.61 frpc                        q
+
+hit1006@hit1006-Precision-7920-Tower:~/Desktop/run_mcsem_test2/run_fwi_nugrid2$ cat out
+  Current date and time: 03-Jul-2023 21:27:11
+=====================================================
+    Welcome to EM modeling and inversion code        
+            Author: Pengliang Yang                   
+            E-mail: ypl.2100@gmail.com               
+  Copyright (c) 2020. All rights reserved. 
+=====================================================
+
+Task: Electromagnetic forward modeling 
+
+=====================================================
+reciprocity=0
+PML layers on each side: nb=12
+Buffer layers on each side: ne=7
+Number of layers extended outside model: nbe=19
+[d1, d2, d3]=[200, 200, 30]
+[n1, n2, n3]=[91, 91, 71]
+[n1pad, n2pad, n3pad]=[129, 129, 109]
+[rd1, rd2, rd3]=[2, 2, 1]
+freq[1]=0.25 freq[2]=0.75 freq[3]=1.75 
+Active source channels: Ex
+Active recever channels: Ex Ey
+
+===================================================================================
+=   BAD TERMINATION OF ONE OF YOUR APPLICATION PROCESSES
+=   RANK 0 PID 526588 RUNNING AT hit1006-Precision-7920-Tower
+=   KILLED BY SIGNAL: 9 (Killed)
+===================================================================================
+
+===================================================================================
+=   BAD TERMINATION OF ONE OF YOUR APPLICATION PROCESSES
+=   RANK 1 PID 526589 RUNNING AT hit1006-Precision-7920-Tower
+=   KILLED BY SIGNAL: 9 (Killed)
+===================================================================================
+
+===================================================================================
+=   BAD TERMINATION OF ONE OF YOUR APPLICATION PROCESSES
+=   RANK 2 PID 526590 RUNNING AT hit1006-Precision-7920-Tower
+=   KILLED BY SIGNAL: 9 (Killed)
+===================================================================================
+
+===================================================================================
+=   BAD TERMINATION OF ONE OF YOUR APPLICATION PROCESSES
+=   RANK 3 PID 526591 RUNNING AT hit1006-Precision-7920-Tower
+=   KILLED BY SIGNAL: 9 (Killed)
+===================================================================================
+
+===================================================================================
+=   BAD TERMINATION OF ONE OF YOUR APPLICATION PROCESSES
+=   RANK 4 PID 526592 RUNNING AT hit1006-Precision-7920-Tower
+=   KILLED BY SIGNAL: 9 (Killed)
+===================================================================================
+
+===================================================================================
+=   BAD TERMINATION OF ONE OF YOUR APPLICATION PROCESSES
+=   RANK 5 PID 526593 RUNNING AT hit1006-Precision-7920-Tower
+=   KILLED BY SIGNAL: 9 (Killed)
+===================================================================================
+
+===================================================================================
+=   BAD TERMINATION OF ONE OF YOUR APPLICATION PROCESSES
+=   RANK 6 PID 526594 RUNNING AT hit1006-Precision-7920-Tower
+=   KILLED BY SIGNAL: 9 (Killed)
+===================================================================================
+
+===================================================================================
+=   BAD TERMINATION OF ONE OF YOUR APPLICATION PROCESSES
+=   RANK 7 PID 526595 RUNNING AT hit1006-Precision-7920-Tower
+=   KILLED BY SIGNAL: 11 (Segmentation fault)
+===================================================================================
+
+===================================================================================
+=   BAD TERMINATION OF ONE OF YOUR APPLICATION PROCESSES
+=   RANK 8 PID 526596 RUNNING AT hit1006-Precision-7920-Tower
+=   KILLED BY SIGNAL: 9 (Killed)
+===================================================================================
+
+===================================================================================
+=   BAD TERMINATION OF ONE OF YOUR APPLICATION PROCESSES
+=   RANK 9 PID 526597 RUNNING AT hit1006-Precision-7920-Tower
+=   KILLED BY SIGNAL: 11 (Segmentation fault)
+===================================================================================
+
+===================================================================================
+=   BAD TERMINATION OF ONE OF YOUR APPLICATION PROCESSES
+=   RANK 10 PID 526598 RUNNING AT hit1006-Precision-7920-Tower
+=   KILLED BY SIGNAL: 9 (Killed)
+===================================================================================
+
+===================================================================================
+=   BAD TERMINATION OF ONE OF YOUR APPLICATION PROCESSES
+=   RANK 11 PID 526599 RUNNING AT hit1006-Precision-7920-Tower
+=   KILLED BY SIGNAL: 11 (Segmentation fault)
+===================================================================================
+
+===================================================================================
+=   BAD TERMINATION OF ONE OF YOUR APPLICATION PROCESSES
+=   RANK 12 PID 526600 RUNNING AT hit1006-Precision-7920-Tower
+=   KILLED BY SIGNAL: 11 (Segmentation fault)
+===================================================================================
+
+===================================================================================
+=   BAD TERMINATION OF ONE OF YOUR APPLICATION PROCESSES
+=   RANK 13 PID 526601 RUNNING AT hit1006-Precision-7920-Tower
+=   KILLED BY SIGNAL: 9 (Killed)
+===================================================================================
+
+===================================================================================
+=   BAD TERMINATION OF ONE OF YOUR APPLICATION PROCESSES
+=   RANK 14 PID 526602 RUNNING AT hit1006-Precision-7920-Tower
+=   KILLED BY SIGNAL: 9 (Killed)
+===================================================================================
+
+===================================================================================
+=   BAD TERMINATION OF ONE OF YOUR APPLICATION PROCESSES
+=   RANK 15 PID 526603 RUNNING AT hit1006-Precision-7920-Tower
+=   KILLED BY SIGNAL: 9 (Killed)
+===================================================================================
+
+===================================================================================
+=   BAD TERMINATION OF ONE OF YOUR APPLICATION PROCESSES
+=   RANK 16 PID 526604 RUNNING AT hit1006-Precision-7920-Tower
+=   KILLED BY SIGNAL: 9 (Killed)
+===================================================================================
+
+===================================================================================
+=   BAD TERMINATION OF ONE OF YOUR APPLICATION PROCESSES
+=   RANK 17 PID 526605 RUNNING AT hit1006-Precision-7920-Tower
+=   KILLED BY SIGNAL: 9 (Killed)
+===================================================================================
+
+===================================================================================
+=   BAD TERMINATION OF ONE OF YOUR APPLICATION PROCESSES
+=   RANK 18 PID 526606 RUNNING AT hit1006-Precision-7920-Tower
+=   KILLED BY SIGNAL: 9 (Killed)
+===================================================================================
+
+===================================================================================
+=   BAD TERMINATION OF ONE OF YOUR APPLICATION PROCESSES
+=   RANK 19 PID 526607 RUNNING AT hit1006-Precision-7920-Tower
+=   KILLED BY SIGNAL: 9 (Killed)
+===================================================================================
+
+===================================================================================
+=   BAD TERMINATION OF ONE OF YOUR APPLICATION PROCESSES
+=   RANK 20 PID 526608 RUNNING AT hit1006-Precision-7920-Tower
+=   KILLED BY SIGNAL: 9 (Killed)
+===================================================================================
+
+===================================================================================
+=   BAD TERMINATION OF ONE OF YOUR APPLICATION PROCESSES
+=   RANK 21 PID 526609 RUNNING AT hit1006-Precision-7920-Tower
+=   KILLED BY SIGNAL: 9 (Killed)
+===================================================================================
+
+===================================================================================
+=   BAD TERMINATION OF ONE OF YOUR APPLICATION PROCESSES
+=   RANK 22 PID 526610 RUNNING AT hit1006-Precision-7920-Tower
+=   KILLED BY SIGNAL: 9 (Killed)
+===================================================================================
+
+===================================================================================
+=   BAD TERMINATION OF ONE OF YOUR APPLICATION PROCESSES
+=   RANK 23 PID 526611 RUNNING AT hit1006-Precision-7920-Tower
+=   KILLED BY SIGNAL: 9 (Killed)
+===================================================================================
+
+===================================================================================
+=   BAD TERMINATION OF ONE OF YOUR APPLICATION PROCESSES
+=   RANK 24 PID 526612 RUNNING AT hit1006-Precision-7920-Tower
+=   KILLED BY SIGNAL: 11 (Segmentation fault)
+===================================================================================
+hit1006@hit1006-Precision-7920-Tower:~/Desktop/run_mcsem_test2/run_fwi_nugrid2$ 
