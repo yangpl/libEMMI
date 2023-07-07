@@ -115,7 +115,7 @@ void fg_fwi_init(acqui_t *acqui_, emf_t *emf_, fwi_t *fwi_)
   emf = emf_;
   fwi = fwi_;
   
-  if(!getparint("addnoise", &emf->addnoise)) emf->addnoise = 0;
+  if(!getparint("addnoise", &emf->addnoise)) emf->addnoise = 1;//1=addnoise; 0=not
   if(!getparint("invmask", &emf->invmask)) emf->invmask = 0;
   if(!getparfloat("amp_perc", &emf->amp_perc)) emf->amp_perc = 0.03;
   /* uncertainty, default=1% noise/deviation from the true value*/
