@@ -10,6 +10,10 @@
 #include "emf.h"
 #include "constants.h"
 
+#ifdef _OPENMP
+#include <omp.h>
+#endif
+
 void cpml_init(emf_t *emf);
 void cpml_close(emf_t *emf);
 
