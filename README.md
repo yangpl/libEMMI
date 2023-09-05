@@ -15,6 +15,29 @@ Compilation requirement: gcc compiler, mpicc compiler and make
 
 Software required: fftw3 (https://fftw.org/)
 
+Credits:
+
+@Article{Yang_2023_libEMM,
+author = {Pengliang Yang},
+title = {{libEMM: A fictious wave domain 3D CSEM modelling library bridging sequential and parallel GPU implementation}},
+journal = {Computer Physics Communications},
+volume = {288},
+pages = {108745},
+year = {2023},
+issn = {0010-4655},
+doi = {https://doi.org/10.1016/j.cpc.2023.108745},
+}
+
+@Article{Yang_2023_3dcsem,
+      title={{3D fictitious wave domain CSEM inversion by adjoint source estimation}}, 
+      author={Pengliang Yang},
+      year={2023},
+      journal = {Computers and Geosciences},
+      year = {2023},
+      doi = {https://doi.org/10.1016/j.cageo.2023.105441},
+}
+
+
 --------------------------------------------
 Structure of the software:
 
