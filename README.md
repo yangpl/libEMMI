@@ -17,46 +17,11 @@ Software required: fftw3 (https://fftw.org/)
 
 Credits:
 
-@Article{Yang_2023_libEMM,
+* Pengliang Yang, 3D fictitious wave domain CSEM inversion by adjoint source estimation, 2023 Computers & Geosciences , Vol. 180 p. 105441
 
-author = {Pengliang Yang},
+* Pengliang Yang, libEMM: A fictious wave domain 3D CSEM modelling library bridging sequential and parallel GPU implementation, 2023 Computer Physics Communications, Vol. 288 p. 108745
 
-title = {{libEMM: A fictious wave domain 3D CSEM modelling library bridging sequential and parallel GPU implementation}},
-
-journal = {Computer Physics Communications},
-
-volume = {288},
-
-pages = {108745},
-
-year = {2023},
-
-issn = {0010-4655},
-
-doi = {https://doi.org/10.1016/j.cpc.2023.108745},
-
-}
-
-
-@Article{Yang_2023_3dcsem,
-
-author = {Pengliang Yang},
-
-title = {{3D fictitious wave domain CSEM inversion by adjoint source estimation}},
-
-journal = {Computers \& Geosciences},
-
-volume = {180},
-
-pages = {105441},
-
-year = {2023},
-
-issn = {0098-3004},
-
-doi = {https://doi.org/10.1016/j.cageo.2023.105441},
-
-}
+* Pengliang Yang and Rune Mittet, Controlled-source electromagnetics modelling using high order finite-difference time-domain method on a nonuniform grid 2023 Geophysics , Vol. 88, No. 2 Society of Exploration Geophysicists p. E53-E67
 
 
 --------------------------------------------
