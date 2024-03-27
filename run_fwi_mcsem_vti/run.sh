@@ -7,8 +7,9 @@ mode=1 #0=modelling; 1=inversion
 fsrc=sources.txt
 frec=receivers.txt
 fsrcrec=src_rec_table.txt
-frho_h=rho_init
-frho_v=rho_init
+frho11=rho_init
+frho22=rho_init
+frho33=rho_init
 chsrc=Ex
 chrec=Ex,Ey
 x1min=-9000
@@ -51,5 +52,5 @@ offset_start=1000
 ">inputpar.txt
 
 export OMP_NUM_THREADS=4
-mpirun -n 25 ../bin/fdtd $(cat inputpar.txt) >out &
+mpirun -n 3 ../bin/fdtd $(cat inputpar.txt) >out 
 
