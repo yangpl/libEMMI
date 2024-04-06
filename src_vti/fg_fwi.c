@@ -107,7 +107,6 @@ void fg_fwi_init(acqui_t *acqui_, emf_t *emf_, fwi_t *fwi_)
   if(!getparfloat("noisefloorE", &emf->noisefloorE)) emf->noisefloorE = 1e-16;
   if(!getparfloat("noisefloorH", &emf->noisefloorH)) emf->noisefloorH = 1e-14;
   if(!getparfloat("offset_start", &emf->offset_start)) emf->offset_start = 1000.;
-  if(!getparfloat("offset_sep", &emf->offset_sep)) emf->offset_sep = 3000.;
   if(!getparfloat("gamma1", &fwi->gamma1)) fwi->gamma1 = 1.e3;//Tikhonov
   if(!getparfloat("gamma2", &fwi->gamma2)) fwi->gamma2 = 0.;//TV
   if(!getparint("preco", &fwi->preco)) fwi->preco = 1;/* 1 = precondition on, 0 = off */
@@ -128,7 +127,6 @@ void fg_fwi_init(acqui_t *acqui_, emf_t *emf_, fwi_t *fwi_)
 
   emf->ibathy = alloc2int(emf->n1, emf->n2);
   emf->offset_ok = alloc1int(acqui->nrec);
-  emf->offset_weight = alloc1float(acqui->nrec);
   emf->mask = alloc3float(emf->n1, emf->n2, emf->n3);
   emf->dobs_fd = alloc3complexf(acqui->nrec, emf->nfreq, emf->nchrec);
   emf->dcal_fd = alloc3complexf(acqui->nrec, emf->nfreq, emf->nchrec);
@@ -181,7 +179,6 @@ void fg_fwi_init(acqui_t *acqui_, emf_t *emf_, fwi_t *fwi_)
     float tmp = sqrtf(d1*d1 + d2*d2);//offset between source and receiver
     if(tmp>emf->offset_start) {
       emf->offset_ok[irec] = 1;
-      emf->offset_weight[irec] = 1.;
       ntrace++;
     }else emf->offset_ok[irec] = 0;
   }
@@ -209,7 +206,6 @@ void fg_fwi_close()
 {
   free2int(emf->ibathy);
   free1int(emf->offset_ok);
-  free1float(emf->offset_weight);
   free3float(emf->mask);
   free3complexf(emf->dobs_fd);
   free3complexf(emf->dcal_fd);

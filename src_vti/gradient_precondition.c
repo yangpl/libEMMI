@@ -21,7 +21,7 @@ void gradient_precondition(acqui_t *acqui, emf_t *emf, fwi_t *fwi, float *g)
 	  z -= acqui->src_x3[0];// z-zb
 
 	  factor = exp(z/skin_depth);
-	  g[i] *= factor;//*(factor -1.)/(factor + 1.);//(factor-1)/(factor+1)-->0 when z-->0
+	  g[i] *= factor;
 	}else
 	  g[i] = 0.;
       }
