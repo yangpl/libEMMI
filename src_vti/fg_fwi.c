@@ -68,7 +68,7 @@ int check_convergence(emf_t *emf, int adj);
 void write_data(acqui_t *acqui, emf_t *emf, char *fname, float _Complex ***dcal_fd);
 void read_data(acqui_t *acqui, emf_t *emf);
 void write_misfit(acqui_t *acqui, emf_t *emf, char *fname, float ***obj);
-void cal_data_uncertainty(acqui_t *acqui, emf_t *emf, fwi_t *fwi);
+void cal_uncertainty_noise(acqui_t *acqui, emf_t *emf, fwi_t *fwi);
 
 void homogenization(emf_t *emf);/* homogenization method by Davedycheva 2003 */
 void build_gradient(emf_t *emf, fwi_t *fwi);
@@ -194,18 +194,10 @@ void fg_fwi_init(acqui_t *acqui_, emf_t *emf_, fwi_t *fwi_)
     for(k=0; k<nproc; k++) printf("isrc=%d ndp=%d\n", acqui->shot_idx[k], fwi->ndp_list[k]);
   }
   
-  emf->Ea = alloc2complexf(acqui->nrec, emf->nfreq);
-  emf->Eb = alloc2complexf(acqui->nrec, emf->nfreq);
-  emf->Ha = alloc2complexf(acqui->nrec, emf->nfreq);
-  emf->Hb = alloc2complexf(acqui->nrec, emf->nfreq);
   read_data(acqui, emf);/* initialize dobs_fd */
   if(emf->verb) printf("read observed data completed!\n");
-  cal_data_uncertainty(acqui, emf, fwi);
+  cal_uncertainty_noise(acqui, emf, fwi);
   if(emf->verb) printf("data uncertainty computed!\n");
-  free2complexf(emf->Ea);
-  free2complexf(emf->Eb);
-  free2complexf(emf->Ha);
-  free2complexf(emf->Hb);
 
   fcost_adjsrc_init();
   memcpy(emf->rho_h[0][0], emf->rho11[0][0], emf->n123*sizeof(float));//set it to be rho11

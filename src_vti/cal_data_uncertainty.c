@@ -14,140 +14,92 @@
 #include "mpi_info.h"
 
 float frannor(void);/* random noise generator*/
-void write_data(acqui_t *acqui, emf_t *emf, char *fname, float _Complex ***dcal_fd);
 
 void write_misfit(acqui_t *acqui, emf_t *emf, char *fname, float ***obj);
 
-void cal_data_uncertainty(acqui_t *acqui, emf_t *emf, fwi_t *fwi)
+/*<add Gaussian white noise>*/
+void cal_uncertainty_noise(acqui_t *acq, emf_t *emf, fwi_t *fwi)
 {
-  int ifreq, isrc, irec, ichrec, ic;
-  float d1, d2, tmp,tmp1,tmp2, phi;
+  int ifreq, irec, ichrec;
+  float phi, mse, s1, s2, s3;
   float _Complex cgwn;
+  float _Complex Ex, Ey, Hx, Hy;
+  float _Complex Exc, Eyc, Hxc, Hyc;
 
-  //step 1: compute Fx, Fy using Fa, Fb, where F=E,H
-  memset(&emf->dobs_fd[0][0][0], 0, emf->nchrec*emf->nfreq*acqui->nrec*sizeof(float _Complex));
-  isrc = 0; //current shot global index=acqui->shot_idx[iproc]-1, local index=0 (always only 1 shot on each processor)
-  for(ichrec=0; ichrec<emf->nchrec; ichrec++){
-    if(strcmp(emf->chrec[ichrec],"Ex")==0){
-      for(irec=0; irec<acqui->nrec; irec++){
-	phi = acqui->rec_azimuth[irec]-acqui->src_azimuth[isrc];
-	for(ifreq=0; ifreq<emf->nfreq; ifreq++){
-	  emf->dobs_fd[ichrec][ifreq][irec] = emf->Ea[ifreq][irec]*cos(phi) + emf->Eb[ifreq][irec]*sin(phi);
-	}//end for ifreq
-      }//end for irec
-	
-    }else if(strcmp(emf->chrec[ichrec],"Ey")==0){
-      for(irec=0; irec<acqui->nrec; irec++){
-	phi = acqui->rec_azimuth[irec]-acqui->src_azimuth[isrc];
-	for(ifreq=0; ifreq<emf->nfreq; ifreq++){
-	  emf->dobs_fd[ichrec][ifreq][irec] = -emf->Ea[ifreq][irec]*sin(phi) + emf->Eb[ifreq][irec]*cos(phi);
-	}//end for ireq
-      }//end for irec
-	
-    }else if(strcmp(emf->chrec[ichrec],"Hx")==0){
-      for(irec=0; irec<acqui->nrec; irec++){
-	phi = acqui->rec_azimuth[irec]-acqui->src_azimuth[isrc];
-	for(ifreq=0; ifreq<emf->nfreq; ifreq++){
-	  emf->dobs_fd[ichrec][ifreq][irec] = emf->Ha[ifreq][irec]*cos(phi) + emf->Hb[ifreq][irec]*sin(phi);
-	}//end for ifreq
-      }//end for irec
-	
-    }else if(strcmp(emf->chrec[ichrec],"Hy")==0){
-      for(irec=0; irec<acqui->nrec; irec++){
-	phi = acqui->rec_azimuth[irec]-acqui->src_azimuth[isrc];
-	for(ifreq=0; ifreq<emf->nfreq; ifreq++){
-	  emf->dobs_fd[ichrec][ifreq][irec] = -emf->Ha[ifreq][irec]*sin(phi) + emf->Hb[ifreq][irec]*cos(phi);
-	}//end for ifreq
-      }//end for irec
-
-    }//end if
-      
-  }
-
-  //step 2: compute uncertainties associated with different components:
-  //delta_Fx, delta_Fy depends on Fx and Fy (involving Fa and Fb)
-  fwi->mse = 0;  
-  for(ichrec=0; ichrec<emf->nchrec; ichrec++){
+  mse = 0;  
+  for(irec=0; irec<acq->nrec; irec++){
+    //compute azimuth angle between source towline and receiver direction
+    phi = acq->rec_azimuth[irec]-acq->src_azimuth[0];
     for(ifreq=0; ifreq<emf->nfreq; ifreq++){
-      for(irec=0; irec<acqui->nrec; irec++){
+      //=======================================================
+      //step 1: compute uncertainties
+      //=======================================================
+      Ex = 0;//Ex before rotation
+      Ey = 0;//Ey before rotation
+      Hx = 0;//Hx before rotation
+      Hy = 0;//Hy before rotation
+      Exc = 0;//Ex after rotation
+      Eyc = 0;//Ey after rotation
+      Hxc = 0;//Hx after rotation
+      Hyc = 0;//Hy after rotation
+      for(ichrec=0; ichrec<emf->nchrec; ichrec++){
+      	if(strcmp(emf->chrec[ichrec],"Ex")==0){
+      	  Ex = emf->dobs_fd[ichrec][ifreq][irec];
+      	  Exc += Ex*cos(phi);
+      	  Eyc += Ex*sin(phi);
+      	}else if(strcmp(emf->chrec[ichrec],"Ey")==0){
+      	  Ey = emf->dobs_fd[ichrec][ifreq][irec];
+      	  Exc -= Ey*sin(phi);
+      	  Eyc += Ey*cos(phi);
+      	}else if(strcmp(emf->chrec[ichrec],"Hx")==0){
+      	  Hx = emf->dobs_fd[ichrec][ifreq][irec];
+      	  Hxc += Hx*cos(phi);
+      	  Hyc += Hx*sin(phi);
+      	}else if(strcmp(emf->chrec[ichrec],"Hy")==0){
+      	  Hy = emf->dobs_fd[ichrec][ifreq][irec];
+      	  Hxc -= Hy*sin(phi);
+      	  Hyc += Hy*cos(phi);
+      	}
+      }
 
-	tmp1 = 0.;
-	phi = acqui->rec_azimuth[irec]-acqui->src_azimuth[isrc];
+      for(ichrec=0; ichrec<emf->nchrec; ichrec++){
 	if(strcmp(emf->chrec[ichrec],"Ex")==0){
-	  d1 = cabs(emf->Ea[ifreq][irec])*cos(phi);
-	  d2 = cabs(emf->Eb[ifreq][irec])*sin(phi);
-	  tmp1 = emf->amp_perc*sqrt(d1*d1+d2*d2);
-	}else	  if(strcmp(emf->chrec[ichrec],"Ey")==0){
-	  d1 = cabs(emf->Ea[ifreq][irec])*sin(phi);
-	  d2 = cabs(emf->Eb[ifreq][irec])*cos(phi);
-	  tmp1 = emf->amp_perc*sqrt(d1*d1+d2*d2);
-	}else	  if(strcmp(emf->chrec[ichrec],"Hx")==0){
-	  d1 = cabs(emf->Ha[ifreq][irec])*cos(phi);
-	  d2 = cabs(emf->Hb[ifreq][irec])*sin(phi);
-	  tmp1 = emf->amp_perc*sqrt(d1*d1+d2*d2);
-	}else	  if(strcmp(emf->chrec[ichrec],"Hy")==0){
-	  d1 = cabs(emf->Ha[ifreq][irec])*sin(phi);
-	  d2 = cabs(emf->Hb[ifreq][irec])*cos(phi);
-	  tmp1 = emf->amp_perc*sqrt(d1*d1+d2*d2);
+	  s1 = cabs(emf->amp_perc*Ex)*cos(phi);
+	  s2 = cabs(emf->amp_perc*Ey)*sin(phi);
+	  s3 = emf->delta_phi*cabs(Eyc);
+	  emf->delta_emf[ichrec][ifreq][irec] = sqrt(s1*s1 + s2*s2 + s3*s3 + emf->noisefloorE*emf->noisefloorE);
+	}else if(strcmp(emf->chrec[ichrec],"Ey")==0){
+	  s1 = cabs(emf->amp_perc*Ex)*sin(phi);
+	  s2 = cabs(emf->amp_perc*Ey)*cos(phi);
+	  s3 = emf->delta_phi*cabs(Exc);
+	  emf->delta_emf[ichrec][ifreq][irec] = sqrt(s1*s1 + s2*s2 + s3*s3 + emf->noisefloorE*emf->noisefloorE);
+	}else if(strcmp(emf->chrec[ichrec],"Hx")==0){
+	  s1 = cabs(emf->amp_perc*Hx)*cos(phi);
+	  s2 = cabs(emf->amp_perc*Hy)*sin(phi);
+	  s3 = emf->delta_phi*cabs(Hyc);
+	  emf->delta_emf[ichrec][ifreq][irec] = sqrt(s1*s1 + s2*s2 + s3*s3 + emf->noisefloorH*emf->noisefloorH);
+	}else if(strcmp(emf->chrec[ichrec],"Hy")==0){
+	  s1 = cabs(emf->amp_perc*Hx)*sin(phi);
+	  s2 = cabs(emf->amp_perc*Hy)*cos(phi);
+	  s3 = cabs(emf->delta_phi*Hxc);
+	  emf->delta_emf[ichrec][ifreq][irec] = sqrt(s1*s1 + s2*s2 + s3*s3 + emf->noisefloorH*emf->noisefloorH);
 	}
 
-	/* d1 = acqui->src_x1[0]-acqui->rec_x1[irec]; */
-	/* d2 = acqui->src_x2[0]-acqui->rec_x2[irec]; */
-	/* tmp = sqrtf(d1*d1 + d2*d2);//offset between source and receiver */
-	/* // 2*amp_perc in [offset_start, offset_sep] */
-	/* if(tmp>emf->offset_start && tmp<emf->offset_sep) tmp1 *= 2; */
-	  
-	tmp2 = 0.;
-	for(ic=0; ic<emf->nchrec; ic++){
-	  //reset tmp2 to non zero value if the other components exist, otherwise tmp2=0
-	  if(strcmp(emf->chrec[ichrec],"Ex")==0 && strcmp(emf->chrec[ic],"Ey")==0){
-	    tmp2 = emf->delta_phi*cabs(emf->dobs_fd[ic][ifreq][irec]);
-	  }
-	  if(strcmp(emf->chrec[ichrec],"Ey")==0 && strcmp(emf->chrec[ic],"Ex")==0){
-	    tmp2 = emf->delta_phi*cabs(emf->dobs_fd[ic][ifreq][irec]);
-	  }
-	  if(strcmp(emf->chrec[ichrec],"Hx")==0 && strcmp(emf->chrec[ic],"Hy")==0){
-	    tmp2 = emf->delta_phi*cabs(emf->dobs_fd[ic][ifreq][irec]);
-	  }
-	  if(strcmp(emf->chrec[ichrec],"Hy")==0 && strcmp(emf->chrec[ic],"Hx")==0){
-	    tmp2 = emf->delta_phi*cabs(emf->dobs_fd[ic][ifreq][irec]);
-	  }
-	}
-	if(strcmp(emf->chrec[ichrec],"Ex")==0||strcmp(emf->chrec[ichrec],"Ey")==0)
-	  emf->delta_emf[ichrec][ifreq][irec] = sqrt(tmp1*tmp1 + tmp2*tmp2 + emf->noisefloorE*emf->noisefloorE);
-	if(strcmp(emf->chrec[ichrec],"Hx")==0||strcmp(emf->chrec[ichrec],"Hy")==0)
-	  emf->delta_emf[ichrec][ifreq][irec] = sqrt(tmp1*tmp1 + tmp2*tmp2 + emf->noisefloorH*emf->noisefloorH);
-	
-	/* if(strcmp(emf->chrec[ichrec],"Ex")==0||strcmp(emf->chrec[ichrec],"Ey")==0) */
-	/*   emf->delta_emf[ichrec][ifreq][irec] = sqrt(tmp1*tmp1 + tmp2*tmp2); */
-	/* if(strcmp(emf->chrec[ichrec],"Hx")==0||strcmp(emf->chrec[ichrec],"Hy")==0) */
-	/*   emf->delta_emf[ichrec][ifreq][irec] = sqrt(tmp1*tmp1 + tmp2*tmp2); */
-
-	if(emf->addnoise && emf->offset_ok[irec]){
-	  /* if(strcmp(emf->chrec[ichrec],"Ex")==0||strcmp(emf->chrec[ichrec],"Ey")==0) */
-	  /*   emf->delta_emf[ichrec][ifreq][irec] += emf->noisefloorE; */
-	  /* if(strcmp(emf->chrec[ichrec],"Hx")==0||strcmp(emf->chrec[ichrec],"Hy")==0) */
-	  /*   emf->delta_emf[ichrec][ifreq][irec] += emf->noisefloorH; */
-
-	  /* frannor() compute Gaussian white noise (GWN) following N(0,1) distribution  */
+	//=======================================================
+	//step 2: add Gaussian white noise
+	//=======================================================
+	if(emf->addnoise){
+	  //frannor() compute Gaussian white noise (GWN) following N(0,1) distribution
 	  cgwn = (frannor() + I*frannor())/sqrt(2.);//complex-valued GWN
 	  emf->dobs_fd[ichrec][ifreq][irec] += emf->delta_emf[ichrec][ifreq][irec]*cgwn;
-	    
-	  fwi->mse += conj(cgwn)*cgwn;//accumulate mse value
-	}
-      }//end for irec
-    }//end for ifreq      
-      
-  }//end for ichrec
+	  mse += conj(cgwn)*cgwn;//accumulate mse value
+	}//end if
+      }	//end for ichrec
+    }//end for ifreq
+  }//end for irec
 
-  MPI_Allreduce(&fwi->mse, &tmp, 1, MPI_FLOAT, MPI_SUM, MPI_COMM_WORLD);/*sum over all process*/
-  fwi->mse = tmp;
+
+  MPI_Allreduce(&mse, &fwi->mse, 1, MPI_FLOAT, MPI_SUM, MPI_COMM_WORLD);/*sum over all process*/
   if(emf->verb) printf("addnoise=%d, target rmse=%e\n", emf->addnoise, sqrt(fwi->mse/fwi->ndp));
-  
-  /* char fname[sizeof("uncertainty_0000.txt")]; */
-  /* sprintf(fname, "uncertainty_%04d.txt", acqui->shot_idx[iproc]); */
-  /* write_misfit(acqui, emf, fname, emf->delta_emf); */
-  /* sprintf(fname, "obs_%04d.txt", acqui->shot_idx[iproc]); */
-  /* write_data(acqui, emf, fname, emf->dobs_fd);/\* print out noise corrupted data *\/ */
 
 }
