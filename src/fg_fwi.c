@@ -68,7 +68,7 @@ int check_convergence(emf_t *emf, int adj);
 void write_data(acqui_t *acqui, emf_t *emf, char *fname, float _Complex ***dcal_fd);
 void read_data(acqui_t *acqui, emf_t *emf);
 void write_misfit(acqui_t *acqui, emf_t *emf, char *fname, float ***obj);
-void cal_data_uncertainty(acqui_t *acqui, emf_t *emf, fwi_t *fwi);
+void cal_uncertainty_noise(acqui_t *acqui, emf_t *emf, fwi_t *fwi);
 
 void homogenization(emf_t *emf);/* homogenization method by Davedycheva 2003 */
 void build_gradient(emf_t *emf, fwi_t *fwi);
@@ -118,7 +118,7 @@ void fg_fwi_init(acqui_t *acqui_, emf_t *emf_, fwi_t *fwi_)
   if(!getparint("addnoise", &emf->addnoise)) emf->addnoise = 1;//1=addnoise; 0=not
   if(!getparint("invmask", &emf->invmask)) emf->invmask = 0;
   if(!getparfloat("amp_perc", &emf->amp_perc)) emf->amp_perc = 0.03;
-  /* uncertainty, default=1% noise/deviation from the true value*/
+  /* uncertainty, default=1% noise/deviation from the true value */
   if(!getparfloat("delta_phi", &emf->delta_phi)) emf->delta_phi = 1.5*PI/180.;
   if(!getparfloat("noisefloorE", &emf->noisefloorE)) emf->noisefloorE = 1e-16;
   if(!getparfloat("noisefloorH", &emf->noisefloorH)) emf->noisefloorH = 1e-14;
@@ -141,7 +141,6 @@ void fg_fwi_init(acqui_t *acqui_, emf_t *emf_, fwi_t *fwi_)
 
   emf->ibathy = alloc2int(emf->n1, emf->n2);
   emf->offset_ok = alloc1int(acqui->nrec);
-  emf->offset_weight = alloc1float(acqui->nrec);
   emf->rho = alloc3float(emf->n1, emf->n2, emf->n3);//effective rho used in inversion
   emf->mask = alloc3float(emf->n1, emf->n2, emf->n3);
   emf->dobs_fd = alloc3complexf(acqui->nrec, emf->nfreq, emf->nchrec);
@@ -196,7 +195,6 @@ void fg_fwi_init(acqui_t *acqui_, emf_t *emf_, fwi_t *fwi_)
     float tmp = sqrtf(d1*d1 + d2*d2);// offset between source and receiver
     if(tmp>emf->offset_start) {
       emf->offset_ok[irec] = 1;
-      emf->offset_weight[irec] = 1.;
       ntrace++;
     }else emf->offset_ok[irec] = 0;
   }
@@ -209,18 +207,10 @@ void fg_fwi_init(acqui_t *acqui_, emf_t *emf_, fwi_t *fwi_)
     for(k=0; k<nproc; k++) printf("isrc=%d ndp=%d\n", acqui->shot_idx[k], fwi->ndp_list[k]);
   }
   
-  emf->Ea = alloc2complexf(acqui->nrec, emf->nfreq);
-  emf->Eb = alloc2complexf(acqui->nrec, emf->nfreq);
-  emf->Ha = alloc2complexf(acqui->nrec, emf->nfreq);
-  emf->Hb = alloc2complexf(acqui->nrec, emf->nfreq);
   read_data(acqui, emf);/* initialize dobs_fd */
   if(emf->verb) printf("read observed data completed!\n");
-  cal_data_uncertainty(acqui, emf, fwi);
+  cal_uncertainty_noise(acqui, emf, fwi);
   if(emf->verb) printf("data uncertainty computed!\n");
-  free2complexf(emf->Ea);
-  free2complexf(emf->Eb);
-  free2complexf(emf->Ha);
-  free2complexf(emf->Hb);
 
   fcost_adjsrc_init();
   memcpy(emf->rho[0][0], emf->rho33[0][0], emf->n123*sizeof(float));//set it to be rho33
@@ -232,8 +222,6 @@ void fg_fwi_close()
 {
   free2int(emf->ibathy);
   free1int(emf->offset_ok);
-  free1float(emf->offset_weight);
-
   free3float(emf->rho);
   free3float(emf->mask);
   free3complexf(emf->dobs_fd);

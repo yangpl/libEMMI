@@ -41,22 +41,17 @@ void read_data(acqui_t *acqui, emf_t *emf)
 /*< read observed data according to shot/process index >*/
 {
   char fname[sizeof("emf_0000.txt")];
-  int isrc, irec, ifreq, iseof;
+  int isrc, ichrec, irec, ifreq, iseof;
   float dp_re, dp_im;
   char chrec[sizeof("Ex")];
   FILE *fp;
-
-  memset(&emf->Ea[0][0], 0, emf->nfreq*acqui->nrec*sizeof(float _Complex));
-  memset(&emf->Eb[0][0], 0, emf->nfreq*acqui->nrec*sizeof(float _Complex));
-  memset(&emf->Ha[0][0], 0, emf->nfreq*acqui->nrec*sizeof(float _Complex));
-  memset(&emf->Hb[0][0], 0, emf->nfreq*acqui->nrec*sizeof(float _Complex));
 
   if(emf->reciprocity){
     
   }else{
     sprintf(fname, "emf_%04d.txt", acqui->shot_idx[iproc]);
-    if(access(fname, F_OK)!=0) err("file %s does not exist", fname);
     fp=fopen(fname,"r");
+  if(fp==NULL) err("error opening file for reading");
     fscanf(fp, "%*[^\n]\n");//skip a line at the beginning of the file
     while(1){
       iseof=fscanf(fp, "%d \t %d \t %s \t %d \t %e \t %e\n",
@@ -65,18 +60,10 @@ void read_data(acqui_t *acqui, emf_t *emf)
 	break;
       }else{
 	if(acqui->shot_idx[iproc]==isrc && ifreq<=emf->nfreq && irec<=acqui->nrec){
-	  if(strcmp(chrec,"Ex")==0){
-	    emf->Ea[ifreq-1][irec-1] = dp_re + I* dp_im;
+	  for(ichrec=0; ichrec<emf->nchrec; ichrec++){
+	    if(strcmp(emf->chrec[ichrec], chrec)==0) break;
 	  }
-	  if(strcmp(chrec,"Ey")==0){
-	    emf->Eb[ifreq-1][irec-1] = dp_re + I* dp_im;
-	  }
-	  if(strcmp(chrec,"Hx")==0){
-	    emf->Ha[ifreq-1][irec-1] = dp_re + I* dp_im;
-	  }
-	  if(strcmp(chrec,"Hy")==0){
-	    emf->Hb[ifreq-1][irec-1] = dp_re + I* dp_im;
-	  }
+	  emf->dobs_fd[ichrec][ifreq-1][irec-1] = dp_re + I* dp_im;
 	}//end if
       }
     }

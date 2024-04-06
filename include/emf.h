@@ -55,14 +55,6 @@ typedef struct {
   float ***memD2H3, ***memD3H2, ***memD3H1, ***memD1H3, ***memD1H2, ***memD2H1;
   float ***memD2E3, ***memD3E2, ***memD3E1, ***memD1E3, ***memD1E2, ***memD2E1;
 
-  /* Gauss-Newton inversion part */
-  float ***gn_E1, ***gn_E2, ***gn_E3, ***gn_H1, ***gn_H2, ***gn_H3;
-  float ***gn_curlE1, ***gn_curlE2, ***gn_curlE3, ***gn_curlH1, ***gn_curlH2, ***gn_curlH3;
-  float ***gn_memD2H3, ***gn_memD3H2, ***gn_memD3H1, ***gn_memD1H3, ***gn_memD1H2, ***gn_memD2H1;
-  float ***gn_memD2E3, ***gn_memD3E2, ***gn_memD3E1, ***gn_memD1E3, ***gn_memD1E2, ***gn_memD2E1;
-  float ***v_rho11, ***v_rho22, ***v_rho33;
-
-  
   /* computing box bound */
   int *i1min_fwd, *i1max_fwd;
   int *i2min_fwd, *i2max_fwd;
@@ -86,14 +78,10 @@ typedef struct {
   float _Complex ****adj_H1,****adj_H2, ****adj_H3;
   float _Complex **expfactor;
 
-
-  float _Complex **Ea, **Eb, **Ha, **Hb;
-
   int addnoise;
   int invmask;
   float offset_start;
   int *offset_ok;
-  float *offset_weight;
   float noisefloorE, noisefloorH;
   float amp_perc;/* 0.03=3% deviation from the true value */
   float delta_phi;

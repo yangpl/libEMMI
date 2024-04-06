@@ -2,8 +2,9 @@
  *-----------------------------------------------------------------------
  *
  * Copyright (c) 2021 Harbin Institute of Technology. All rights reserved.
- * Anothr: Pengliang Yang 
+ * Author: Pengliang Yang 
  * Email: ypl.2100@gmail.com
+ * Homepage: https://yangpl.wordpress.com/
  *-----------------------------------------------------------------------*/
 #include "cstd.h"
 #include "acqui.h"
