@@ -15,17 +15,18 @@ Compilation requirement: gcc compiler, mpicc compiler and make
 
 Software required: fftw3 (https://fftw.org/)
 
-Credits:
+## Credits:
 
-* Pengliang Yang, 3D fictitious wave domain CSEM inversion by adjoint source estimation, 2023 Computers & Geosciences , Vol. 180 p. 105441
+1. Pengliang Yang, 3D fictitious wave domain CSEM inversion by adjoint source estimation, 2023 Computers & Geosciences , Vol. 180 p. 105441
+[doi:10.1016/j.cageo.2023.105441](https://doi.org/10.1016/j.cageo.2023.105441)
 
-* Pengliang Yang, libEMM: A fictious wave domain 3D CSEM modelling library bridging sequential and parallel GPU implementation, 2023 Computer Physics Communications, Vol. 288 p. 108745
+2. Pengliang Yang, libEMM: A fictious wave domain 3D CSEM modelling library bridging sequential and parallel GPU implementation, 2023 Computer Physics Communications, Vol. 288 p. 108745 [doi:10.1016/j.cpc.2023.108745](https://doi.org/10.1016/j.cpc.2023.108745)
 
-* Pengliang Yang and Rune Mittet, Controlled-source electromagnetics modelling using high order finite-difference time-domain method on a nonuniform grid 2023 Geophysics , Vol. 88, No. 2 Society of Exploration Geophysicists p. E53-E67
+3. Pengliang Yang and Rune Mittet, Controlled-source electromagnetics modelling using high order finite-difference time-domain method on a nonuniform grid 2023 Geophysics , Vol. 88, No. 2 Society of Exploration Geophysicists p. E53-E67
+[doi:10.1190/geo2022-0134.1](https://doi.org/10.1190/geo2022-0134.1)
 
 
---------------------------------------------
-Structure of the software:
+## Software Structure
 
 * src: source code 
 * include: header files
@@ -36,7 +37,8 @@ Structure of the software:
 * run_fwi_land_iter1: template to run only 1st iteration
 
 
---------------------------------------------
+## Examples
+
 1) run_adjsrc_freq2time:
 
 
@@ -136,8 +138,8 @@ The output after inversion:
 
 I output all relevant information during nonlinear CSEM inversion into ASCII file out.txt by 'mpirun -n 16 ../bin/fdtd $(cat inputpar.txt) >&out.txt' in run.sh. You can check out all these details.
 
--------------------------------------
-Visualization of the numerical result
+
+## Visualization of the numerical result
 
 I created 3 python scripts to visualize the result. These are:
 
