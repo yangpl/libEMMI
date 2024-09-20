@@ -1,11 +1,5 @@
-/* extract EM fields using interpolation, correction done with rigirous interpolation
- * 
- * Reference: 
- *    Shantsev DV, Maaø FA. Rigorous interpolation near diped interfaces in 3-D 
- *    finite-difference EM modeling. Geophysical Journal International. 2015 Feb
- *    1;200(2):745-57.
+/* extract EM fields using interpolation
  *---------------------------------------------------------------------------
- *
  *   Copyright (c) 2020, Harbin Institute of Technology, China
  *   Author: Pengliang Yang
  *   E-mail: ypl.2100@gmail.com
