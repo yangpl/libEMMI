@@ -11,9 +11,6 @@
 #include "mpi_info.h"
 #include "constants.h"
 
-
-int cmpfunc(const void *a, const void *b) { return ( *(int*)a - *(int*)b ); }
-
 void nugrid_init(emf_t *emf);
 void nugrid_close(emf_t *emf);
 
@@ -84,7 +81,6 @@ void emf_init(emf_t *emf)
   emf->freqs=alloc1float(emf->nfreq);
   emf->omegas=alloc1float(emf->nfreq);
   getparfloat("freqs", emf->freqs);/* a list of frequencies separated by comma */
-  qsort(emf->freqs, emf->nfreq, sizeof(float), cmpfunc);/*sort frequencies in ascending order*/
   for(ifreq=0; ifreq<emf->nfreq; ++ifreq) {
     emf->omegas[ifreq]=2.*PI*emf->freqs[ifreq];
     if(iproc==0) printf("freq[%d]=%g ", ifreq+1, emf->freqs[ifreq]);
